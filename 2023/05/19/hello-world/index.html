@@ -232,32 +232,38 @@ if (false) {
 POWERMODE.shake = true;
 POWERMODE.mobile = true;
 document.body.addEventListener('input', POWERMODE);
-</script><script>(function(d, w, c) {
-    w.ChatraID = 'iiyyDdh8DAeetuXvt';
-    var s = d.createElement('script');
-    w[c] = w[c] || function() {
-        (w[c].q = w[c].q || []).push(arguments);
-    };
-    s.async = true;
-    s.src = 'https://call.chatra.io/chatra.js';
-    if (d.head) d.head.appendChild(s);
-})(document, window, 'Chatra');
+</script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "0319cc0f-ca7e-4abe-99c5-0afeafd7c348";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
 
 if (true) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
   var chatBtnFn = () => {
     var chatBtn = document.getElementById("chat_btn")
     chatBtn.addEventListener("click", function(){
-      Chatra('openChat')
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
     });
   }
   chatBtnFn()
 } else {
   if (false) {
     function chatBtnHide () {
-      Chatra('hide')
+      $crisp.push(["do", "chat:hide"])
     }
     function chatBtnShow () {
-      Chatra('show')
+      $crisp.push(["do", "chat:show"])
     }
   }
 }</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
