@@ -16,12 +16,12 @@ jobs:
     steps:
       # check it to your workflow can access it
       # from: https://github.com/actions/checkout
-      - name: Checkout Repository main branch
-        uses: actions/checkout@main
+      - name: Checkout Repository master branch
+        uses: actions/checkout@mater
 
       # from: https://github.com/actions/setup-node
       - name: Setup Node.js 10.x
-        uses: actions/setup-node@main
+        uses: actions/setup-node@master
         with:
           node-version: "10.x"
 
@@ -51,7 +51,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }} # 此处为 hexo-deploy-key
           external_repository: czlifetime/czlifetime.github.io
-          publish_branch: main
+          publish_branch: master
           publish_dir: ./public
           commit_message: deploy githubPage
           # commit_message: ${{ github.event.head_commit.message }}
