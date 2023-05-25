@@ -59,4 +59,4 @@ jobs:
         git config user.email "czlifetime@foxmail.com"
         git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://${{ secrets.CODING_TOKEN_ }}@$GITHUB_REPO" master:master
+        git push --force --quiet "https://${{ secrets.CODING_TOKEN }}@$GITHUB_REPO" master:master
