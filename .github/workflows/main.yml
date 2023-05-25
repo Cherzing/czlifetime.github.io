@@ -51,7 +51,7 @@ jobs:
       env: 
         # Github 仓库
         GITHUB_REPO: github.com/czlifetime/czlifetime.github.io
-        
+    
       # 将编译后的博客文件推送到指定仓库
       run: |
         cd ./public && git init && git add .
@@ -59,4 +59,4 @@ jobs:
         git config user.email "czlifetime@foxmail.com"
         git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://${{ secrets.Coding_Token }}@$GITHUB_REPO" master:master
+        git push --force --quiet "https://${{ secrets.CODING_TOKEN_ }}@$GITHUB_REPO" master:master
