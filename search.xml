@@ -1,45 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java设计思想</title>
-    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
-<li>统计思想:利用map集合进行统计</li>
-</ul>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
-<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
-<li><code>StringBuilder</code></li>
-<li><code>StringJoiner</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
-<li>如30%的甲，70%的乙：<ol>
-<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
-<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
-<li>对随机取得的值进行条件判断，取到的值就有概率</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
-<li><ul>
-<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
-<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
-<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
-</ul>
-</li>
-</ul>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
-<li>把具体的要求封装成方法</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>设计思想</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HEXO</title>
     <url>/2023/05/19/hello-world/</url>
     <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
@@ -225,52 +186,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据结构</title>
-    <url>/2023/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
-<li><p>节点的内部结构</p>
-<p><img src="/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
-</li>
-<li><p><img src="/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
-</li>
-</ul>
-<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
-<li>规则：任意节点左右子树不超过一</li>
-<li>平衡二叉树的旋转机制<ul>
-<li>左旋</li>
-<li>右旋</li>
-</ul>
-</li>
-</ul>
-<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
-<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
-<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
-<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
-<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
-</ul>
-<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
-<li>每一个节点或是红色的，或者是黑色的</li>
-<li>根节点必须是黑色</li>
-<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
-<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
-<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
-</ul>
-<img src="红黑树节点.png" style="zoom:50%;" />
-
-<ul>
-<li>红黑树添加节点的规则：<ul>
-<li>添加节点默认是红色(效率高)</li>
-<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
-</ul>
-</li>
-</ul>
-<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图</title>
     <url>/2023/05/22/%E5%9B%BE/</url>
     <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
@@ -305,6 +220,91 @@
 <li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
 </ul>
 <h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java设计思想</title>
+    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
+<li>统计思想:利用map集合进行统计</li>
+</ul>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
+<li><code>StringBuilder</code></li>
+<li><code>StringJoiner</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
+<li>如30%的甲，70%的乙：<ol>
+<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
+<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
+<li>对随机取得的值进行条件判断，取到的值就有概率</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
+<li><ul>
+<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
+<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
+<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li>把具体的要求封装成方法</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>设计思想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/2023/05/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
+<li><p>节点的内部结构</p>
+<p><img src="/img/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
+</li>
+<li><p><img src="/img/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
+</li>
+</ul>
+<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
+<li>规则：任意节点左右子树不超过一</li>
+<li>平衡二叉树的旋转机制<ul>
+<li>左旋</li>
+<li>右旋</li>
+</ul>
+</li>
+</ul>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
+<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
+<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
+<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
+<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
+</ul>
+<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
+<li>每一个节点或是红色的，或者是黑色的</li>
+<li>根节点必须是黑色</li>
+<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
+<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
+<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
+</ul>
+<img src="红黑树节点.png" style="zoom:50%;" />
+
+<ul>
+<li>红黑树添加节点的规则：<ul>
+<li>添加节点默认是红色(效率高)</li>
+<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
+</ul>
+</li>
+</ul>
+<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
+]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
