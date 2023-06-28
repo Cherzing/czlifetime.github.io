@@ -45,7 +45,7 @@
 <li><p>数据流的流向：输入流、输出流</p>
 </li>
 <li><p>流的角色：节点流、处理流(字符流)</p>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/img//img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
 </li>
 </ol>
 </li>
@@ -173,7 +173,7 @@
 <p>I：input</p>
 <p>O：output</p>
 <p>流：像水流一样传输数据</p>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://raw.githubusercontent.com/czlifetime/img/master/IO%E6%B5%81.png"></p>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://github.com/czlifetime/img/blob/1.0/img/IO%E6%B5%81.png?raw=true"></p>
 <p><img src="https://raw.githubusercontent.com/czlifetime/img/master/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
 <h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -407,42 +407,42 @@
       </tags>
   </entry>
   <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
+    <title>Java设计思想</title>
+    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
+<li>统计思想:利用map集合进行统计</li>
 </ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
+<li><code>StringBuilder</code></li>
+<li><code>StringJoiner</code></li>
 </ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
 </li>
 </ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
+<li>如30%的甲，70%的乙：<ol>
+<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
+<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
+<li>对随机取得的值进行条件判断，取到的值就有概率</li>
+</ol>
+</li>
 </ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
+<li><ul>
+<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
+<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
+<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li>把具体的要求封装成方法</li>
+</ul>
+]]></content>
       <tags>
-        <tag>数据结构</tag>
+        <tag>设计思想</tag>
       </tags>
   </entry>
   <entry>
@@ -492,42 +492,42 @@
       </tags>
   </entry>
   <entry>
-    <title>Java设计思想</title>
-    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
-<li>统计思想:利用map集合进行统计</li>
-</ul>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
-<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
-<li><code>StringBuilder</code></li>
-<li><code>StringJoiner</code></li>
-</ul>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
 </li>
 </ul>
-<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
-<li>如30%的甲，70%的乙：<ol>
-<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
-<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
-<li>对随机取得的值进行条件判断，取到的值就有概率</li>
-</ol>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
-<li><ul>
-<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
-<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
-<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
 </ul>
-</li>
-</ul>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
-<li>把具体的要求封装成方法</li>
-</ul>
-]]></content>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
       <tags>
-        <tag>设计思想</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
