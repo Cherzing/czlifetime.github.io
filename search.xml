@@ -1,191 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HEXO</title>
-    <url>/2023/05/19/hello-world/</url>
-    <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
-<p>我为什么要搭建个人博客？</p>
-<ol>
-<li>记录美好生活；</li>
-<li>提升自己的技术水平；</li>
-<li>空闲时间娱乐；</li>
-</ol>
-<hr>
-<p><font color = "red" size ="5">本博客由Github+Hexo搭建，下面我来介绍我做这个博客的全过程：</font></p>
-<h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><ol>
-<li><p>首先进入<a href="https://github.com/">GitHub官网</a></p>
-</li>
-<li><p>点击Sign up</p>
-</li>
-</ol>
-<p><img src="https://s2.loli.net/2023/05/26/4spkv6yjKPYq2Qt.png"></p>
-<ol start="3">
-<li><p>输入你要注册的邮箱、密码<img src="https://s2.loli.net/2023/05/26/w5rAt1McU8DfLZF.png"></p>
-</li>
-<li><p>Create account</p>
-</li>
-</ol>
-<p><img src="https://s2.loli.net/2023/05/26/qJ6LpkECcez42dF.png"></p>
-<ol start="5">
-<li>依次按照github的提示来做，之后就省略，不难。</li>
-</ol>
-<h2 id="Git安装步骤"><a href="#Git安装步骤" class="headerlink" title="Git安装步骤"></a>Git安装步骤</h2><ol>
-<li><p>进入<a href="https://git-scm.com/">Git官网</a>,想、点击Downloads</p>
-<p><img src="https://s2.loli.net/2023/05/26/XCvmpUekgtPsNc1.png"></p>
-</li>
-<li><p>选择自己的系统</p>
-<p><img src="https://s2.loli.net/2023/05/26/NVbQZjwHz5kDGqx.png"></p>
-</li>
-<li><p>选择自己的适合的版本<img src="https://s2.loli.net/2023/05/26/NVbQZjwHz5kDGqx.png"></p>
-</li>
-</ol>
-<p>​	( 国内下载的速度慢，有时候还会下载失败，我这里提供<a href="https://www.aliyundrive.com/s/32emvmTN9aV">Git-2.40.1-64-bit的安装包</a> )</p>
-<ol start="4">
-<li><p>下载完成打开</p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/yl4izRvqdTBLCn1.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/eNLwi4Sop3kAs8X.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/FmR3fzUq6wNl91H.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/uWtBQJraKdRG7Zh.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/rwGlm473aKEMWvA.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/D7NuTQsWAHjlrwy.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/TsWILrDS98yoOGb.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/Vn2f47LztITKk5p.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/Bzsw2Djd7FQc8m1.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/gmIUl8jCiRG2c5M.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/ECMy75odNPawH3b.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/SpCgHmPqcwUENIh.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/nERkNgU5zpiqxSX.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/NJkGvSWAt6wdFRH.png"></p>
-</li>
-<li><p><img src="https://s2.loli.net/2023/05/26/nHdCWkv5O92Sb3D.png"></p>
-</li>
-<li><p>鼠标左击出现这种情况就可以了</p>
-<p><img src="https://s2.loli.net/2023/05/26/SQlBgaF2YvuLcCy.png"></p>
-</li>
-<li><p>打开Git Bash，输入git出现这种情况就可以了</p>
-<p><img src="https://s2.loli.net/2023/05/26/ySnF47b2xWUaQ9i.png"></p>
-</li>
-</ol>
-<h2 id="绑定GitHub并提交文件"><a href="#绑定GitHub并提交文件" class="headerlink" title="绑定GitHub并提交文件"></a>绑定GitHub并提交文件</h2><ol>
-<li><p>打开Git bash 输入ssh，查看本机是否安装SSH</p>
-<p><img src="https://s2.loli.net/2023/05/26/mKTCNa8wS2BYPuI.png"></p>
-</li>
-<li><p>输入<code>ssh-keygen -t rsa</code>，指定生成秘钥，接着再点击四次回车键，生成两个文件，分别为<code>id_rsa</code>，<code>id_rsa.pub</code>，按照指定的文件位置打开<code>id_rsa.pub</code>，复制下来</p>
-<p><img src="https://s2.loli.net/2023/05/26/lmLI6WPkRhKiJcA.png"></p>
-</li>
-<li><p>打开github，在settings中<code>SSH and GPG keys</code>中添加秘钥，名称加不加都行</p>
-<p><img src="https://s2.loli.net/2023/05/26/EesFogtycpwb3JV.png"></p>
-<p><img src="https://s2.loli.net/2023/05/26/MK4F9RpHiC7OxIS.png"></p>
-</li>
-<li><p>验证是否成功，在Git Bash中输入<code>ssh -T github@github.com</code>进行验证</p>
-<p><img src="https://s2.loli.net/2023/05/26/N8KvWDrzjohAwdb.png"></p>
-</li>
-</ol>
-<h2 id="安装node-js和Hexo"><a href="#安装node-js和Hexo" class="headerlink" title="安装node.js和Hexo"></a>安装node.js和Hexo</h2><h3 id="安装node-js及环境变量适配"><a href="#安装node-js及环境变量适配" class="headerlink" title="安装node.js及环境变量适配"></a>安装node.js及环境变量适配</h3><p>大家可以看这篇<a href="https://blog.csdn.net/antma/article/details/86104068">文章</a>，内容相当的详细</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
-<li><p>在github中新建一个仓库</p>
-<p><img src="D:\Desktop\笔记\图片\GWQ2IX1NctS6TVR.png"></p>
-</li>
-<li><p>仓库名为<code>用户名+github.io</code></p>
-<p><img src="https://s2.loli.net/2023/05/26/zHRwbt15yGinTIU.png"></p>
-</li>
-<li><p>点击到仓库的settings，出现这种情况就可以了</p>
-<p><img src="https://s2.loli.net/2023/05/26/mevcw1kIht5UELn.png"></p>
-</li>
-<li><p>安装Hexo：在任意一个盘符下面新建一个<code>Blog</code>文件夹打开文件夹，使用git Bash 的管理员身份运行，输入<code>npm install -g hexo-cli</code>，安装完成之后，在使用<code>hexo init</code>命令初始化一下，输入<code>hexo g</code>静态部署，输入<code>hexo s</code>可以本地预览，在浏览器中输入<code>localhost:4000</code>，就可以本地预览网页了</p>
-</li>
-<li><p>将Hexo部署到GitHub中：打开Blog文件夹，打开<code>_config.yml</code>文件，滑到文件的最下方，修改</p>
-<p><img src="https://s2.loli.net/2023/05/26/at2KjYhmLPAE84k.png"></p>
-<p><img src="https://s2.loli.net/2023/05/26/16b3vVJNHitP4oX.png"></p>
-<p><img src="https://s2.loli.net/2023/05/26/fSyYRl5OIFAJhcd.png"></p>
-</li>
-<li><p>然后回到<code>Blog</code>文件夹中，打开Git Bash，安装Git部署插件，输入命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>再输入以下的指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean #清除缓存文件db.json和已生成的静态文件public</span><br><span class="line">hexo g     #生成网站静态文件到默认设置的 public 文件夹(hexo generate的缩写)</span><br><span class="line">hexo d     #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
-
-<p>在浏览器中输入<code>你的用户名+github.io</code>就可以访问网站了</p>
-</li>
-</ol>
-<h2 id="解析域名"><a href="#解析域名" class="headerlink" title="解析域名"></a>解析域名</h2><ol>
-<li><p>域名绝大部分是付费的，但是也有免费的，比如我的这个czlifetime.eu.org，具体的申请教程在<a href="https://www.bilibili.com/video/BV1gs4y1J7xZ/?spm_id_from=333.880.my_history.page.click&vd_source=f38da837f7ffc103f340849927ff2d1f">这</a></p>
-</li>
-<li><p>得到域名后，在阿里云、腾讯云、华为云等可以解析，添加记录：A @ 185.199.108.153 和 A @ 185.199.109.153 和 A @ 185.199.110.153 和 A @ 185.199.111.153，任意选一个或两个就可以了</p>
-</li>
-<li><p>打开Blog文件夹里的source文件夹，添加CNAME文件，可以先创建一个CNAME.txt文件，打开后写上你的域名，不要加www否则每次访问都必须加www，但如果不带有www，以后访问的时候带不带www都可以访问，保存后记得要重命名，将.txt删除</p>
-</li>
-<li><p>第三步回到Blog 文件夹，右键打开Git Bash，依次输入下面三条命令:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean #清除缓存文件db.json和已生成的静态文件public</span><br><span class="line">hexo g     #生成网站静态文件到默认设置的 public 文件夹(hexo generate的缩写)</span><br><span class="line">hexo d     #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开GitHub，看看CNAME文件是否已经在你的项目中，如果没有，可以在github的仓库中添加，最后github中也要把你的域名写进去</p>
-<p><img src="https://s2.loli.net/2023/05/26/Z5SmLtMvVpyW4T3.png"></p>
-</li>
-</ol>
-<h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p><code>hexo</code>有很多种主题，我推荐8种主题</p>
-<ol>
-<li>Butterfly<ul>
-<li>GitHub地址：<a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a></li>
-<li>在线演示：<a href="https://butterfly.js.org/">https://butterfly.js.org/</a></li>
-</ul>
-</li>
-<li>ICARUS<ul>
-<li>GitHub地址：<a href="https://github.com/ppoffice/hexo-theme-icarus">https://github.com/ppoffice/hexo-theme-icarus</a></li>
-<li>在线演示：<a href="https://ppoffice.github.io/hexo-theme-icarus/">https://ppoffice.github.io/hexo-theme-icarus/</a></li>
-</ul>
-</li>
-<li>Fluid<ul>
-<li>GitHub地址：<a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></li>
-<li>在线演示：<a href="https://hexo.fluid-dev.com/">hexo.fluid-dev.com&#x2F;</a></li>
-</ul>
-</li>
-<li>Volantis<ul>
-<li>GitHub地址：<a href="https://github.com/volantis-x/hexo-theme-volantis">https://github.com/volantis-x/hexo-theme-volantis</a></li>
-<li>在线演示：<a href="https://volantis.js.org/">volantis.js.org</a></li>
-</ul>
-</li>
-<li>Snippet<ul>
-<li>GitHub地址：<a href="https://github.com/shenliyang/hexo-theme-snippet">https://github.com/shenliyang/hexo-theme-snippet</a></li>
-<li>在线演示：<a href="https://snippet.shenliyang.com/">snippet.shenliyang.com&#x2F;</a></li>
-</ul>
-</li>
-<li>Hacker<ul>
-<li>GitHub地址：<a href="https://github.com/CodeDaraW/Hacker">https://github.com/CodeDaraW/Hacker</a></li>
-<li>在线演示：<a href="https://blog.daraw.cn/">blog.daraw.cn&#x2F;</a></li>
-</ul>
-</li>
-<li>3-hexo<ul>
-<li>GitHub地址：<a href="https://github.com/yelog/hexo-theme-3-hexo">https://github.com/yelog/hexo-theme-3-hexo</a></li>
-<li>在线演示：<a href="https://yelog.org/">yelog.org</a></li>
-</ul>
-</li>
-<li>Cactus<ul>
-<li>GitHub地址：<a href="https://github.com/probberechts/hexo-theme-cactus">https://github.com/probberechts/hexo-theme-cactus</a></li>
-<li>在线演示：<a href="https://probberechts.github.io/hexo-theme-cactus/">probberechts.github.io&#x2F;hexo-theme-cactus&#x2F;</a></li>
-</ul>
-</li>
-</ol>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>点开GitHub的地址，详细的配置就在首页的md文件中，这里不过多赘述</p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>I/O流</title>
     <url>/2023/06/23/IO%E6%B5%81/</url>
     <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
@@ -407,45 +222,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
-</ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
-</ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java设计思想</title>
     <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
@@ -482,6 +258,45 @@
 ]]></content>
       <tags>
         <tag>设计思想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+</li>
+</ul>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -528,6 +343,191 @@
 ]]></content>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HEXO</title>
+    <url>/2023/05/19/hello-world/</url>
+    <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
+<p>我为什么要搭建个人博客？</p>
+<ol>
+<li>记录美好生活；</li>
+<li>提升自己的技术水平；</li>
+<li>空闲时间娱乐；</li>
+</ol>
+<hr>
+<p><font color = "red" size ="5">本博客由Github+Hexo搭建，下面我来介绍我做这个博客的全过程：</font></p>
+<h2 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h2><ol>
+<li><p>首先进入<a href="https://github.com/">GitHub官网</a></p>
+</li>
+<li><p>点击Sign up</p>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/05/26/4spkv6yjKPYq2Qt.png"></p>
+<ol start="3">
+<li><p>输入你要注册的邮箱、密码<img src="https://s2.loli.net/2023/05/26/w5rAt1McU8DfLZF.png"></p>
+</li>
+<li><p>Create account</p>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/05/26/qJ6LpkECcez42dF.png"></p>
+<ol start="5">
+<li>依次按照github的提示来做，之后就省略，不难。</li>
+</ol>
+<h2 id="Git安装步骤"><a href="#Git安装步骤" class="headerlink" title="Git安装步骤"></a>Git安装步骤</h2><ol>
+<li><p>进入<a href="https://git-scm.com/">Git官网</a>,想、点击Downloads</p>
+<p><img src="https://s2.loli.net/2023/05/26/XCvmpUekgtPsNc1.png"></p>
+</li>
+<li><p>选择自己的系统</p>
+<p><img src="https://s2.loli.net/2023/05/26/NVbQZjwHz5kDGqx.png"></p>
+</li>
+<li><p>选择自己的适合的版本<img src="https://s2.loli.net/2023/05/26/NVbQZjwHz5kDGqx.png"></p>
+</li>
+</ol>
+<p>​	( 国内下载的速度慢，有时候还会下载失败，我这里提供<a href="https://www.aliyundrive.com/s/32emvmTN9aV">Git-2.40.1-64-bit的安装包</a> )</p>
+<ol start="4">
+<li><p>下载完成打开</p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/yl4izRvqdTBLCn1.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/eNLwi4Sop3kAs8X.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/FmR3fzUq6wNl91H.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/uWtBQJraKdRG7Zh.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/rwGlm473aKEMWvA.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/D7NuTQsWAHjlrwy.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/TsWILrDS98yoOGb.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/Vn2f47LztITKk5p.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/Bzsw2Djd7FQc8m1.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/gmIUl8jCiRG2c5M.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/ECMy75odNPawH3b.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/SpCgHmPqcwUENIh.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/nERkNgU5zpiqxSX.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/NJkGvSWAt6wdFRH.png"></p>
+</li>
+<li><p><img src="https://s2.loli.net/2023/05/26/nHdCWkv5O92Sb3D.png"></p>
+</li>
+<li><p>鼠标左击出现这种情况就可以了</p>
+<p><img src="https://s2.loli.net/2023/05/26/SQlBgaF2YvuLcCy.png"></p>
+</li>
+<li><p>打开Git Bash，输入git出现这种情况就可以了</p>
+<p><img src="https://s2.loli.net/2023/05/26/ySnF47b2xWUaQ9i.png"></p>
+</li>
+</ol>
+<h2 id="绑定GitHub并提交文件"><a href="#绑定GitHub并提交文件" class="headerlink" title="绑定GitHub并提交文件"></a>绑定GitHub并提交文件</h2><ol>
+<li><p>打开Git bash 输入ssh，查看本机是否安装SSH</p>
+<p><img src="https://s2.loli.net/2023/05/26/mKTCNa8wS2BYPuI.png"></p>
+</li>
+<li><p>输入<code>ssh-keygen -t rsa</code>，指定生成秘钥，接着再点击四次回车键，生成两个文件，分别为<code>id_rsa</code>，<code>id_rsa.pub</code>，按照指定的文件位置打开<code>id_rsa.pub</code>，复制下来</p>
+<p><img src="https://s2.loli.net/2023/05/26/lmLI6WPkRhKiJcA.png"></p>
+</li>
+<li><p>打开github，在settings中<code>SSH and GPG keys</code>中添加秘钥，名称加不加都行</p>
+<p><img src="https://s2.loli.net/2023/05/26/EesFogtycpwb3JV.png"></p>
+<p><img src="https://s2.loli.net/2023/05/26/MK4F9RpHiC7OxIS.png"></p>
+</li>
+<li><p>验证是否成功，在Git Bash中输入<code>ssh -T github@github.com</code>进行验证</p>
+<p><img src="https://s2.loli.net/2023/05/26/N8KvWDrzjohAwdb.png"></p>
+</li>
+</ol>
+<h2 id="安装node-js和Hexo"><a href="#安装node-js和Hexo" class="headerlink" title="安装node.js和Hexo"></a>安装node.js和Hexo</h2><h3 id="安装node-js及环境变量适配"><a href="#安装node-js及环境变量适配" class="headerlink" title="安装node.js及环境变量适配"></a>安装node.js及环境变量适配</h3><p>大家可以看这篇<a href="https://blog.csdn.net/antma/article/details/86104068">文章</a>，内容相当的详细</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
+<li><p>在github中新建一个仓库</p>
+<p><img src="D:\Desktop\笔记\图片\GWQ2IX1NctS6TVR.png"></p>
+</li>
+<li><p>仓库名为<code>用户名+github.io</code></p>
+<p><img src="https://s2.loli.net/2023/05/26/zHRwbt15yGinTIU.png"></p>
+</li>
+<li><p>点击到仓库的settings，出现这种情况就可以了</p>
+<p><img src="https://s2.loli.net/2023/05/26/mevcw1kIht5UELn.png"></p>
+</li>
+<li><p>安装Hexo：在任意一个盘符下面新建一个<code>Blog</code>文件夹打开文件夹，使用git Bash 的管理员身份运行，输入<code>npm install -g hexo-cli</code>，安装完成之后，在使用<code>hexo init</code>命令初始化一下，输入<code>hexo g</code>静态部署，输入<code>hexo s</code>可以本地预览，在浏览器中输入<code>localhost:4000</code>，就可以本地预览网页了</p>
+</li>
+<li><p>将Hexo部署到GitHub中：打开Blog文件夹，打开<code>_config.yml</code>文件，滑到文件的最下方，修改</p>
+<p><img src="https://s2.loli.net/2023/05/26/at2KjYhmLPAE84k.png"></p>
+<p><img src="https://s2.loli.net/2023/05/26/16b3vVJNHitP4oX.png"></p>
+<p><img src="https://s2.loli.net/2023/05/26/fSyYRl5OIFAJhcd.png"></p>
+</li>
+<li><p>然后回到<code>Blog</code>文件夹中，打开Git Bash，安装Git部署插件，输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>再输入以下的指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean #清除缓存文件db.json和已生成的静态文件public</span><br><span class="line">hexo g     #生成网站静态文件到默认设置的 public 文件夹(hexo generate的缩写)</span><br><span class="line">hexo d     #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中输入<code>你的用户名+github.io</code>就可以访问网站了</p>
+</li>
+</ol>
+<h2 id="解析域名"><a href="#解析域名" class="headerlink" title="解析域名"></a>解析域名</h2><ol>
+<li><p>域名绝大部分是付费的，但是也有免费的，比如我的这个czlifetime.eu.org，具体的申请教程在<a href="https://www.bilibili.com/video/BV1gs4y1J7xZ/?spm_id_from=333.880.my_history.page.click&vd_source=f38da837f7ffc103f340849927ff2d1f">这</a></p>
+</li>
+<li><p>得到域名后，在阿里云、腾讯云、华为云等可以解析，添加记录：A @ 185.199.108.153 和 A @ 185.199.109.153 和 A @ 185.199.110.153 和 A @ 185.199.111.153，任意选一个或两个就可以了</p>
+</li>
+<li><p>打开Blog文件夹里的source文件夹，添加CNAME文件，可以先创建一个CNAME.txt文件，打开后写上你的域名，不要加www否则每次访问都必须加www，但如果不带有www，以后访问的时候带不带www都可以访问，保存后记得要重命名，将.txt删除</p>
+</li>
+<li><p>第三步回到Blog 文件夹，右键打开Git Bash，依次输入下面三条命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean #清除缓存文件db.json和已生成的静态文件public</span><br><span class="line">hexo g     #生成网站静态文件到默认设置的 public 文件夹(hexo generate的缩写)</span><br><span class="line">hexo d     #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开GitHub，看看CNAME文件是否已经在你的项目中，如果没有，可以在github的仓库中添加，最后github中也要把你的域名写进去</p>
+<p><img src="https://s2.loli.net/2023/05/26/Z5SmLtMvVpyW4T3.png"></p>
+</li>
+</ol>
+<h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p><code>hexo</code>有很多种主题，我推荐8种主题</p>
+<ol>
+<li>Butterfly<ul>
+<li>GitHub地址：<a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a></li>
+<li>在线演示：<a href="https://butterfly.js.org/">https://butterfly.js.org/</a></li>
+</ul>
+</li>
+<li>ICARUS<ul>
+<li>GitHub地址：<a href="https://github.com/ppoffice/hexo-theme-icarus">https://github.com/ppoffice/hexo-theme-icarus</a></li>
+<li>在线演示：<a href="https://ppoffice.github.io/hexo-theme-icarus/">https://ppoffice.github.io/hexo-theme-icarus/</a></li>
+</ul>
+</li>
+<li>Fluid<ul>
+<li>GitHub地址：<a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></li>
+<li>在线演示：<a href="https://hexo.fluid-dev.com/">hexo.fluid-dev.com&#x2F;</a></li>
+</ul>
+</li>
+<li>Volantis<ul>
+<li>GitHub地址：<a href="https://github.com/volantis-x/hexo-theme-volantis">https://github.com/volantis-x/hexo-theme-volantis</a></li>
+<li>在线演示：<a href="https://volantis.js.org/">volantis.js.org</a></li>
+</ul>
+</li>
+<li>Snippet<ul>
+<li>GitHub地址：<a href="https://github.com/shenliyang/hexo-theme-snippet">https://github.com/shenliyang/hexo-theme-snippet</a></li>
+<li>在线演示：<a href="https://snippet.shenliyang.com/">snippet.shenliyang.com&#x2F;</a></li>
+</ul>
+</li>
+<li>Hacker<ul>
+<li>GitHub地址：<a href="https://github.com/CodeDaraW/Hacker">https://github.com/CodeDaraW/Hacker</a></li>
+<li>在线演示：<a href="https://blog.daraw.cn/">blog.daraw.cn&#x2F;</a></li>
+</ul>
+</li>
+<li>3-hexo<ul>
+<li>GitHub地址：<a href="https://github.com/yelog/hexo-theme-3-hexo">https://github.com/yelog/hexo-theme-3-hexo</a></li>
+<li>在线演示：<a href="https://yelog.org/">yelog.org</a></li>
+</ul>
+</li>
+<li>Cactus<ul>
+<li>GitHub地址：<a href="https://github.com/probberechts/hexo-theme-cactus">https://github.com/probberechts/hexo-theme-cactus</a></li>
+<li>在线演示：<a href="https://probberechts.github.io/hexo-theme-cactus/">probberechts.github.io&#x2F;hexo-theme-cactus&#x2F;</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>点开GitHub的地址，详细的配置就在首页的md文件中，这里不过多赘述</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
