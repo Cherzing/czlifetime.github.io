@@ -222,6 +222,82 @@
       </tags>
   </entry>
   <entry>
+    <title>C++模板</title>
+    <url>/2023/07/31/C++%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板的概念"><a href="#模板的概念" class="headerlink" title="模板的概念"></a>模板的概念</h2><p>模板就是建立<strong>通用的模具</strong>，大大<b>提高复用性</b></p>
+<p>模板的特点：</p>
+<ul>
+<li>模板不可以直接使用，它只是一个框架</li>
+<li>模板的通用并不是万能的</li>
+</ul>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><ul>
+<li><p>C++另一种编程思想称为 <mark>泛型编程</mark> ，主要利用的技术就是模板</p>
+</li>
+<li><p>C++提供两种模板机制:<strong>函数模板</strong>和<strong>类模板</strong></p>
+</li>
+</ul>
+<h3 id="函数模板语法"><a href="#函数模板语法" class="headerlink" title="函数模板语法"></a>函数模板语法</h3><p>函数模板作用：</p>
+<p>建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个<strong>虚拟的类型</strong>来代表。</p>
+<p><strong>语法：</strong> </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">函数声明或定义</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<p>template  —  声明创建模板</p>
+<p>typename  — 表面其后面的符号是一种数据类型，可以用class代替</p>
+<p>T    —   通用的数据类型，名称可以替换，通常为大写字母</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//交换整型函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swapInt</span><span class="params">(<span class="type">int</span>&amp; a, <span class="type">int</span>&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//交换浮点型函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swapDouble</span><span class="params">(<span class="type">double</span>&amp; a, <span class="type">double</span>&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="type">double</span> temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用模板提供通用的交换函数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T&amp; a, T&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//swapInt(a, b);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用模板实现交换</span></span><br><span class="line">	<span class="comment">//1、自动类型推导</span></span><br><span class="line">	<span class="built_in">mySwap</span>(a, b);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、显示指定类型</span></span><br><span class="line">	<span class="built_in">mySwap</span>&lt;<span class="type">int</span>&gt;(a, b);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>函数模板利用关键字 template</li>
+<li>使用函数模板有两种方式：<mark>自动类型推导</mark>、<mark>显示指定类型</mark></li>
+<li>模板的目的是为了提高复用性，将类型参数化</li>
+</ul>
+<h3 id="函数模板注意事项"><a href="#函数模板注意事项" class="headerlink" title="函数模板注意事项"></a>函数模板注意事项</h3><p>注意事项：</p>
+<ul>
+<li><p>自动类型推导，必须推导出一致的数据类型T,才可以使用</p>
+</li>
+<li><p>模板必须要确定出T的数据类型，才可以使用</p>
+</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//利用模板提供通用的交换函数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T&amp; a, T&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1、自动类型推导，必须推导出一致的数据类型T,才可以使用</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="type">char</span> c = <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">mySwap</span>(a, b); <span class="comment">// 正确，可以推导出一致的T</span></span><br><span class="line">	<span class="comment">//mySwap(a, c); // 错误，推导不出一致的T类型</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、模板必须要确定出T的数据类型，才可以使用</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func 调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//func(); //错误，模板不能独立使用，必须确定出T的类型</span></span><br><span class="line">	<span class="built_in">func</span>&lt;<span class="type">int</span>&gt;(); <span class="comment">//利用显示指定类型的方式，给T一个类型，才可以使用该模板</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="built_in">test02</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>使用模板时必须确定出通用数据类型T，并且能够推导出一致的类型</li>
+</ul>
+<h3 id="函数模板案例"><a href="#函数模板案例" class="headerlink" title="函数模板案例"></a>函数模板案例</h3><p>案例描述：</p>
+<ul>
+<li>利用函数模板封装一个排序的函数，可以对<strong>不同数据类型数组</strong>进行排序</li>
+<li>排序规则从大到小，排序算法为<strong>选择排序</strong></li>
+<li>分别利用<strong>char数组</strong>和<strong>int数组</strong>进行测试</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//交换的函数模板</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T &amp;a, T&amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt; <span class="comment">// 也可以替换成typename</span></span><br><span class="line"><span class="comment">//利用选择排序，进行对数组从大到小的排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySort</span><span class="params">(T arr[], <span class="type">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> max = i; <span class="comment">//最大数的下标</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; len; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[max] &lt; arr[j])</span><br><span class="line">			&#123;</span><br><span class="line">				max = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (max != i) <span class="comment">//如果最大数的下标不是i，交换两者</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">mySwap</span>(arr[max], arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printArray</span><span class="params">(T arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试char数组</span></span><br><span class="line">	<span class="type">char</span> charArr[] = <span class="string">&quot;bdcfeagh&quot;</span>;</span><br><span class="line">	<span class="type">int</span> num = <span class="built_in">sizeof</span>(charArr) / <span class="built_in">sizeof</span>(<span class="type">char</span>);</span><br><span class="line">	<span class="built_in">mySort</span>(charArr, num);</span><br><span class="line">	<span class="built_in">printArray</span>(charArr, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试int数组</span></span><br><span class="line">	<span class="type">int</span> intArr[] = &#123; <span class="number">7</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> &#125;;</span><br><span class="line">	<span class="type">int</span> num = <span class="built_in">sizeof</span>(intArr) / <span class="built_in">sizeof</span>(<span class="type">int</span>);</span><br><span class="line">	<span class="built_in">mySort</span>(intArr, num);</span><br><span class="line">	<span class="built_in">printArray</span>(intArr, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="built_in">test02</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>总结：模板可以提高代码复用，需要熟练掌握</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++中&amp;和*的区别</title>
+    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
+<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
+<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+</ul>
+<hr>
+<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面向对象编程</title>
     <url>/2023/07/31/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="什么是方法"><a href="#什么是方法" class="headerlink" title="什么是方法"></a>什么是方法</h3><ul>
@@ -946,160 +1022,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>C++中&amp;和*的区别</title>
-    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
-<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
-<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
-</ul>
-<hr>
-<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++模板</title>
-    <url>/2023/07/31/C++%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板的概念"><a href="#模板的概念" class="headerlink" title="模板的概念"></a>模板的概念</h2><p>模板就是建立<strong>通用的模具</strong>，大大<b>提高复用性</b></p>
-<p>模板的特点：</p>
-<ul>
-<li>模板不可以直接使用，它只是一个框架</li>
-<li>模板的通用并不是万能的</li>
-</ul>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><ul>
-<li><p>C++另一种编程思想称为 <mark>泛型编程</mark> ，主要利用的技术就是模板</p>
-</li>
-<li><p>C++提供两种模板机制:<strong>函数模板</strong>和<strong>类模板</strong></p>
-</li>
-</ul>
-<h3 id="函数模板语法"><a href="#函数模板语法" class="headerlink" title="函数模板语法"></a>函数模板语法</h3><p>函数模板作用：</p>
-<p>建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个<strong>虚拟的类型</strong>来代表。</p>
-<p><strong>语法：</strong> </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">函数声明或定义</span><br></pre></td></tr></table></figure>
-
-<p><strong>解释：</strong></p>
-<p>template  —  声明创建模板</p>
-<p>typename  — 表面其后面的符号是一种数据类型，可以用class代替</p>
-<p>T    —   通用的数据类型，名称可以替换，通常为大写字母</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//交换整型函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swapInt</span><span class="params">(<span class="type">int</span>&amp; a, <span class="type">int</span>&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//交换浮点型函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swapDouble</span><span class="params">(<span class="type">double</span>&amp; a, <span class="type">double</span>&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="type">double</span> temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用模板提供通用的交换函数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T&amp; a, T&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//swapInt(a, b);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用模板实现交换</span></span><br><span class="line">	<span class="comment">//1、自动类型推导</span></span><br><span class="line">	<span class="built_in">mySwap</span>(a, b);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、显示指定类型</span></span><br><span class="line">	<span class="built_in">mySwap</span>&lt;<span class="type">int</span>&gt;(a, b);</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>总结：</p>
-<ul>
-<li>函数模板利用关键字 template</li>
-<li>使用函数模板有两种方式：<mark>自动类型推导</mark>、<mark>显示指定类型</mark></li>
-<li>模板的目的是为了提高复用性，将类型参数化</li>
-</ul>
-<h3 id="函数模板注意事项"><a href="#函数模板注意事项" class="headerlink" title="函数模板注意事项"></a>函数模板注意事项</h3><p>注意事项：</p>
-<ul>
-<li><p>自动类型推导，必须推导出一致的数据类型T,才可以使用</p>
-</li>
-<li><p>模板必须要确定出T的数据类型，才可以使用</p>
-</li>
-</ul>
-<p><strong>示例：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//利用模板提供通用的交换函数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T&amp; a, T&amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1、自动类型推导，必须推导出一致的数据类型T,才可以使用</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="type">char</span> c = <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">mySwap</span>(a, b); <span class="comment">// 正确，可以推导出一致的T</span></span><br><span class="line">	<span class="comment">//mySwap(a, c); // 错误，推导不出一致的T类型</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、模板必须要确定出T的数据类型，才可以使用</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func 调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//func(); //错误，模板不能独立使用，必须确定出T的类型</span></span><br><span class="line">	<span class="built_in">func</span>&lt;<span class="type">int</span>&gt;(); <span class="comment">//利用显示指定类型的方式，给T一个类型，才可以使用该模板</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="built_in">test02</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>总结：</p>
-<ul>
-<li>使用模板时必须确定出通用数据类型T，并且能够推导出一致的类型</li>
-</ul>
-<h3 id="函数模板案例"><a href="#函数模板案例" class="headerlink" title="函数模板案例"></a>函数模板案例</h3><p>案例描述：</p>
-<ul>
-<li>利用函数模板封装一个排序的函数，可以对<strong>不同数据类型数组</strong>进行排序</li>
-<li>排序规则从大到小，排序算法为<strong>选择排序</strong></li>
-<li>分别利用<strong>char数组</strong>和<strong>int数组</strong>进行测试</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//交换的函数模板</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySwap</span><span class="params">(T &amp;a, T&amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt; <span class="comment">// 也可以替换成typename</span></span><br><span class="line"><span class="comment">//利用选择排序，进行对数组从大到小的排序</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mySort</span><span class="params">(T arr[], <span class="type">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> max = i; <span class="comment">//最大数的下标</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; len; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[max] &lt; arr[j])</span><br><span class="line">			&#123;</span><br><span class="line">				max = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (max != i) <span class="comment">//如果最大数的下标不是i，交换两者</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">mySwap</span>(arr[max], arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printArray</span><span class="params">(T arr[], <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试char数组</span></span><br><span class="line">	<span class="type">char</span> charArr[] = <span class="string">&quot;bdcfeagh&quot;</span>;</span><br><span class="line">	<span class="type">int</span> num = <span class="built_in">sizeof</span>(charArr) / <span class="built_in">sizeof</span>(<span class="type">char</span>);</span><br><span class="line">	<span class="built_in">mySort</span>(charArr, num);</span><br><span class="line">	<span class="built_in">printArray</span>(charArr, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//测试int数组</span></span><br><span class="line">	<span class="type">int</span> intArr[] = &#123; <span class="number">7</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> &#125;;</span><br><span class="line">	<span class="type">int</span> num = <span class="built_in">sizeof</span>(intArr) / <span class="built_in">sizeof</span>(<span class="type">int</span>);</span><br><span class="line">	<span class="built_in">mySort</span>(intArr, num);</span><br><span class="line">	<span class="built_in">printArray</span>(intArr, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="built_in">test02</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>总结：模板可以提高代码复用，需要熟练掌握</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
-</ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
-</ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java设计思想</title>
-    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
-<li>统计思想:利用map集合进行统计</li>
-</ul>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
-<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
-<li><code>StringBuilder</code></li>
-<li><code>StringJoiner</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
-<li>如30%的甲，70%的乙：<ol>
-<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
-<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
-<li>对随机取得的值进行条件判断，取到的值就有概率</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
-<li><ul>
-<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
-<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
-<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
-</ul>
-</li>
-</ul>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
-<li>把具体的要求封装成方法</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>设计思想</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>排序</title>
     <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
@@ -1180,6 +1102,45 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>Java设计思想</title>
+    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
+<li>统计思想:利用map集合进行统计</li>
+</ul>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
+<li><code>StringBuilder</code></li>
+<li><code>StringJoiner</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
+<li>如30%的甲，70%的乙：<ol>
+<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
+<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
+<li>对随机取得的值进行条件判断，取到的值就有概率</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
+<li><ul>
+<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
+<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
+<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li>把具体的要求封装成方法</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>设计思想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>树</title>
     <url>/2023/05/19/%E6%A0%91/</url>
     <content><![CDATA[<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
@@ -1221,6 +1182,45 @@ public interface English &#123;
 </ul>
 <p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
 ]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+</li>
+</ul>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
