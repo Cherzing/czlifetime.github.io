@@ -268,6 +268,227 @@
       </tags>
   </entry>
   <entry>
+    <title>I/O流</title>
+    <url>/2023/06/23/IO%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
+<p>保存数据的地方</p>
+<p>2、 文件流</p>
+<ul>
+<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
+<li>输入流：将磁盘中的文件写入内存</li>
+<li>输出流：将内存中的内容写入磁盘</li>
+</ul>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>创建文件对象相关的构造器和方法<ul>
+<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
+<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
+<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
+<li>createNewFile创建新文件</li>
+</ul>
+</li>
+<li>获取文件的相关信息<ul>
+<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
+</ul>
+</li>
+<li>目录操作和文件删除<ul>
+<li>创建一级目录：mkdir</li>
+<li>创建多级目录：mkdirs</li>
+<li>删除空目录或文件：delete</li>
+</ul>
+</li>
+</ul>
+<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
+<li><p>Java IO原理</p>
+<ol>
+<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
+<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
+<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
+</ol>
+</li>
+<li><p>流的分类</p>
+<ol>
+<li><p>操作数据单元：字节流、字符流</p>
+</li>
+<li><p>数据流的流向：输入流、输出流</p>
+</li>
+<li><p>流的角色：节点流、处理流(字符流)</p>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/img//img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileInputStream.png"></p>
+<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
+<li>关系图</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
+<li>相关方法<ul>
+<li><code>new FileReader(File/String)</code></li>
+<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
+<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li><code>new String(char[])</code>:将char[]转成String</li>
+<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
+</ul>
+</li>
+</ol>
+<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileInputStream.png"></p>
+<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
+<li>常用方法<ul>
+<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
+<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
+<li>write(int):写入单个字符</li>
+<li>write(char[]):写入指定数组</li>
+<li>write(char[],off,len):写入指定数组的指定部分</li>
+<li>writer(string):写入指定字符串</li>
+<li>writer(string,off,len):写入指定字符串放入指定部分</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li>String类</li>
+<li>toCharArray:将String转换成char[]</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<ul>
+<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
+</ul>
+<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
+<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
+<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
+<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
+<li>访问管道、访问字符流</li>
+</ul>
+</li>
+<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
+<li>节点流与处理流的区别与联系<ul>
+<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
+<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
+<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
+<ol start="4">
+<li><p>标准输入输出流</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型(编译类型)</th>
+<th>类型(运行类型)</th>
+<th>默认设备</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>System.in标准输入</td>
+<td>InputStream</td>
+<td>BufferedInputStream</td>
+<td>键盘</td>
+</tr>
+<tr>
+<td>System.out标准输出</td>
+<td>PrintStream</td>
+<td>PrintStream</td>
+<td>显示器</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
+<ul>
+<li>解决文件乱码问题</li>
+</ul>
+</li>
+<li><p>打印流-PrintStream和PrintWriter</p>
+<ul>
+<li>打印流只有输出流</li>
+<li>PrintStream(字节流)</li>
+<li>PrintWriter(字符流)</li>
+</ul>
+</li>
+</ol>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
+<li>序列化：在保存数据时，保存数据的值和数据类型</li>
+<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
+<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
+<li>Serializable:标记接口，没有方法</li>
+<li>Externalizable:该接口有方法需要实现</li>
+</ul>
+</li>
+</ol>
+<p>##Properties类</p>
+<ol>
+<li>专门用于读取配置文件的的集合类<ul>
+<li>配置文件格式：键&#x3D;值</li>
+</ul>
+</li>
+<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
+<li>常见方法：<ul>
+<li>load：加载配置文件的键值对到Properties对象</li>
+<li>list：将数据显示到指定设备</li>
+<li>getProperty(key):根据键获取值</li>
+<li>setProperty(key,value):设置键值对到Properties对象</li>
+<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
+</ul>
+</li>
+</ol>
+<p>作用：存储和读取数据</p>
+<p>I：input</p>
+<p>O：output</p>
+<p>流：像水流一样传输数据</p>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://github.com/czlifetime/img/blob/1.0/img/IO%E6%B5%81.png?raw=true"></p>
+<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：a</p>
+<ul>
+<li>创建对象细节：<ul>
+<li>参数是字符串表示的路径或者是File对象都是可以的</li>
+<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
+<li>如果文件已经存在,则会清空文件</li>
+</ul>
+</li>
+<li>写出数据细节：<ul>
+<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
+</ul>
+</li>
+<li>释放资源细节：<ul>
+<li>每次使用完流之后都要释放资源</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>创建对象细节：如果文件不存在，直接报错</p>
+</li>
+<li><p>读取数据细节：</p>
+<ul>
+<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
+<li>读到文件末尾，read方法返回-1</li>
+</ul>
+</li>
+<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
+</li>
+</ul>
+<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面向对象编程</title>
     <url>/2023/07/31/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="什么是方法"><a href="#什么是方法" class="headerlink" title="什么是方法"></a>什么是方法</h3><ul>
@@ -807,227 +1028,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>I/O流</title>
-    <url>/2023/06/23/IO%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
-<p>保存数据的地方</p>
-<p>2、 文件流</p>
-<ul>
-<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
-<li>输入流：将磁盘中的文件写入内存</li>
-<li>输出流：将内存中的内容写入磁盘</li>
-</ul>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
-<li>创建文件对象相关的构造器和方法<ul>
-<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
-<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
-<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
-<li>createNewFile创建新文件</li>
-</ul>
-</li>
-<li>获取文件的相关信息<ul>
-<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
-</ul>
-</li>
-<li>目录操作和文件删除<ul>
-<li>创建一级目录：mkdir</li>
-<li>创建多级目录：mkdirs</li>
-<li>删除空目录或文件：delete</li>
-</ul>
-</li>
-</ul>
-<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
-<li><p>Java IO原理</p>
-<ol>
-<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
-<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
-<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
-</ol>
-</li>
-<li><p>流的分类</p>
-<ol>
-<li><p>操作数据单元：字节流、字符流</p>
-</li>
-<li><p>数据流的流向：输入流、输出流</p>
-</li>
-<li><p>流的角色：节点流、处理流(字符流)</p>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/img//img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileInputStream.png"></p>
-<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
-<li>关系图</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
-<li>相关方法<ul>
-<li><code>new FileReader(File/String)</code></li>
-<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
-<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li><code>new String(char[])</code>:将char[]转成String</li>
-<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
-</ul>
-</li>
-</ol>
-<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileInputStream.png"></p>
-<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
-<li>常用方法<ul>
-<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
-<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
-<li>write(int):写入单个字符</li>
-<li>write(char[]):写入指定数组</li>
-<li>write(char[],off,len):写入指定数组的指定部分</li>
-<li>writer(string):写入指定字符串</li>
-<li>writer(string,off,len):写入指定字符串放入指定部分</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li>String类</li>
-<li>toCharArray:将String转换成char[]</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<ul>
-<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
-</ul>
-<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
-<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
-<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
-<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
-<li>访问管道、访问字符流</li>
-</ul>
-</li>
-<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
-<li>节点流与处理流的区别与联系<ul>
-<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
-<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
-<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
-<ol start="4">
-<li><p>标准输入输出流</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类型(编译类型)</th>
-<th>类型(运行类型)</th>
-<th>默认设备</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>System.in标准输入</td>
-<td>InputStream</td>
-<td>BufferedInputStream</td>
-<td>键盘</td>
-</tr>
-<tr>
-<td>System.out标准输出</td>
-<td>PrintStream</td>
-<td>PrintStream</td>
-<td>显示器</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
-<ul>
-<li>解决文件乱码问题</li>
-</ul>
-</li>
-<li><p>打印流-PrintStream和PrintWriter</p>
-<ul>
-<li>打印流只有输出流</li>
-<li>PrintStream(字节流)</li>
-<li>PrintWriter(字符流)</li>
-</ul>
-</li>
-</ol>
-<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
-<li>序列化：在保存数据时，保存数据的值和数据类型</li>
-<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
-<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
-<li>Serializable:标记接口，没有方法</li>
-<li>Externalizable:该接口有方法需要实现</li>
-</ul>
-</li>
-</ol>
-<p>##Properties类</p>
-<ol>
-<li>专门用于读取配置文件的的集合类<ul>
-<li>配置文件格式：键&#x3D;值</li>
-</ul>
-</li>
-<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
-<li>常见方法：<ul>
-<li>load：加载配置文件的键值对到Properties对象</li>
-<li>list：将数据显示到指定设备</li>
-<li>getProperty(key):根据键获取值</li>
-<li>setProperty(key,value):设置键值对到Properties对象</li>
-<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
-</ul>
-</li>
-</ol>
-<p>作用：存储和读取数据</p>
-<p>I：input</p>
-<p>O：output</p>
-<p>流：像水流一样传输数据</p>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://github.com/czlifetime/img/blob/1.0/img/IO%E6%B5%81.png?raw=true"></p>
-<p><img src="https://raw.githubusercontent.com/czlifetime/img/master/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
-<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行结果：a</p>
-<ul>
-<li>创建对象细节：<ul>
-<li>参数是字符串表示的路径或者是File对象都是可以的</li>
-<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
-<li>如果文件已经存在,则会清空文件</li>
-</ul>
-</li>
-<li>写出数据细节：<ul>
-<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
-</ul>
-</li>
-<li>释放资源细节：<ul>
-<li>每次使用完流之后都要释放资源</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>创建对象细节：如果文件不存在，直接报错</p>
-</li>
-<li><p>读取数据细节：</p>
-<ul>
-<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
-<li>读到文件末尾，read方法返回-1</li>
-</ul>
-</li>
-<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
-</li>
-</ul>
-<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从零开始搭建个人博客</title>
     <url>/2023/05/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
@@ -1305,6 +1305,355 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>排序</title>
+    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
+<li><strong>排序</strong>：从大到小或从小到大排序</li>
+<li><strong>排序的稳定性</strong>：<ul>
+<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
+<li>不稳定：相反</li>
+</ul>
+</li>
+<li>排序算法的分类：<ul>
+<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
+<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
+</ul>
+</li>
+</ol>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
+<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
+<p>算法描述：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法分析：</p>
+<ul>
+<li><p>时间复杂度：</p>
+<p>最好的情况：比较次数n-1次</p>
+<p>最坏的情况：$$O(n^2)$$</p>
+<p>平均时间复杂度：$$O(n^2)$$</p>
+</li>
+<li><p>空间复杂度：$$O(1)$$</p>
+</li>
+</ul>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
+<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
+<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
+<p><strong>算法性能分析</strong>：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
+<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
+<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
+<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法性能分析：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：</p>
+<p>最好：$$O(1)$$</p>
+<p>最差：$$O(n^2)$$</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
+<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^2)$$</p>
+<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
+<ul>
+<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
+<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
+<p>大根堆：根&gt;&#x3D;左右节点</p>
+<p>小根堆：根&lt;&#x3D;左右节点</p>
+<ol>
+<li><p>建立大根堆</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
+</li>
+</ol>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查找（只含代码）</title>
+    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E4%BB%A3%E7%A0%81)/</url>
+    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><div class="tabs" id="顺序查找"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#顺序查找-1">顺序查找 1</button></li><li class="tab"><button type="button" data-href="#顺序查找-2">顺序查找 2</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="顺序查找-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SerchSqList</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;L.length;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(e == L.elem[i])&#123;</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;已找到元素&quot;</span>&lt;&lt;L.elem[i]&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="顺序查找-2"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SearchSqList2</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	L.elem[<span class="number">0</span>] = e;</span><br><span class="line">	<span class="keyword">for</span>(i = L.length;L.elem[i] != e;--i)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;元素的位置为&quot;</span>&lt;&lt;i+<span class="number">1</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+
+<h3 id="折半查找-x2F-二分查找"><a href="#折半查找-x2F-二分查找" class="headerlink" title="折半查找&#x2F;二分查找"></a>折半查找&#x2F;二分查找</h3><blockquote>
+<p><strong>注意：二分查找仅适用于有序递增或递减</strong></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SearchBin</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> low = <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> high = L.length;</span><br><span class="line">	<span class="type">int</span> mid = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">		mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(L.elem[mid] = e)&#123;</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;找到元素&quot;</span>&lt;&lt;e&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(e&lt;L.elem[mid])&#123;</span><br><span class="line">			high = mid - <span class="number">1</span>;			</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			low = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p>见：<a href="https://blog.czlifetime.eu.org/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/index.html">查找(全)</a></p>
+<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h3><h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><h3 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h3><h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的构造方法"><a href="#散列表的构造方法" class="headerlink" title="散列表的构造方法"></a>散列表的构造方法</h3><h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查找（全）</title>
+    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/</url>
+    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><strong>查找</strong>：在数据集合中寻找满足某种条件的数据元素的过程称为查找</li>
+<li><strong>查找表(查找结构)</strong>：用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成</li>
+<li><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</li>
+</ul>
+<h3 id="查找表的常见操作"><a href="#查找表的常见操作" class="headerlink" title="查找表的常见操作"></a>查找表的常见操作</h3><ol>
+<li>查找符合条件的数据元素(静态查找表)</li>
+<li>插入、删除某个元素数据(动态查找表)</li>
+</ol>
+<h2 id="查找算法的效率评价"><a href="#查找算法的效率评价" class="headerlink" title="查找算法的效率评价"></a>查找算法的效率评价</h2><ul>
+<li><p>查找长度：在查找运算中，需要对比关键字的次数称为查找长度</p>
+</li>
+<li><p>平均查找长度(ASL)：所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^nP_iC_i<br>$$<br>$$P_i$$：查找第i个元素的概率</p>
+<p>$$C_i$$：查找第i个元素的查找长度</p>
+</li>
+</ul>
+<blockquote>
+<p>通常认为查找任何一个元素的概率都相同</p>
+</blockquote>
+<blockquote>
+<p>评价一个查找算法的效率时，通常考虑查找成功&#x2F;查找失败两种情况的ASL</p>
+</blockquote>
+<h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找，又叫”线性查找“，通常用于线性表</p>
+<p>线性表：</p>
+<ul>
+<li>顺序表</li>
+<li>链表</li>
+</ul>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>思想：从头到尾挨个找</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>普通实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE1.png"></p>
+<p>实现（哨兵）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%93%A8%E5%85%B5%EF%BC%89.png"></p>
+<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><h4 id="顺序查找的优化-对有序表"><a href="#顺序查找的优化-对有序表" class="headerlink" title="顺序查找的优化(对有序表)"></a>顺序查找的优化(对有序表)</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%8C%96.png"></p>
+<h4 id="（被查概率不相等）"><a href="#（被查概率不相等）" class="headerlink" title="（被查概率不相等）"></a>（被查概率不相等）</h4><p>将被查概率大的放在靠前的位置</p>
+<h4 id="用查找判定树分析ASL"><a href="#用查找判定树分析ASL" class="headerlink" title="用查找判定树分析ASL"></a>用查找判定树分析ASL</h4><blockquote>
+<ul>
+<li>一个成功节点的查找长度 &#x3D; 自身所在层数</li>
+<li>一个失败节点的查找长度 &#x3D; 其父节点所在层数</li>
+<li>默认情况下，各种失败情况或成功情况都等概率发生</li>
+</ul>
+</blockquote>
+<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><blockquote>
+<p>折半查找，又称“二分查找”，仅适用于<font color="red">有序的顺序表</font></p>
+</blockquote>
+<h4 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE2.png"></p>
+<h4 id="查找判定树"><a href="#查找判定树" class="headerlink" title="查找判定树"></a>查找判定树</h4><p>根据数据构造判定树</p>
+<blockquote>
+<p>根据mid所指的元素与将原有元素分割到左右子树中</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A02.png"></p>
+<ul>
+<li>如果low和high之间有<mark>偶数</mark>个元素，则mid分隔后，<mark>左半部分比右半部分少一个元素</mark></li>
+<li>如果当前low和high之间有<mark>奇数</mark>个元素，则mid分隔后，<mark>左右两部分元素个数相等</mark></li>
+<li><mark>结论</mark>：折半查找的判定树中，若$$mid&#x3D;\lfloor(low+high)&#x2F;2\rfloor$$，则对于任何一个节点，必有<mark>右子树节点数-左子树节点数&#x3D;0或1</mark>——<font color="red">即：右子树的节点数总比左子树的节点数相等或多一个</font></li>
+</ul>
+<hr>
+<p><strong>折半查找的<mark>判定树</mark>一定是<mark>平衡二叉树</mark></strong></p>
+<p>折半查找的判定树中，<mark>只有最下面一层是不满的</mark>，因此，元素个数为<mark>n</mark>时，树高<mark>$h&#x3D;[log_2{(n+1)}]$</mark></p>
+<hr>
+<p><strong>判定树节点关键字：<mark>左&lt;中&lt;右</mark>，满足二叉树排序树的定义</strong></p>
+<p><strong>当二叉树的节点有<mark>n</mark>个时，有<mark>失败节点n+1个</mark>（等于成功节点的空链域数量）</strong></p>
+<h4 id="折半查找效率"><a href="#折半查找效率" class="headerlink" title="折半查找效率"></a>折半查找效率</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png"></p>
+<p><mark><strong>时间复杂度&#x3D;$O(log_2{n})$</strong></mark></p>
+<hr>
+<blockquote>
+<p><strong>问</strong>：折半查找时间复杂度&#x3D;$$O(log_2{n})$$，顺序查找的时间复杂度&#x3D;$$O(n)$$，那么折半查找的速度一定比顺序查找更快吗？</p>
+<hr>
+<p><strong>答</strong>：不是，在顺序查找中，当查找的元素是第一个元素时，顺序查找的速度</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>问</strong>：$$mid&#x3D;\lceil(low+high)&#x2F;2\rceil$$会出现什么情况？</p>
+<hr>
+<p><strong>答</strong>：左子树节点数-右子树节点数&#x3D;0或1</p>
+</blockquote>
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p><strong>分块查找</strong>又称为<strong>索引顺序查找</strong>，是一种性能介于顺序查找和折半查找之间的查找方法。</p>
+<p>在此查找方法中，除了本身以外，还需建立“索引表”。</p>
+<p>索引表包含两个部分：<mark>关键字项（其值为改字表内的最大关键字）和指针项（指示该字表的第一个记录在表中的位置）</mark></p>
+<p><strong>特点</strong>：<mark>块内无序、块间有序、</mark></p>
+<hr>
+<p><strong>代码</strong>：</p>
+<img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81.png" style="zoom:50%;" />
+
+<p><strong>过程</strong>：</p>
+<ol>
+<li>在索引表中确定待查记录所属的分块</li>
+<li>在块内顺序查找</li>
+</ol>
+<h4 id="查找效率分析（ASL）"><a href="#查找效率分析（ASL）" class="headerlink" title="查找效率分析（ASL）"></a>查找效率分析（ASL）</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90%EF%BC%88%E5%88%86%E5%9D%97%EF%BC%89.png"></p>
+<p>设索引查找和块内查找的平均查找长度分别为$$L_I$$、$$L_S$$，则分块超找的平均查找长度为<br>$$<br>ASL&#x3D;L_I+L_S<br>$$<br>用顺序查找查索引表，则$$L_I&#x3D;(1+2+…+b)&#x2F;b&#x3D;(b+1)&#x2F;2$$，$$L_S&#x3D;(1+2+…+s)&#x2F;s&#x3D;(s+1)&#x2F;2$$</p>
+<p>当$$s&#x3D;\sqrt[]n$$时，$$ASL_{最小}&#x3D;\sqrt[]n+1$$</p>
+<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树（BST）"><a href="#二叉排序树（BST）" class="headerlink" title="二叉排序树（BST）"></a>二叉排序树（BST）</h3><p><font color="red">二叉排序树</font>&gt;又称<em>二叉查找树</em></p>
+<ol>
+<li><p>二叉排序树的定义</p>
+<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有节点的的值均小于它的根节点的值；</li>
+<li>若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
+<li>它的左右子树也分别为二叉排序树</li>
+</ul>
+<blockquote>
+<p><mark>左子树节点值&lt;根节点值&lt;右子树节点值</mark></p>
+</blockquote>
+</li>
+<li><p>二叉排序树的查找</p>
+<p>步骤：</p>
+<ol>
+<li>若二叉排序树为空，则查找失败，返回空指针</li>
+<li>若二叉排序树非空，将给定值key与根节点的关键字<code>T-&gt;data.key</code>进行比较<ul>
+<li>若key等于<code>T-&gt;data.key</code>，则查找成功，返回根节点的地址</li>
+<li>若key小于<code>T-&gt;data.key</code>，则递归查找左子树</li>
+<li>若key大于<code>T-&gt;data.key</code>，则递归查找右子树</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>二叉排序树的插入</p>
+</li>
+<li><p>二叉排序树的创建</p>
+</li>
+<li><p>二叉排序树的删除</p>
+</li>
+<li><p>查找效率分析</p>
+</li>
+</ol>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
+<li><p>平衡二叉树的定义</p>
+</li>
+<li><p>平衡二叉树的平衡调整方法</p>
+</li>
+<li><p>平衡二叉树的插入</p>
+</li>
+</ol>
+<h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
+<blockquote>
+<p>如何建立“关键字”与“存储地址”的联系？</p>
+<blockquote>
+<p>通过“散列函数(哈希函数)”：$$Add&#x3D;H(key)$$实现</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>散列函数和散列地址：$$p&#x3D;H(key)$$，$$H$$为散列函数，$$p$$为散列地址</li>
+<li>散列表：一个连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录</li>
+<li>冲突和同义词：$$key_1\not&#x3D;key_2$$，$$H(key_1)&#x3D;H(key_2)$$，这种现象称为冲突，$$key_1$$，$$key_2$$互为同义词</li>
+</ol>
+<h3 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h3><ol>
+<li><p><strong>数字分析法</strong></p>
+<blockquote>
+<p>选取数码分布较为均匀的若干位作为散列地址</p>
+</blockquote>
+<p>设关键字是r进制数（如十进制数)，而r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些，每种数码出现的机会均等；而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。</p>
+<p>这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+</li>
+<li><p><strong>平方取中法</strong>：取关键字的平方值的<strong>中间几位</strong>作为散列地址</p>
+<p>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+<li><p><strong>折叠法</strong></p>
+<p>将关键字分割成位数相同的几部分，然后取这几部分叠加和作为散列地址。根据数叠加的方式，可以把折叠法分为移位叠加、边界叠加。</p>
+<p>$$key&#x3D;45387765213$$，表长为1000：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8F%A0%E6%B3%95.jpg"></p>
+</li>
+<li><p><strong>除留余数法</strong><br>$$<br>H(key)&#x3D;key%p<br>$$<br>$$p$$为不大于表长$$m$$但最接近或等于$$m$$的最大<mark>质数</mark></p>
+<blockquote>
+<p>用质数取模，分布更均匀，冲突更少</p>
+</blockquote>
+</li>
+<li><p><strong>直接定址法</strong><br>$$<br>H(key)&#x3D;key 或H(key)&#x3D;a*key+b<br>$$<br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+</ol>
+<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><ol>
+<li><p>开放地址法</p>
+<p>所谓开放定址法，是指可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为:<br>$$<br>H_i&#x3D;(H(key)+d_i)%m,i&#x3D;1,2…,k(k&lt;&#x3D;m-1)<br>$$</p>
+<p>$$m$$为散列表表长；$$d_i$$为增量序列</p>
+<p>根据$$d$$的取值不同，可分为以下三种方法：</p>
+<ol>
+<li><p><strong>线性探测法</strong><br>$$<br>d_i&#x3D;1,2,3,…,m-1<br>$$<br>发生冲突时，每次往后探测相邻的下一个单元是否为空</p>
+<blockquote>
+<p>线性探测法很容易造成同义词、非同义词的“聚集(堆积)”现象，严重影响查找效率</p>
+<blockquote>
+<p>产生原因：冲突后再探测一定是放在某个连续的位置</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>二次探测法</strong><br>$$<br>d_i&#x3D;1^2,-1^2,2^2,-2^2,3^2,…,k^2,-k^2(k&lt;&#x3D;m&#x2F;2)<br>$$</p>
+</li>
+<li><p><strong>伪随机探测法</strong><br>$$<br>d_i&#x3D;伪随机数序列<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>链地址法(拉链法)：把具有相同散列地址的记录放在同一个单链表中，称之为同义词单链表</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8B%89%E9%93%BE%E6%B3%95.png"></p>
+</li>
+</ol>
+<h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
+<p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
+<p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树</title>
+    <url>/2023/05/19/%E6%A0%91/</url>
+    <content><![CDATA[<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
+<li><p>节点的内部结构</p>
+<p><img src="/img/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
+</li>
+<li><p><img src="/img/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
+</li>
+</ul>
+<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
+<li>规则：任意节点左右子树不超过一</li>
+<li>平衡二叉树的旋转机制<ul>
+<li>左旋</li>
+<li>右旋</li>
+</ul>
+</li>
+</ul>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
+<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
+<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
+<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
+<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
+</ul>
+<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
+<li>每一个节点或是红色的，或者是黑色的</li>
+<li>根节点必须是黑色</li>
+<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
+<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
+<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
+</ul>
+<img src="红黑树节点.png" style="zoom:50%;" />
+
+<ul>
+<li>红黑树添加节点的规则：<ul>
+<li>添加节点默认是红色(效率高)</li>
+<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
+</ul>
+</li>
+</ul>
+<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性表</title>
     <url>/2023/07/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的顺序表示和实现"><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h2><ol>
@@ -1430,132 +1779,6 @@ public interface English &#123;
 </li>
 </ol>
 <h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><h2 id="顺序表和链表的比较"><a href="#顺序表和链表的比较" class="headerlink" title="顺序表和链表的比较"></a>顺序表和链表的比较</h2><h3 id="空间性能"><a href="#空间性能" class="headerlink" title="空间性能"></a>空间性能</h3><h3 id="时间性能"><a href="#时间性能" class="headerlink" title="时间性能"></a>时间性能</h3><div class="tabs" id="test1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test1-1">test1 1</button></li><li class="tab"><button type="button" data-href="#test1-2">test1 2</button></li><li class="tab"><button type="button" data-href="#test1-3">test1 3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序</title>
-    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
-<li><strong>排序</strong>：从大到小或从小到大排序</li>
-<li><strong>排序的稳定性</strong>：<ul>
-<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
-<li>不稳定：相反</li>
-</ul>
-</li>
-<li>排序算法的分类：<ul>
-<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
-<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
-</ul>
-</li>
-</ol>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
-<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
-<p>算法描述：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法分析：</p>
-<ul>
-<li><p>时间复杂度：</p>
-<p>最好的情况：比较次数n-1次</p>
-<p>最坏的情况：$$O(n^2)$$</p>
-<p>平均时间复杂度：$$O(n^2)$$</p>
-</li>
-<li><p>空间复杂度：$$O(1)$$</p>
-</li>
-</ul>
-<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
-<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
-<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
-<p><strong>算法性能分析</strong>：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
-<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
-<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
-<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法性能分析：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：</p>
-<p>最好：$$O(1)$$</p>
-<p>最差：$$O(n^2)$$</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
-<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^2)$$</p>
-<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
-<ul>
-<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
-<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
-<p>大根堆：根&gt;&#x3D;左右节点</p>
-<p>小根堆：根&lt;&#x3D;左右节点</p>
-<ol>
-<li><p>建立大根堆</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
-</li>
-</ol>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树</title>
-    <url>/2023/05/19/%E6%A0%91/</url>
-    <content><![CDATA[<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
-<li><p>节点的内部结构</p>
-<p><img src="/img/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
-</li>
-<li><p><img src="/img/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
-</li>
-</ul>
-<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
-<li>规则：任意节点左右子树不超过一</li>
-<li>平衡二叉树的旋转机制<ul>
-<li>左旋</li>
-<li>右旋</li>
-</ul>
-</li>
-</ul>
-<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
-<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
-<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
-<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
-<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
-</ul>
-<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
-<li>每一个节点或是红色的，或者是黑色的</li>
-<li>根节点必须是黑色</li>
-<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
-<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
-<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
-</ul>
-<img src="红黑树节点.png" style="zoom:50%;" />
-
-<ul>
-<li>红黑树添加节点的规则：<ul>
-<li>添加节点默认是红色(效率高)</li>
-<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
-</ul>
-</li>
-</ul>
-<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
 ]]></content>
       <tags>
         <tag>数据结构</tag>
