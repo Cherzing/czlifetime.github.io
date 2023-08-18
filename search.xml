@@ -268,46 +268,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java网络</title>
-    <url>/2023/08/18/Java%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h2><ul>
-<li>获取本机InetAddress对象：<code>getLocalHost()</code></li>
-<li>根据指定主机名&#x2F;域名获取ip地址对象：<code>getByName()</code></li>
-<li>获取InetAddress对象的主机名：<code>getHostName()</code></li>
-<li>获取InetAddress对象的地址：<code>getHostAddress()</code></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">API_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException &#123;</span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">localHost</span> <span class="operator">=</span> InetAddress.getLocalHost();</span><br><span class="line">        System.out.println(localHost);</span><br><span class="line"></span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">byName</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;MaxLifetime-LAPTOP&quot;</span>);</span><br><span class="line">        System.out.println(byName);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">lh1</span> <span class="operator">=</span> localHost.getHostName();</span><br><span class="line">        System.out.println(lh1);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">hm</span> <span class="operator">=</span> byName.getHostName();</span><br><span class="line">        System.out.println(hm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ol>
-<li><p>套接字(Socket)开发网络应用程序被广泛采用，以至于成为事实上的标准</p>
-</li>
-<li><p>通信的两端都要有插座，是两台机器间通信的端点</p>
-</li>
-<li><p>网络通信其实就是Socket间的通信.</p>
-</li>
-<li><p>Socket允许程序把网络连接当成一个流，数据在两个套接字间通过IO传输</p>
-</li>
-<li><p>一般主动发起通信的应用程序属客户端，等待通信请求的为服务端</p>
-</li>
-</ol>
-<h3 id="TCP网络通信编程"><a href="#TCP网络通信编程" class="headerlink" title="TCP网络通信编程"></a>TCP网络通信编程</h3><ol>
-<li>基本介绍<ul>
-<li>基于客户端——服务端的网络通信</li>
-<li>底层使用的是TCP&#x2F;IP协议</li>
-<li>应用场景举例：客户端发送数据、服务端接受并显示</li>
-<li>基于Socket的TCP编程</li>
-<li>（可靠）</li>
-</ul>
-</li>
-</ol>
-<h3 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a>UDP编程</h3><p>（不可靠）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCP%25E9%2580%259A%25E4%25BF%25A1%25E7%25BC%2596%25E7%25A8%258B.png"></p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>I/O流</title>
     <url>/2023/06/23/IO%E6%B5%81/</url>
     <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
@@ -528,6 +488,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Java网络</title>
+    <url>/2023/08/18/Java%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h2><ul>
+<li>获取本机InetAddress对象：<code>getLocalHost()</code></li>
+<li>根据指定主机名&#x2F;域名获取ip地址对象：<code>getByName()</code></li>
+<li>获取InetAddress对象的主机名：<code>getHostName()</code></li>
+<li>获取InetAddress对象的地址：<code>getHostAddress()</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">API_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException &#123;</span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">localHost</span> <span class="operator">=</span> InetAddress.getLocalHost();</span><br><span class="line">        System.out.println(localHost);</span><br><span class="line"></span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">byName</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;MaxLifetime-LAPTOP&quot;</span>);</span><br><span class="line">        System.out.println(byName);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">lh1</span> <span class="operator">=</span> localHost.getHostName();</span><br><span class="line">        System.out.println(lh1);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">hm</span> <span class="operator">=</span> byName.getHostName();</span><br><span class="line">        System.out.println(hm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ol>
+<li><p>套接字(Socket)开发网络应用程序被广泛采用，以至于成为事实上的标准</p>
+</li>
+<li><p>通信的两端都要有插座，是两台机器间通信的端点</p>
+</li>
+<li><p>网络通信其实就是Socket间的通信.</p>
+</li>
+<li><p>Socket允许程序把网络连接当成一个流，数据在两个套接字间通过IO传输</p>
+</li>
+<li><p>一般主动发起通信的应用程序属客户端，等待通信请求的为服务端</p>
+</li>
+</ol>
+<h3 id="TCP网络通信编程"><a href="#TCP网络通信编程" class="headerlink" title="TCP网络通信编程"></a>TCP网络通信编程</h3><ol>
+<li>基本介绍<ul>
+<li>基于客户端——服务端的网络通信</li>
+<li>底层使用的是TCP&#x2F;IP协议</li>
+<li>应用场景举例：客户端发送数据、服务端接受并显示</li>
+<li>基于Socket的TCP编程</li>
+<li>（可靠）</li>
+</ul>
+</li>
+</ol>
+<h3 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a>UDP编程</h3><p>（不可靠）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCP%25E9%2580%259A%25E4%25BF%25A1%25E7%25BC%2596%25E7%25A8%258B.png"></p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始搭建个人博客</title>
     <url>/2023/05/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
@@ -710,43 +710,6 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代理模式</title>
-    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
-<ul>
-<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
-<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
-<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
-</ul>
-<p><strong>例如：</strong></p>
-<p>使用黄牛代理，帮我买演唱会门票</p>
-<blockquote>
-<p>Human.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Me.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>HuangNiu.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>test.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1289,6 +1252,135 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>代理模式</title>
+    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
+<ul>
+<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
+<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
+<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
+</ul>
+<p><strong>例如：</strong></p>
+<p>使用黄牛代理，帮我买演唱会门票</p>
+<blockquote>
+<p>Human.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Me.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>HuangNiu.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>test.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++中&amp;和*的区别</title>
+    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
+<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
+<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+</ul>
+<hr>
+<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+</li>
+</ul>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java设计思想</title>
+    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
+<li>统计思想:利用map集合进行统计</li>
+</ul>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
+<li><code>StringBuilder</code></li>
+<li><code>StringJoiner</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
+<li>如30%的甲，70%的乙：<ol>
+<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
+<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
+<li>对随机取得的值进行条件判断，取到的值就有概率</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
+<li><ul>
+<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
+<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
+<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li>把具体的要求封装成方法</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>设计思想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序</title>
     <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
@@ -1369,98 +1461,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>Java设计思想</title>
-    <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
-<li>统计思想:利用map集合进行统计</li>
-</ul>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
-<li>遍历集合，按照指定的集合进行拼接的两种方式：<ul>
-<li><code>StringBuilder</code></li>
-<li><code>StringJoiner</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="概率问题"><a href="#概率问题" class="headerlink" title="概率问题"></a>概率问题</h3><ul>
-<li>如30%的甲，70%的乙：<ol>
-<li>创建一个新的集合：赋30%的”1”，赋70%的”2”</li>
-<li>对所创建的集合元素进行随机取值：<code>Random r = new Random();</code></li>
-<li>对随机取得的值进行条件判断，取到的值就有概率</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> CS408.CollectionText;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Text2</span> &#123;</span><br><span class="line">    <span class="comment">//班级里有N个学生要求:70%的概率随机到男生,30%的概率随机到女生</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合</span></span><br><span class="line">        ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        Collections.addAll(list,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">        Collections.addAll(list,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//从list中抽取1,0</span></span><br><span class="line">        <span class="type">Random</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> r.nextInt(list.size());</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> list.get(index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建两个集合分别存储男生与女生</span></span><br><span class="line">        ArrayList&lt;String&gt; boyList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        ArrayList&lt;String&gt; girlList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Collections.addAll(boyList,<span class="string">&quot;男1&quot;</span>,<span class="string">&quot;男2&quot;</span>,<span class="string">&quot;男3&quot;</span>,<span class="string">&quot;男4&quot;</span>,<span class="string">&quot;男5&quot;</span>,<span class="string">&quot;男6&quot;</span>,<span class="string">&quot;男7&quot;</span>,<span class="string">&quot;男8&quot;</span>,<span class="string">&quot;男9&quot;</span>);</span><br><span class="line">        Collections.addAll(girlList,<span class="string">&quot;女1&quot;</span>,<span class="string">&quot;女2&quot;</span>,<span class="string">&quot;女3&quot;</span>,<span class="string">&quot;女4&quot;</span>,<span class="string">&quot;女5&quot;</span>,<span class="string">&quot;女6&quot;</span>,<span class="string">&quot;女7&quot;</span>,<span class="string">&quot;女8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断此时是从boyList里抽取，还是从girlList中抽取</span></span><br><span class="line">        <span class="keyword">if</span> (number == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">boyIndex</span> <span class="operator">=</span> r.nextInt(boyList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> boyList.get(boyIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">girlIndex</span> <span class="operator">=</span> r.nextInt(girlList.size());</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> girlList.get(girlIndex);</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="对应思想"><a href="#对应思想" class="headerlink" title="对应思想"></a>对应思想</h3><ul>
-<li><ul>
-<li>如果原始数据的规律非常复杂，可以先手动排序让每一个数据跟唯一的序号产生对应关系</li>
-<li>序号就是数字，规律简单，后续的所有操作，以序号为准</li>
-<li>当真正需要操作数据的时候，通过序号找到原始数据即可</li>
-</ul>
-</li>
-</ul>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
-<li>把具体的要求封装成方法</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>设计思想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++中&amp;和*的区别</title>
-    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
-<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
-<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
-</ul>
-<hr>
-<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
-</ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
-</ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>查找（只含代码）</title>
     <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E4%BB%A3%E7%A0%81)/</url>
     <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><div class="tabs" id="顺序查找"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#顺序查找-1">顺序查找 1</button></li><li class="tab"><button type="button" data-href="#顺序查找-2">顺序查找 2</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="顺序查找-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SerchSqList</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;L.length;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(e == L.elem[i])&#123;</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;已找到元素&quot;</span>&lt;&lt;L.elem[i]&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="顺序查找-2"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SearchSqList2</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	L.elem[<span class="number">0</span>] = e;</span><br><span class="line">	<span class="keyword">for</span>(i = L.length;L.elem[i] != e;--i)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;元素的位置为&quot;</span>&lt;&lt;i+<span class="number">1</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
@@ -1473,6 +1473,213 @@ public interface English &#123;
 <h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p>见：<a href="https://blog.czlifetime.eu.org/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/index.html">查找(全)</a></p>
 <h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">BSTree <span class="title">SearchBST</span><span class="params">(BSTree T, KeyType key)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//在根指针T所指二叉排序树中递归地查找某关键字等于key的数据元素</span></span><br><span class="line">	<span class="comment">//若查找成功，则返回指向该数据元素结点的指针，否则返回空指针</span></span><br><span class="line">	<span class="keyword">if</span> ((!T) || key == T-&gt;data.key) <span class="keyword">return</span> T;<span class="comment">//查找结束</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (key &lt; T-&gt;data.key) <span class="keyword">return</span> <span class="built_in">SearchBST</span>(T-&gt;lchild, key);<span class="comment">//在左子树中继续查找</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">SearchBST</span>(T-&gt;rchild, key);<span class="comment">//在右子树中继续查找</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
+<blockquote>
+<p>如何建立“关键字”与“存储地址”的联系？</p>
+<blockquote>
+<p>通过“散列函数(哈希函数)”：$$Add&#x3D;H(key)$$实现</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>散列函数和散列地址：$$p&#x3D;H(key)$$，$$H$$为散列函数，$$p$$为散列地址</li>
+<li>散列表：一个连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录</li>
+<li>冲突和同义词：$$key_1\not&#x3D;key_2$$，$$H(key_1)&#x3D;H(key_2)$$，这种现象称为冲突，$$key_1$$，$$key_2$$互为同义词</li>
+</ol>
+<h3 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h3><ol>
+<li><p><strong>数字分析法</strong></p>
+<blockquote>
+<p>选取数码分布较为均匀的若干位作为散列地址</p>
+</blockquote>
+<p>设关键字是r进制数（如十进制数)，而r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些，每种数码出现的机会均等；而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。</p>
+<p>这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+</li>
+<li><p><strong>平方取中法</strong>：取关键字的平方值的<strong>中间几位</strong>作为散列地址</p>
+<p>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+<li><p><strong>折叠法</strong></p>
+<p>将关键字分割成位数相同的几部分，然后取这几部分叠加和作为散列地址。根据数叠加的方式，可以把折叠法分为移位叠加、边界叠加。</p>
+<p>$$key&#x3D;45387765213$$，表长为1000：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8F%A0%E6%B3%95.jpg"></p>
+</li>
+<li><p><strong>除留余数法</strong><br>$$<br>H(key)&#x3D;key%p<br>$$<br>$$p$$为不大于表长$$m$$但最接近或等于$$m$$的最大<mark>质数</mark></p>
+<blockquote>
+<p>用质数取模，分布更均匀，冲突更少</p>
+</blockquote>
+</li>
+<li><p><strong>直接定址法</strong><br>$$<br>H(key)&#x3D;key 或H(key)&#x3D;a*key+b<br>$$<br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+</ol>
+<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><ol>
+<li><p>开放地址法</p>
+<p>所谓开放定址法，是指可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为:<br>$$<br>H_i&#x3D;(H(key)+d_i)%m,i&#x3D;1,2…,k(k&lt;&#x3D;m-1)<br>$$</p>
+<p>$$m$$为散列表表长；$$d_i$$为增量序列</p>
+<p>根据$$d$$的取值不同，可分为以下三种方法：</p>
+<ol>
+<li><p><strong>线性探测法</strong><br>$$<br>d_i&#x3D;1,2,3,…,m-1<br>$$<br>发生冲突时，每次往后探测相邻的下一个单元是否为空</p>
+<blockquote>
+<p>线性探测法很容易造成同义词、非同义词的“聚集(堆积)”现象，严重影响查找效率</p>
+<blockquote>
+<p>产生原因：冲突后再探测一定是放在某个连续的位置</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>二次探测法</strong><br>$$<br>d_i&#x3D;1^2,-1^2,2^2,-2^2,3^2,…,k^2,-k^2(k&lt;&#x3D;m&#x2F;2)<br>$$</p>
+</li>
+<li><p><strong>伪随机探测法</strong><br>$$<br>d_i&#x3D;伪随机数序列<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>链地址法(拉链法)：把具有相同散列地址的记录放在同一个单链表中，称之为同义词单链表</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8B%89%E9%93%BE%E6%B3%95.png"></p>
+</li>
+</ol>
+<h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
+<p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
+<p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查找（全）</title>
+    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/</url>
+    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><strong>查找</strong>：在数据集合中寻找满足某种条件的数据元素的过程称为查找</li>
+<li><strong>查找表(查找结构)</strong>：用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成</li>
+<li><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</li>
+</ul>
+<h3 id="查找表的常见操作"><a href="#查找表的常见操作" class="headerlink" title="查找表的常见操作"></a>查找表的常见操作</h3><ol>
+<li>查找符合条件的数据元素(静态查找表)</li>
+<li>插入、删除某个元素数据(动态查找表)</li>
+</ol>
+<h2 id="查找算法的效率评价"><a href="#查找算法的效率评价" class="headerlink" title="查找算法的效率评价"></a>查找算法的效率评价</h2><ul>
+<li><p>查找长度：在查找运算中，需要对比关键字的次数称为查找长度</p>
+</li>
+<li><p>平均查找长度(ASL)：所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^nP_iC_i<br>$$<br>$$P_i$$：查找第i个元素的概率</p>
+<p>$$C_i$$：查找第i个元素的查找长度</p>
+</li>
+</ul>
+<blockquote>
+<p>通常认为查找任何一个元素的概率都相同</p>
+</blockquote>
+<blockquote>
+<p>评价一个查找算法的效率时，通常考虑查找成功&#x2F;查找失败两种情况的ASL</p>
+</blockquote>
+<h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找，又叫”线性查找“，通常用于线性表</p>
+<p>线性表：</p>
+<ul>
+<li>顺序表</li>
+<li>链表</li>
+</ul>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>思想：从头到尾挨个找</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>普通实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE1.png"></p>
+<p>实现（哨兵）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%93%A8%E5%85%B5%EF%BC%89.png"></p>
+<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><h4 id="顺序查找的优化-对有序表"><a href="#顺序查找的优化-对有序表" class="headerlink" title="顺序查找的优化(对有序表)"></a>顺序查找的优化(对有序表)</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%8C%96.png"></p>
+<h4 id="（被查概率不相等）"><a href="#（被查概率不相等）" class="headerlink" title="（被查概率不相等）"></a>（被查概率不相等）</h4><p>将被查概率大的放在靠前的位置</p>
+<h4 id="用查找判定树分析ASL"><a href="#用查找判定树分析ASL" class="headerlink" title="用查找判定树分析ASL"></a>用查找判定树分析ASL</h4><blockquote>
+<ul>
+<li>一个成功节点的查找长度 &#x3D; 自身所在层数</li>
+<li>一个失败节点的查找长度 &#x3D; 其父节点所在层数</li>
+<li>默认情况下，各种失败情况或成功情况都等概率发生</li>
+</ul>
+</blockquote>
+<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><blockquote>
+<p>折半查找，又称“二分查找”，仅适用于<font color="red">有序的顺序表</font></p>
+</blockquote>
+<h4 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE2.png"></p>
+<h4 id="查找判定树"><a href="#查找判定树" class="headerlink" title="查找判定树"></a>查找判定树</h4><p>根据数据构造判定树</p>
+<blockquote>
+<p>根据mid所指的元素与将原有元素分割到左右子树中</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A02.png"></p>
+<ul>
+<li>如果low和high之间有<mark>偶数</mark>个元素，则mid分隔后，<mark>左半部分比右半部分少一个元素</mark></li>
+<li>如果当前low和high之间有<mark>奇数</mark>个元素，则mid分隔后，<mark>左右两部分元素个数相等</mark></li>
+<li><mark>结论</mark>：折半查找的判定树中，若$$mid&#x3D;\lfloor(low+high)&#x2F;2\rfloor$$，则对于任何一个节点，必有<mark>右子树节点数-左子树节点数&#x3D;0或1</mark>——<font color="red">即：右子树的节点数总比左子树的节点数相等或多一个</font></li>
+</ul>
+<hr>
+<p><strong>折半查找的<mark>判定树</mark>一定是<mark>平衡二叉树</mark></strong></p>
+<p>折半查找的判定树中，<mark>只有最下面一层是不满的</mark>，因此，元素个数为<mark>n</mark>时，树高<mark>$h&#x3D;[log_2{(n+1)}]$</mark></p>
+<hr>
+<p><strong>判定树节点关键字：<mark>左&lt;中&lt;右</mark>，满足二叉树排序树的定义</strong></p>
+<p><strong>当二叉树的节点有<mark>n</mark>个时，有<mark>失败节点n+1个</mark>（等于成功节点的空链域数量）</strong></p>
+<h4 id="折半查找效率"><a href="#折半查找效率" class="headerlink" title="折半查找效率"></a>折半查找效率</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png"></p>
+<p><mark><strong>时间复杂度&#x3D;$O(log_2{n})$</strong></mark></p>
+<hr>
+<blockquote>
+<p><strong>问</strong>：折半查找时间复杂度&#x3D;$$O(log_2{n})$$，顺序查找的时间复杂度&#x3D;$$O(n)$$，那么折半查找的速度一定比顺序查找更快吗？</p>
+<hr>
+<p><strong>答</strong>：不是，在顺序查找中，当查找的元素是第一个元素时，顺序查找的速度</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>问</strong>：$$mid&#x3D;\lceil(low+high)&#x2F;2\rceil$$会出现什么情况？</p>
+<hr>
+<p><strong>答</strong>：左子树节点数-右子树节点数&#x3D;0或1</p>
+</blockquote>
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p><strong>分块查找</strong>又称为<strong>索引顺序查找</strong>，是一种性能介于顺序查找和折半查找之间的查找方法。</p>
+<p>在此查找方法中，除了本身以外，还需建立“索引表”。</p>
+<p>索引表包含两个部分：<mark>关键字项（其值为改字表内的最大关键字）和指针项（指示该字表的第一个记录在表中的位置）</mark></p>
+<p><strong>特点</strong>：<mark>块内无序、块间有序、</mark></p>
+<hr>
+<p><strong>代码</strong>：</p>
+<img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81.png" style="zoom:50%;" />
+
+<p><strong>过程</strong>：</p>
+<ol>
+<li>在索引表中确定待查记录所属的分块</li>
+<li>在块内顺序查找</li>
+</ol>
+<h4 id="查找效率分析（ASL）"><a href="#查找效率分析（ASL）" class="headerlink" title="查找效率分析（ASL）"></a>查找效率分析（ASL）</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90%EF%BC%88%E5%88%86%E5%9D%97%EF%BC%89.png"></p>
+<p>设索引查找和块内查找的平均查找长度分别为$$L_I$$、$$L_S$$，则分块超找的平均查找长度为<br>$$<br>ASL&#x3D;L_I+L_S<br>$$<br>用顺序查找查索引表，则$$L_I&#x3D;(1+2+…+b)&#x2F;b&#x3D;(b+1)&#x2F;2$$，$$L_S&#x3D;(1+2+…+s)&#x2F;s&#x3D;(s+1)&#x2F;2$$</p>
+<p>当$$s&#x3D;\sqrt[]n$$时，$$ASL_{最小}&#x3D;\sqrt[]n+1$$</p>
+<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树（BST）"><a href="#二叉排序树（BST）" class="headerlink" title="二叉排序树（BST）"></a>二叉排序树（BST）</h3><p><font color="red">二叉排序树</font>&gt;又称<em>二叉查找树</em></p>
+<ol>
+<li><p>二叉排序树的定义</p>
+<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有节点的的值均小于它的根节点的值；</li>
+<li>若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
+<li>它的左右子树也分别为二叉排序树</li>
+</ul>
+<blockquote>
+<p><mark>左子树节点值&lt;根节点值&lt;右子树节点值</mark></p>
+</blockquote>
+</li>
+<li><p>二叉排序树的查找</p>
+<p>步骤：</p>
+<ol>
+<li>若二叉排序树为空，则查找失败，返回空指针</li>
+<li>若二叉排序树非空，将给定值key与根节点的关键字<code>T-&gt;data.key</code>进行比较<ul>
+<li>若key等于<code>T-&gt;data.key</code>，则查找成功，返回根节点的地址</li>
+<li>若key小于<code>T-&gt;data.key</code>，则递归查找左子树</li>
+<li>若key大于<code>T-&gt;data.key</code>，则递归查找右子树</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>二叉排序树的插入</p>
+</li>
+<li><p>二叉排序树的创建</p>
+</li>
+<li><p>二叉排序树的删除</p>
+</li>
+<li><p>查找效率分析</p>
+</li>
+</ol>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
+<li><p>平衡二叉树的定义</p>
+</li>
+<li><p>平衡二叉树的平衡调整方法</p>
+</li>
+<li><p>平衡二叉树的插入</p>
+</li>
+</ol>
 <h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
 <blockquote>
 <p>如何建立“关键字”与“存储地址”的联系？</p>
@@ -1713,213 +1920,6 @@ public interface English &#123;
 </li>
 </ol>
 <h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><h2 id="顺序表和链表的比较"><a href="#顺序表和链表的比较" class="headerlink" title="顺序表和链表的比较"></a>顺序表和链表的比较</h2><h3 id="空间性能"><a href="#空间性能" class="headerlink" title="空间性能"></a>空间性能</h3><h3 id="时间性能"><a href="#时间性能" class="headerlink" title="时间性能"></a>时间性能</h3><div class="tabs" id="test1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test1-1">test1 1</button></li><li class="tab"><button type="button" data-href="#test1-2">test1 2</button></li><li class="tab"><button type="button" data-href="#test1-3">test1 3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查找（全）</title>
-    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/</url>
-    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><strong>查找</strong>：在数据集合中寻找满足某种条件的数据元素的过程称为查找</li>
-<li><strong>查找表(查找结构)</strong>：用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成</li>
-<li><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</li>
-</ul>
-<h3 id="查找表的常见操作"><a href="#查找表的常见操作" class="headerlink" title="查找表的常见操作"></a>查找表的常见操作</h3><ol>
-<li>查找符合条件的数据元素(静态查找表)</li>
-<li>插入、删除某个元素数据(动态查找表)</li>
-</ol>
-<h2 id="查找算法的效率评价"><a href="#查找算法的效率评价" class="headerlink" title="查找算法的效率评价"></a>查找算法的效率评价</h2><ul>
-<li><p>查找长度：在查找运算中，需要对比关键字的次数称为查找长度</p>
-</li>
-<li><p>平均查找长度(ASL)：所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^nP_iC_i<br>$$<br>$$P_i$$：查找第i个元素的概率</p>
-<p>$$C_i$$：查找第i个元素的查找长度</p>
-</li>
-</ul>
-<blockquote>
-<p>通常认为查找任何一个元素的概率都相同</p>
-</blockquote>
-<blockquote>
-<p>评价一个查找算法的效率时，通常考虑查找成功&#x2F;查找失败两种情况的ASL</p>
-</blockquote>
-<h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找，又叫”线性查找“，通常用于线性表</p>
-<p>线性表：</p>
-<ul>
-<li>顺序表</li>
-<li>链表</li>
-</ul>
-<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>思想：从头到尾挨个找</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>普通实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE1.png"></p>
-<p>实现（哨兵）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%93%A8%E5%85%B5%EF%BC%89.png"></p>
-<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><h4 id="顺序查找的优化-对有序表"><a href="#顺序查找的优化-对有序表" class="headerlink" title="顺序查找的优化(对有序表)"></a>顺序查找的优化(对有序表)</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%8C%96.png"></p>
-<h4 id="（被查概率不相等）"><a href="#（被查概率不相等）" class="headerlink" title="（被查概率不相等）"></a>（被查概率不相等）</h4><p>将被查概率大的放在靠前的位置</p>
-<h4 id="用查找判定树分析ASL"><a href="#用查找判定树分析ASL" class="headerlink" title="用查找判定树分析ASL"></a>用查找判定树分析ASL</h4><blockquote>
-<ul>
-<li>一个成功节点的查找长度 &#x3D; 自身所在层数</li>
-<li>一个失败节点的查找长度 &#x3D; 其父节点所在层数</li>
-<li>默认情况下，各种失败情况或成功情况都等概率发生</li>
-</ul>
-</blockquote>
-<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><blockquote>
-<p>折半查找，又称“二分查找”，仅适用于<font color="red">有序的顺序表</font></p>
-</blockquote>
-<h4 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE1.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE2.png"></p>
-<h4 id="查找判定树"><a href="#查找判定树" class="headerlink" title="查找判定树"></a>查找判定树</h4><p>根据数据构造判定树</p>
-<blockquote>
-<p>根据mid所指的元素与将原有元素分割到左右子树中</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A02.png"></p>
-<ul>
-<li>如果low和high之间有<mark>偶数</mark>个元素，则mid分隔后，<mark>左半部分比右半部分少一个元素</mark></li>
-<li>如果当前low和high之间有<mark>奇数</mark>个元素，则mid分隔后，<mark>左右两部分元素个数相等</mark></li>
-<li><mark>结论</mark>：折半查找的判定树中，若$$mid&#x3D;\lfloor(low+high)&#x2F;2\rfloor$$，则对于任何一个节点，必有<mark>右子树节点数-左子树节点数&#x3D;0或1</mark>——<font color="red">即：右子树的节点数总比左子树的节点数相等或多一个</font></li>
-</ul>
-<hr>
-<p><strong>折半查找的<mark>判定树</mark>一定是<mark>平衡二叉树</mark></strong></p>
-<p>折半查找的判定树中，<mark>只有最下面一层是不满的</mark>，因此，元素个数为<mark>n</mark>时，树高<mark>$h&#x3D;[log_2{(n+1)}]$</mark></p>
-<hr>
-<p><strong>判定树节点关键字：<mark>左&lt;中&lt;右</mark>，满足二叉树排序树的定义</strong></p>
-<p><strong>当二叉树的节点有<mark>n</mark>个时，有<mark>失败节点n+1个</mark>（等于成功节点的空链域数量）</strong></p>
-<h4 id="折半查找效率"><a href="#折半查找效率" class="headerlink" title="折半查找效率"></a>折半查找效率</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png"></p>
-<p><mark><strong>时间复杂度&#x3D;$O(log_2{n})$</strong></mark></p>
-<hr>
-<blockquote>
-<p><strong>问</strong>：折半查找时间复杂度&#x3D;$$O(log_2{n})$$，顺序查找的时间复杂度&#x3D;$$O(n)$$，那么折半查找的速度一定比顺序查找更快吗？</p>
-<hr>
-<p><strong>答</strong>：不是，在顺序查找中，当查找的元素是第一个元素时，顺序查找的速度</p>
-</blockquote>
-<hr>
-<blockquote>
-<p><strong>问</strong>：$$mid&#x3D;\lceil(low+high)&#x2F;2\rceil$$会出现什么情况？</p>
-<hr>
-<p><strong>答</strong>：左子树节点数-右子树节点数&#x3D;0或1</p>
-</blockquote>
-<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p><strong>分块查找</strong>又称为<strong>索引顺序查找</strong>，是一种性能介于顺序查找和折半查找之间的查找方法。</p>
-<p>在此查找方法中，除了本身以外，还需建立“索引表”。</p>
-<p>索引表包含两个部分：<mark>关键字项（其值为改字表内的最大关键字）和指针项（指示该字表的第一个记录在表中的位置）</mark></p>
-<p><strong>特点</strong>：<mark>块内无序、块间有序、</mark></p>
-<hr>
-<p><strong>代码</strong>：</p>
-<img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81.png" style="zoom:50%;" />
-
-<p><strong>过程</strong>：</p>
-<ol>
-<li>在索引表中确定待查记录所属的分块</li>
-<li>在块内顺序查找</li>
-</ol>
-<h4 id="查找效率分析（ASL）"><a href="#查找效率分析（ASL）" class="headerlink" title="查找效率分析（ASL）"></a>查找效率分析（ASL）</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90%EF%BC%88%E5%88%86%E5%9D%97%EF%BC%89.png"></p>
-<p>设索引查找和块内查找的平均查找长度分别为$$L_I$$、$$L_S$$，则分块超找的平均查找长度为<br>$$<br>ASL&#x3D;L_I+L_S<br>$$<br>用顺序查找查索引表，则$$L_I&#x3D;(1+2+…+b)&#x2F;b&#x3D;(b+1)&#x2F;2$$，$$L_S&#x3D;(1+2+…+s)&#x2F;s&#x3D;(s+1)&#x2F;2$$</p>
-<p>当$$s&#x3D;\sqrt[]n$$时，$$ASL_{最小}&#x3D;\sqrt[]n+1$$</p>
-<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树（BST）"><a href="#二叉排序树（BST）" class="headerlink" title="二叉排序树（BST）"></a>二叉排序树（BST）</h3><p><font color="red">二叉排序树</font>&gt;又称<em>二叉查找树</em></p>
-<ol>
-<li><p>二叉排序树的定义</p>
-<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：</p>
-<ul>
-<li>若它的左子树不空，则左子树上所有节点的的值均小于它的根节点的值；</li>
-<li>若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
-<li>它的左右子树也分别为二叉排序树</li>
-</ul>
-<blockquote>
-<p><mark>左子树节点值&lt;根节点值&lt;右子树节点值</mark></p>
-</blockquote>
-</li>
-<li><p>二叉排序树的查找</p>
-<p>步骤：</p>
-<ol>
-<li>若二叉排序树为空，则查找失败，返回空指针</li>
-<li>若二叉排序树非空，将给定值key与根节点的关键字<code>T-&gt;data.key</code>进行比较<ul>
-<li>若key等于<code>T-&gt;data.key</code>，则查找成功，返回根节点的地址</li>
-<li>若key小于<code>T-&gt;data.key</code>，则递归查找左子树</li>
-<li>若key大于<code>T-&gt;data.key</code>，则递归查找右子树</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>二叉排序树的插入</p>
-</li>
-<li><p>二叉排序树的创建</p>
-</li>
-<li><p>二叉排序树的删除</p>
-</li>
-<li><p>查找效率分析</p>
-</li>
-</ol>
-<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
-<li><p>平衡二叉树的定义</p>
-</li>
-<li><p>平衡二叉树的平衡调整方法</p>
-</li>
-<li><p>平衡二叉树的插入</p>
-</li>
-</ol>
-<h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
-<blockquote>
-<p>如何建立“关键字”与“存储地址”的联系？</p>
-<blockquote>
-<p>通过“散列函数(哈希函数)”：$$Add&#x3D;H(key)$$实现</p>
-</blockquote>
-</blockquote>
-<ol>
-<li>散列函数和散列地址：$$p&#x3D;H(key)$$，$$H$$为散列函数，$$p$$为散列地址</li>
-<li>散列表：一个连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录</li>
-<li>冲突和同义词：$$key_1\not&#x3D;key_2$$，$$H(key_1)&#x3D;H(key_2)$$，这种现象称为冲突，$$key_1$$，$$key_2$$互为同义词</li>
-</ol>
-<h3 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h3><ol>
-<li><p><strong>数字分析法</strong></p>
-<blockquote>
-<p>选取数码分布较为均匀的若干位作为散列地址</p>
-</blockquote>
-<p>设关键字是r进制数（如十进制数)，而r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些，每种数码出现的机会均等；而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。</p>
-<p>这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
-</li>
-<li><p><strong>平方取中法</strong>：取关键字的平方值的<strong>中间几位</strong>作为散列地址</p>
-<p>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
-</li>
-<li><p><strong>折叠法</strong></p>
-<p>将关键字分割成位数相同的几部分，然后取这几部分叠加和作为散列地址。根据数叠加的方式，可以把折叠法分为移位叠加、边界叠加。</p>
-<p>$$key&#x3D;45387765213$$，表长为1000：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8F%A0%E6%B3%95.jpg"></p>
-</li>
-<li><p><strong>除留余数法</strong><br>$$<br>H(key)&#x3D;key%p<br>$$<br>$$p$$为不大于表长$$m$$但最接近或等于$$m$$的最大<mark>质数</mark></p>
-<blockquote>
-<p>用质数取模，分布更均匀，冲突更少</p>
-</blockquote>
-</li>
-<li><p><strong>直接定址法</strong><br>$$<br>H(key)&#x3D;key 或H(key)&#x3D;a*key+b<br>$$<br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
-</li>
-</ol>
-<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><ol>
-<li><p>开放地址法</p>
-<p>所谓开放定址法，是指可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为:<br>$$<br>H_i&#x3D;(H(key)+d_i)%m,i&#x3D;1,2…,k(k&lt;&#x3D;m-1)<br>$$</p>
-<p>$$m$$为散列表表长；$$d_i$$为增量序列</p>
-<p>根据$$d$$的取值不同，可分为以下三种方法：</p>
-<ol>
-<li><p><strong>线性探测法</strong><br>$$<br>d_i&#x3D;1,2,3,…,m-1<br>$$<br>发生冲突时，每次往后探测相邻的下一个单元是否为空</p>
-<blockquote>
-<p>线性探测法很容易造成同义词、非同义词的“聚集(堆积)”现象，严重影响查找效率</p>
-<blockquote>
-<p>产生原因：冲突后再探测一定是放在某个连续的位置</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p><strong>二次探测法</strong><br>$$<br>d_i&#x3D;1^2,-1^2,2^2,-2^2,3^2,…,k^2,-k^2(k&lt;&#x3D;m&#x2F;2)<br>$$</p>
-</li>
-<li><p><strong>伪随机探测法</strong><br>$$<br>d_i&#x3D;伪随机数序列<br>$$</p>
-</li>
-</ol>
-</li>
-<li><p>链地址法(拉链法)：把具有相同散列地址的记录放在同一个单链表中，称之为同义词单链表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8B%89%E9%93%BE%E6%B3%95.png"></p>
-</li>
-</ol>
-<h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
-<p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
-<p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
 ]]></content>
       <tags>
         <tag>数据结构</tag>
