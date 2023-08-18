@@ -749,7 +749,7 @@ public interface English &#123;
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: 'https://twikoo-nine-roan.vercel.app/',
+      envId: 'https://twikoo.czlifetime.eu.org/',
       region: '',
       onCommentLoaded: function () {
         btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
@@ -761,7 +761,7 @@ public interface English &#123;
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
     twikoo.getCommentsCount({
-      envId: 'https://twikoo-nine-roan.vercel.app/',
+      envId: 'https://twikoo.czlifetime.eu.org/',
       region: '',
       urls: [window.location.pathname],
       includeReply: false
