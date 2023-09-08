@@ -1,0 +1,562 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>活在当下的博客 | 活在当下的博客</title><meta name="author" content="活在当下"><meta name="copyright" content="活在当下"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MySQL服务启动与关闭：net start mysql,net stop mysql 连接到MySQL服务的指令：mysql -h localhost -P 3306 -u root -pcz 表的一行称之为一条记录，在java中，一行记录往往使用对象表示 MySQL结构:  SQL语句的分类  DDL：数据定义语句[create] DML：数据操作语句[增加insert，修改update，删除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="活在当下的博客">
+<meta property="og:url" content="http://czlifetime.github.io/2023/08/20/MySQL/index.html">
+<meta property="og:site_name" content="活在当下的博客">
+<meta property="og:description" content="MySQL服务启动与关闭：net start mysql,net stop mysql 连接到MySQL服务的指令：mysql -h localhost -P 3306 -u root -pcz 表的一行称之为一条记录，在java中，一行记录往往使用对象表示 MySQL结构:  SQL语句的分类  DDL：数据定义语句[create] DML：数据操作语句[增加insert，修改update，删除">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-08-20T01:48:37.489Z">
+<meta property="article:modified_time" content="2023-09-07T13:20:40.789Z">
+<meta property="article:author" content="活在当下">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/czlifetime/img/hello%E7%86%8A.jpg"><link rel="canonical" href="http://czlifetime.github.io/2023/08/20/MySQL/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.8.5"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@5.0.17/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5621d8cada923403e10d271a816fafbe";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 活在当下","link":"链接: ","source":"来源: 活在当下的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '活在当下的博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-07 21:20:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/gh/radium-bit/res@master/live2d/autoload.js" async></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/hello%E7%86%8A.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/czlifetime/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://czlifetime.eu.org/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="活在当下的博客"><span class="site-name">活在当下的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://czlifetime.eu.org/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题<a class="post-edit-link" href="https://github.com/czlifetime/czlifetime.github.io/edit/master/about/_posts/MySQL.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-20T01:48:37.489Z" title="发表于 2023-08-20 09:48:37">2023-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-07T13:20:40.789Z" title="更新于 2023-09-07 21:20:40">2023-09-07</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>服务启动与关闭：<code>net start mysql</code>,<code>net stop mysql</code></p>
+<p>连接到MySQL服务的指令：<code>mysql -h localhost -P 3306 -u root -pcz</code></p>
+<p>表的一行称之为一条记录，在java中，一行记录往往使用对象表示</p>
+<p>MySQL结构:</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/MySQL%E7%BB%93%E6%9E%84.jpg"></p>
+<p><strong>SQL语句的分类</strong></p>
+<ul>
+<li>DDL：数据定义语句[create]</li>
+<li>DML：数据操作语句[增加insert，修改update，删除delete]</li>
+<li>DQL：数据查询语句[select]</li>
+<li>DCL：数据控制语句[管理数据库]</li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p><code>CREATE DATABASE [IF NOT EXISTS];</code></p>
+<blockquote>
+<ol>
+<li><p>[DEFAULT] CHARACTER SET ：指定数据库采用的字符集，如果不指定字符集，默认utf-8</p>
+</li>
+<li><p>COLLATE：指定数据库字符集的校对规则（常用的utf8_bin、utf8_general_ci）</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h3><p><code>SELECT * FROM dbtest WHERE NAME = &#39;tom&#39;;</code></p>
+<h3 id="查看、删除数据库"><a href="#查看、删除数据库" class="headerlink" title="查看、删除数据库"></a>查看、删除数据库</h3><ul>
+<li><p>显示数据库语句：</p>
+<p><code>SHOW DATABASES</code></p>
+</li>
+<li><p>显示数据库创建语句：</p>
+<p><code>SHOW CREATE DATABASE db_name;</code></p>
+</li>
+<li><p>数据库删除语句：</p>
+<p><code>DROP DATABASE [IF EXITS] db_name;</code></p>
+</li>
+</ul>
+<h3 id="备份恢复数据库"><a href="#备份恢复数据库" class="headerlink" title="备份恢复数据库"></a>备份恢复数据库</h3><ul>
+<li><p>备份数据库</p>
+<p><code>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; 文件名.sql</code></p>
+</li>
+<li><p>恢复数据库</p>
+<p><code>Sourse 文件名.sql</code></p>
+</li>
+</ul>
+<h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p><code>CREATE TABLE table_name(</code></p>
+<p><code>	field1 datatype,</code>	</p>
+<p><code>	field2 datatype,</code></p>
+<p><code>	field3 datatype</code></p>
+<p><code>)``character set 字符集 collate 校对规则 engine 存储引擎</code></p>
+<p>field:指定列名 </p>
+<p>datatype: 指定列类型(字段类型)</p>
+<p>character set:不指定为所在数据库字符集</p>
+<p>collate：不指定为所在数据库校对规则</p>
+<p>engine：引擎</p>
+<h3 id="删除-amp-amp-修改"><a href="#删除-amp-amp-修改" class="headerlink" title="删除&amp;&amp;修改"></a>删除&amp;&amp;修改</h3><p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/sql%20%E4%BF%AE%E6%94%B9%E8%A1%A8.jpg"></p>
+<h2 id="MySql数据类型-列类型"><a href="#MySql数据类型-列类型" class="headerlink" title="MySql数据类型(列类型)"></a>MySql数据类型(列类型)</h2><p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/MySQl%E5%88%97%E6%95%B0%E6%8D%AE.png"></p>
+<h3 id="列类型的基本使用"><a href="#列类型的基本使用" class="headerlink" title="列类型的基本使用"></a>列类型的基本使用</h3><h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><ol>
+<li><p>在满足需求的情况下，尽量选择占用空间小的类型</p>
+</li>
+<li><p>如何定义一个无符号的整数</p>
+<p>unsigned</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> test01(</span><br><span class="line">id tinyint</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test02(</span><br><span class="line">id tinyint unsigned</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test01 <span class="keyword">values</span>(<span class="number">-128</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test02 <span class="keyword">values</span>(<span class="number">128</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> test01;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> test02;</span><br></pre></td></tr></table></figure>
+
+<h4 id="bit"><a href="#bit" class="headerlink" title="bit"></a>bit</h4><ol>
+<li>bit(m)，m在1~64之间</li>
+<li>添加数据范围</li>
+<li>显示按照bit</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> test03 (num bit (<span class="number">8</span>));</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test03 <span class="keyword">values</span>(<span class="number">255</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> test03;</span><br></pre></td></tr></table></figure>
+
+<h4 id="小数型"><a href="#小数型" class="headerlink" title="小数型"></a>小数型</h4><ol>
+<li>Float、double{}[unsigned]</li>
+<li>decimal[M,D][unsigned]<ul>
+<li>可以支持更加精确的小数位：M是小数位数（精度）的总和，D是小数点(标度)后面的位数</li>
+<li>D&#x3D;0，没有小数点或分数部分。</li>
+<li>M最大为65，D最大是30</li>
+<li>D被省略，为0，M被省略，默认是10</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test04(</span><br><span class="line">num1 <span class="type">FLOAT</span>,</span><br><span class="line">num2 <span class="keyword">DOUBLE</span>,</span><br><span class="line">num3 <span class="type">DECIMAL</span>(<span class="number">20</span>,<span class="number">10</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test04 <span class="keyword">VALUE</span>(<span class="number">1234567890.1234567890</span>,<span class="number">1234567890.1234567890</span>,<span class="number">1234567890.1234567890</span>);</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test04;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li><p>字符串的基本使用</p>
+<ul>
+<li><p>CHAR(size)</p>
+<p>固定长度字符串，最大255字符</p>
+</li>
+<li><p>VARCHAR(size)</p>
+<p>可变长度字符串，最大65532字节</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test05 (</span><br><span class="line">	<span class="string">&#x27;name&#x27;</span> <span class="type">CHAR</span>(<span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+
+<p>细节：</p>
+<ul>
+<li><code>char(4)</code>，4表示字符数（最大255），不是字节数</li>
+<li><code>varchar(4)</code>，4表示字符数</li>
+</ul>
+<blockquote>
+<p>细节：</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>不管是中文还是英文，都是最多存放4个，是按照字符来存放</p>
+</li>
+<li><p><code>char(4)</code>是定长，不管插入几个字符，只会分配4个字符</p>
+</li>
+<li><p><code>varchar(4)</code>是变长，按照实际占用的空间来分配</p>
+<ul>
+<li><code>varchar</code>本身还需要占用1-3个字节来记录存放内容长度</li>
+</ul>
+</li>
+<li><ul>
+<li><p>如果数据是定长，推荐使用char，比如md5的密码,邮编，手<br>机号，身份证号码等.char(32)</p>
+</li>
+<li><p>如果一个字段的长度是不确定，我们使用varchar ，比如留<br>言，文章</p>
+</li>
+</ul>
+</li>
+<li><p>在存放文本时，也可以使用Text 数据类型.可以将TEXT列视为<br>VARCHAR列,注意 Text 不能有默认值.大小 0-2^16 字节<br>如果希望存放更多字符，可以选择<br>MEDIUMTEXT 0-2^24 或者 LONGTEXT O~2^32</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> t1 (</span><br><span class="line">  birthday <span class="type">DATE</span>,</span><br><span class="line">  job_time DATETIME,</span><br><span class="line">  login_time <span class="type">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> t1;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> t1(birthday,job_time) <span class="keyword">VALUE</span>(<span class="string">&#x27;2003-4-24&#x27;</span>,<span class="string">&#x27;2026-3-1&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CRUD-create、read、update、delete"><a href="#CRUD-create、read、update、delete" class="headerlink" title="CRUD(create、read、update、delete)"></a>CRUD(create、read、update、delete)</h2><h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20insert.jpg"></p>
+<ol>
+<li>插入的数据应与宁段的数据类型相同。<br>比如 把 abo’ 添加到 int 类型会错误</li>
+<li>数据的长度应在列的规定范围内，例如: 不能将一个长度为80的字符串加入到长度为40的列中</li>
+<li>在values中列出的数据位置必须与被加入的列的排列位置相对应。<br>字符和日期型数据应包含在单引号中。</li>
+<li>列可以插入空值[前提是该字段允许为空]，insert into table value (null)</li>
+<li>insert into tab name (列名..) values (),),() 形式添加多条记录</li>
+<li>如果是给表中的所有字段添加数据，可以不写前面的字段名称</li>
+<li>默认值的使用，当不给某个字段值时，如果有默认值就会添加，否则报错</li>
+</ol>
+<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20update.jpg"></p>
+<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20delete.jpg"></p>
+<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><p>1. </p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQLselect1.jpg"></p>
+<p>准备：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>,</span><br><span class="line">`name` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">chinese <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span>,</span><br><span class="line">English <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span>,</span><br><span class="line">Math <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span> </span><br><span class="line"> );</span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">&#x27;曹志&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">2</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="number">89</span>,<span class="number">78</span>,<span class="number">86</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">3</span>,<span class="string">&#x27;李四&#x27;</span>,<span class="number">76</span>,<span class="number">87</span>,<span class="number">56</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">4</span>,<span class="string">&#x27;王五&#x27;</span>,<span class="number">87</span>,<span class="number">56</span>,<span class="number">76</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">5</span>,<span class="string">&#x27;熊大&#x27;</span>,<span class="number">81</span>,<span class="number">83</span>,<span class="number">80</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">6</span>,<span class="string">&#x27;熊二&#x27;</span>,<span class="number">71</span>,<span class="number">72</span>,<span class="number">73</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">7</span>,<span class="string">&#x27;Tom&#x27;</span>,<span class="number">7</span>,<span class="number">74</span>,<span class="number">75</span>);</span><br></pre></td></tr></table></figure>
+
+<p>select：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询表中所有学生的信息</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student;</span><br><span class="line"># 查询表中所有学生的姓名和对应的英语成绩</span><br><span class="line"><span class="keyword">select</span> `name`,English <span class="keyword">from</span> student;</span><br><span class="line"># 过滤表中重复数据 <span class="keyword">distinct</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="operator">*</span> <span class="keyword">from</span> student;</span><br></pre></td></tr></table></figure>
+
+<p>2. </p>
+<p>使用表达式对查询的列进行运算</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20select2-1.jpg"></p>
+<p>在select语句中可使用as语句</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20select2-2.jpg"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 统计每个学生的总分</span><br><span class="line"><span class="keyword">SELECT</span> `name`, (English<span class="operator">+</span>Math<span class="operator">+</span>chinese) <span class="keyword">FROM</span> student;</span><br><span class="line"># 在所有学生总分加十分的情况</span><br><span class="line"><span class="keyword">SELECT</span> `name`, (English <span class="operator">+</span> Math <span class="operator">+</span> chinese <span class="operator">+</span> <span class="number">10</span>) <span class="keyword">FROM</span> student;</span><br><span class="line"># 使用别名表示学生分数</span><br><span class="line"><span class="keyword">SELECT</span> `name`, (English <span class="operator">+</span> Math <span class="operator">+</span> chinese <span class="operator">+</span> <span class="number">10</span>) <span class="keyword">AS</span> `total` <span class="keyword">FROM</span> student;</span><br></pre></td></tr></table></figure>
+
+<p>3. </p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20select3-1.jpg"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 查询姓名为赵云的学生成绩</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> `name` <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"># 查询英语成绩大于<span class="number">90</span>分的同学</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student </span><br><span class="line">	<span class="keyword">WHERE</span> English <span class="operator">&gt;</span> <span class="number">90</span>;</span><br><span class="line"># 查询总分大于<span class="number">200</span>分的所有同学</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> (English<span class="operator">+</span>Math<span class="operator">+</span>chinese) <span class="operator">&gt;</span> <span class="number">200</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 查询math大于<span class="number">60</span> 并且(<span class="keyword">AND</span>) id大于<span class="number">90</span>的学生成绩</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> Math <span class="operator">&gt;</span> <span class="number">60</span> <span class="keyword">AND</span> id <span class="operator">&gt;</span> <span class="number">90</span>;</span><br><span class="line"># 查询英语成绩大于语文成绩的同学</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span><span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> English <span class="operator">&gt;</span> chinese;</span><br><span class="line"># 查询总分大于<span class="number">200</span>分 并且 数学成绩小于等于语文成绩，姓曹的学生.</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student </span><br><span class="line">	<span class="keyword">WHERE</span> (English<span class="operator">+</span>Math<span class="operator">+</span>chinese) <span class="operator">&gt;</span> <span class="number">200</span> <span class="keyword">AND</span> Math <span class="operator">&lt;=</span> chinese <span class="keyword">AND</span> `name` <span class="keyword">LIKE</span> <span class="string">&#x27;曹%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ol>
+<li><p>合计&#x2F;统计函数</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20count.jpg"></p>
+<p>–&gt; 返回行的总数</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 函数</span><br><span class="line"><span class="comment">-- 合计函数</span></span><br><span class="line"><span class="comment">-- 统计一个班级共有多少学生</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> student;</span><br><span class="line"><span class="comment">-- 统计数学成绩大于90的学生有多少个</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> Math <span class="operator">&gt;</span> <span class="number">90</span>;</span><br><span class="line"><span class="comment">-- 统计总分大于250的人数有多少</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> (English <span class="operator">+</span> Math <span class="operator">+</span> chinese) <span class="operator">&gt;</span> <span class="number">250</span>;</span><br><span class="line"><span class="comment">-- count(*)和count(列)的区别</span></span><br><span class="line"><span class="comment">-- count(*) 返回满足条件的记录的行数</span></span><br><span class="line"><span class="comment">-- count(列): 统计满足条件的某列有多少个，但是会排除 为null</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>sum</li>
+</ol>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/sql%20sum.jpg"></p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20sum%E7%9A%84%E4%BD%BF%E7%94%A8.jpg"></p>
+<ol start="3">
+<li>avg</li>
+</ol>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20avg.jpg"></p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20AVG%E7%9A%84%E4%BD%BF%E7%94%A8.jpg"></p>
+<ol start="4">
+<li>合计函数</li>
+</ol>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20min%E3%80%81max.jpg"></p>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/sql%20min%E3%80%81max%E7%9A%84%E4%BD%BF%E7%94%A8.jpg"></p>
+<ol start="5">
+<li>group by</li>
+</ol>
+<p><img src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20group%20by.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://czlifetime.github.io">活在当下</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://czlifetime.github.io/2023/08/20/MySQL/">http://czlifetime.github.io/2023/08/20/MySQL/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://czlifetime.github.io" target="_blank">活在当下的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/czlifetime/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/czlifetime/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/08/18/Java%E7%BD%91%E7%BB%9C/" title="Java网络"><img class="cover" src= "https://cdn.jsdelivr.net/gh/czlifetime/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/czlifetime/img/Java.jpg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/czlifetime/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java网络</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%9B%E9%80%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看、删除数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.4.</span> <span class="toc-text">备份恢复数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-amp-amp-%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除&amp;&amp;修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%88%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">MySql数据类型(列类型)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">列类型的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bit"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">bit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0%E5%9E%8B"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">小数型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">日期</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRUD-create%E3%80%81read%E3%80%81update%E3%80%81delete"><span class="toc-number">1.4.</span> <span class="toc-text">CRUD(create、read、update、delete)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Insert"><span class="toc-number">1.4.1.</span> <span class="toc-text">Insert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update"><span class="toc-number">1.4.2.</span> <span class="toc-text">Update</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete"><span class="toc-number">1.4.3.</span> <span class="toc-text">Delete</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Select"><span class="toc-number">1.4.4.</span> <span class="toc-text">Select</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By 活在当下</div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://blog.czlifetime.eu.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://unpkg.com/hexo-theme-butterfly@4.8.5/source/js/utils.js"></script><script src="https://unpkg.com/hexo-theme-butterfly@4.8.5/source/js/main.js"></script><script src="https://unpkg.com/hexo-theme-butterfly@4.8.5/source/js/tw_cn.js"></script><script src="https://unpkg.com/@fancyapps/ui@5.0.17/dist/fancybox/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload@17.8.3/dist/lazyload.iife.min.js"></script><script src="https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    btf.addModeChange('mermaid', () => {
+      window.runMermaid()
+    })
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.czlifetime.eu.org/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.czlifetime.eu.org/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.textContent = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://unpkg.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://unpkg.com/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://unpkg.com/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://unpkg.com/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://unpkg.com/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "660b78d8-560b-4097-b2f6-7667753c4d50";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (true) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="https://unpkg.com/hexo-theme-butterfly@4.8.5/source/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
