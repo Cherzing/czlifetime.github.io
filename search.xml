@@ -268,6 +268,108 @@
       </tags>
   </entry>
   <entry>
+    <title>JDBC</title>
+    <url>/2023/09/09/JDBC/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
+<h2 id="JDBC-入门"><a href="#JDBC-入门" class="headerlink" title="JDBC 入门"></a>JDBC 入门</h2><ol>
+<li><p>创建工程，导入jar包</p>
+</li>
+<li><p>注册驱动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取连接</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/jdbc_test&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;cz&quot;</span>;</span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>定义SQL语句</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update account set money = 2000 where id =1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取执行SQL对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> conn.createStatement();</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行SQL</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>处理返回结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>释放资源</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">statement.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="JDBC-API-详解"><a href="#JDBC-API-详解" class="headerlink" title="JDBC API 详解"></a>JDBC API 详解</h2><h3 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h3><ul>
+<li>作用<ul>
+<li>注册驱动</li>
+<li>获取数据库连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
+<li><p>作用</p>
+<ol>
+<li><p>获取执行SQL的对象</p>
+<ul>
+<li><p>普通执行SQL对象</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Statement <span class="title function_">createStatement</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>预编译SQL的执行SQL对象：防止SQL注入</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PreparedStatement <span class="title function_">prepareStatement</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行存储过程的对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CallableStatement <span class="title function_">prepaareCall</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>管理事务</p>
+<ul>
+<li><p>MySQL事务管理</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开启事务：<span class="keyword">BEGIN</span>；<span class="operator">/</span><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">提交事务：<span class="keyword">COMMIT</span>;</span><br><span class="line">回滚事务：<span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>JDBC事务管理</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">开启事务：setAutoCommit(<span class="type">boolean</span> autoCommit):<span class="literal">true</span>为自动提交；FALSE为手动提交，几位开始事务</span><br><span class="line">提交事务:commit();</span><br><span class="line">回滚事务:rollback();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><ul>
+<li><p>作用：</p>
+<ol>
+<li><p>执行SQL语句</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20statement.jpg"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><ul>
+<li><p>封装了DQL语句查询结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20resultset.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20result%E6%96%B9%E6%B3%95.jpg"></p>
+</li>
+</ul>
+<h3 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h3><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+<h2 id="据库连接池"><a href="#据库连接池" class="headerlink" title="据库连接池"></a>据库连接池</h2><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>I/O流</title>
     <url>/2023/06/23/IO%E6%B5%81/</url>
     <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
@@ -488,10 +590,9 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC</title>
-    <url>/2023/09/09/JDBC/</url>
-    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><p>是java语言操作关系型数据库的一套API</p>
-]]></content>
+    <title>JavaWeb</title>
+    <url>/2023/09/09/JavaWeb/</url>
+    <content><![CDATA[]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -1455,6 +1556,43 @@ public interface English &#123;
 </blockquote>
 ]]></content>
       <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代理模式</title>
+    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
+<ul>
+<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
+<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
+<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
+</ul>
+<p><strong>例如：</strong></p>
+<p>使用黄牛代理，帮我买演唱会门票</p>
+<blockquote>
+<p>Human.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Me.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>HuangNiu.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>test.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
+]]></content>
+      <tags>
         <tag>Java</tag>
       </tags>
   </entry>
@@ -1641,43 +1779,6 @@ public interface English &#123;
 ]]></content>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代理模式</title>
-    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
-<ul>
-<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
-<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
-<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
-</ul>
-<p><strong>例如：</strong></p>
-<p>使用黄牛代理，帮我买演唱会门票</p>
-<blockquote>
-<p>Human.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Me.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>HuangNiu.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>test.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
