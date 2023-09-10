@@ -370,229 +370,88 @@
       </tags>
   </entry>
   <entry>
-    <title>I/O流</title>
-    <url>/2023/06/23/IO%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
-<p>保存数据的地方</p>
-<p>2、 文件流</p>
-<ul>
-<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
-<li>输入流：将磁盘中的文件写入内存</li>
-<li>输出流：将内存中的内容写入磁盘</li>
-</ul>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
-<li>创建文件对象相关的构造器和方法<ul>
-<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
-<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
-<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
-<li>createNewFile创建新文件</li>
-</ul>
-</li>
-<li>获取文件的相关信息<ul>
-<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
-</ul>
-</li>
-<li>目录操作和文件删除<ul>
-<li>创建一级目录：mkdir</li>
-<li>创建多级目录：mkdirs</li>
-<li>删除空目录或文件：delete</li>
-</ul>
-</li>
-</ul>
-<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
-<li><p>Java IO原理</p>
-<ol>
-<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
-<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
-<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
-</ol>
-</li>
-<li><p>流的分类</p>
-<ol>
-<li><p>操作数据单元：字节流、字符流</p>
-</li>
-<li><p>数据流的流向：输入流、输出流</p>
-</li>
-<li><p>流的角色：节点流、处理流(字符流)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
-<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
-<li>关系图</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
-<li>相关方法<ul>
-<li><code>new FileReader(File/String)</code></li>
-<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
-<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li><code>new String(char[])</code>:将char[]转成String</li>
-<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
-</ul>
-</li>
-</ol>
-<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
-<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
-<li>常用方法<ul>
-<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
-<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
-<li>write(int):写入单个字符</li>
-<li>write(char[]):写入指定数组</li>
-<li>write(char[],off,len):写入指定数组的指定部分</li>
-<li>writer(string):写入指定字符串</li>
-<li>writer(string,off,len):写入指定字符串放入指定部分</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li>String类</li>
-<li>toCharArray:将String转换成char[]</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<ul>
-<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
-</ul>
-<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
-<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
-<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
-<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
-<li>访问管道、访问字符流</li>
-</ul>
-</li>
-<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
-<li>节点流与处理流的区别与联系<ul>
-<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
-<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
-<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
-<ol start="4">
-<li><p>标准输入输出流</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类型(编译类型)</th>
-<th>类型(运行类型)</th>
-<th>默认设备</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>System.in标准输入</td>
-<td>InputStream</td>
-<td>BufferedInputStream</td>
-<td>键盘</td>
-</tr>
-<tr>
-<td>System.out标准输出</td>
-<td>PrintStream</td>
-<td>PrintStream</td>
-<td>显示器</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
-<ul>
-<li>解决文件乱码问题</li>
-</ul>
-</li>
-<li><p>打印流-PrintStream和PrintWriter</p>
-<ul>
-<li>打印流只有输出流</li>
-<li>PrintStream(字节流)</li>
-<li>PrintWriter(字符流)</li>
-</ul>
-</li>
-</ol>
-<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
-<li>序列化：在保存数据时，保存数据的值和数据类型</li>
-<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
-<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
-<li>Serializable:标记接口，没有方法</li>
-<li>Externalizable:该接口有方法需要实现</li>
-</ul>
-</li>
-</ol>
-<h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2><ol>
-<li>专门用于读取配置文件的的集合类<ul>
-<li>配置文件格式：键&#x3D;值</li>
-</ul>
-</li>
-<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
-<li>常见方法：<ul>
-<li>load：加载配置文件的键值对到Properties对象</li>
-<li>list：将数据显示到指定设备</li>
-<li>getProperty(key):根据键获取值</li>
-<li>setProperty(key,value):设置键值对到Properties对象</li>
-<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
-</ul>
-</li>
-</ol>
-<p>作用：存储和读取数据</p>
-<p>I：input</p>
-<p>O：output</p>
-<p>流：像水流一样传输数据</p>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/img/IO%E6%B5%81.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
-<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行结果：a</p>
-<ul>
-<li>创建对象细节：<ul>
-<li>参数是字符串表示的路径或者是File对象都是可以的</li>
-<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
-<li>如果文件已经存在,则会清空文件</li>
-</ul>
-</li>
-<li>写出数据细节：<ul>
-<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
-</ul>
-</li>
-<li>释放资源细节：<ul>
-<li>每次使用完流之后都要释放资源</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>创建对象细节：如果文件不存在，直接报错</p>
-</li>
-<li><p>读取数据细节：</p>
-<ul>
-<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
-<li>读到文件末尾，read方法返回-1</li>
-</ul>
-</li>
-<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
-</li>
-</ul>
-<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaWeb</title>
     <url>/2023/09/09/JavaWeb/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有</p>
+<ul>
+<li>提供了一套标准化的项目结构</li>
+<li>提供了一套标准化的构建流程 (编译，测试，打包，发布……)</li>
+<li>提供了一套依赖管理机制</li>
+</ul>
+<p><strong>常用命令</strong></p>
+<ul>
+<li>compile</li>
+<li>clean </li>
+<li>test</li>
+<li>package</li>
+<li>install</li>
+</ul>
+<h3 id="maven坐标"><a href="#maven坐标" class="headerlink" title="maven坐标"></a>maven坐标</h3><ul>
+<li>是资源的唯一标识</li>
+<li>使用坐标来定义项目或引入项目中的依赖</li>
+</ul>
+<p><strong>组成</strong></p>
+<ul>
+<li>groupID：定义当前Maven项目隶属组织名称</li>
+<li>artifactID：定义当前Maven项目名称</li>
+<li>version：定义当前项目版本号</li>
+</ul>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a><strong>依赖</strong></h3><p>需要使用到的相关jar包</p>
+<p><strong>依赖范围</strong></p>
+<p>&lt;scope&gt;&lt;&#x2F;scope&gt;</p>
+<p>通过设置坐标的依赖范围（scope），可以设置对应jar包的作用范围：编译环境、测试环境、运行环境</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/maven%20%E4%BE%9D%E8%B5%96%E8%8C%83%E5%9B%B4.jpg"></p>
+<p><strong>排除依赖</strong></p>
+<p>&lt;exclusiom&gt;&lt;&#x2F;exclusion&gt;</p>
+<p><strong>生命周期</strong></p>
+<p>3套相互独立的生命周期</p>
+<ul>
+<li>clean：清理工作</li>
+<li>default:核心工作(编译、测试、打包、安装、部署)</li>
+<li>site:生成报告。发布站点</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/Maven%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E9%98%B6%E6%AE%B5.jpg"></p>
+<blockquote>
+<p>在同一套生命周期中，当运行后面的阶段时，前面的阶段都会运行</p>
+</blockquote>
+<h3 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h3><p><strong><a href="https://mybatis.org/mybatis-3/zh/getting-started.html">MyBatis教程</a></Strong></p>
+<p>是一款优秀的持久层框架，用于简化JDBC开发</p>
+<p><strong>持久层</strong></p>
+<ul>
+<li>负责将数据保存大数据库的那一层代码</li>
+<li>JavaEE三层架构：表现层、业务层、持久层</li>
+</ul>
+<p><strong>框架</strong></p>
+<ul>
+<li>是一个半成品软件，是一套可重用、通用的、软件基础代码模型</li>
+<li>在框架的基础上构建软件更加高效、规范、通用、可拓展。</li>
+</ul>
+<h4 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.lifetime.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.io.Resources;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//1. 加载核心配置文件，获取SQLSessionFactory对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">resource</span> <span class="operator">=</span> <span class="string">&quot;mybatis-config.xml&quot;</span>;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> Resources.getResourceAsStream(resource);</span><br><span class="line">        <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SqlSessionFactoryBuilder</span>().build(inputStream);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取SQLSession对象</span></span><br><span class="line">        <span class="type">SqlSession</span> <span class="variable">sqlSession</span> <span class="operator">=</span> sqlSessionFactory.openSession();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 执行SQL语句</span></span><br><span class="line">        List&lt;User&gt; users = sqlSession.selectList(<span class="string">&quot;test.selectAll&quot;</span>);</span><br><span class="line">        System.out.println(users);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//4. 释放资源</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Mapper代理开发"><a href="#Mapper代理开发" class="headerlink" title="Mapper代理开发"></a>Mapper代理开发</h4><p><strong>目的</strong></p>
+<ul>
+<li>解决原生方式中的硬编码</li>
+<li>简化后期执行SQL</li>
+</ul>
+<p><strong>Mapper代理步骤：</strong></p>
+<ol>
+<li>定义SQL映射文件同名的Map普洱接口，并且将Mapper接口和SQL映射文件方式在同一目录下</li>
+<li>设置SQL映射文件的namespace属性为Mapper接口全限定名</li>
+<li>在Mapper接口中定义方法，方法名就是SQL映射文件中SQL语句的ID，并保持参数类型和返回值类型一致</li>
+<li>编码：<ol>
+<li>通过SqlSession的getMapper方法获取Mapper接口的代理对象</li>
+<li>调用对应方法完成SQL的执行</li>
+</ol>
+</li>
+</ol>
+<h4 id="MyBatis核心配置文件"><a href="#MyBatis核心配置文件" class="headerlink" title="MyBatis核心配置文件"></a>MyBatis核心配置文件</h4><h4 id="配置文件完成增删改查"><a href="#配置文件完成增删改查" class="headerlink" title="配置文件完成增删改查"></a>配置文件完成增删改查</h4><h4 id="注解完成增删改查"><a href="#注解完成增删改查" class="headerlink" title="注解完成增删改查"></a>注解完成增删改查</h4><h4 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h4><h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><h3 id="SpringBootWeb入门"><a href="#SpringBootWeb入门" class="headerlink" title="SpringBootWeb入门"></a>SpringBootWeb入门</h3><ol>
+<li>创建springboot工程，并勾选web开发相关依赖。</li>
+<li>定义HelloController类，添加方法 hello，并添加注解</li>
+<li>运行测试</li>
+</ol>
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><h3 id="Web服务器-Tomcat"><a href="#Web服务器-Tomcat" class="headerlink" title="Web服务器-Tomcat"></a>Web服务器-Tomcat</h3>]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -1560,43 +1419,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>代理模式</title>
-    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
-<ul>
-<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
-<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
-<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
-</ul>
-<p><strong>例如：</strong></p>
-<p>使用黄牛代理，帮我买演唱会门票</p>
-<blockquote>
-<p>Human.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Me.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>HuangNiu.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>test.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从零开始搭建个人博客</title>
     <url>/2023/05/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
@@ -1782,42 +1604,40 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
+    <title>代理模式</title>
+    <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
+<ul>
+<li>它可以实现对目标对象的访问控制，比如说只有满足一定条件的用户才能调用目标对象的方法。</li>
+<li>它可以实现对目标对象的功能扩展，比如说在目标对象的方法执行前后添加一些额外的逻辑，比如日志、缓存、事务等。</li>
+<li>它可以实现对目标对象的解耦，比如说将目标对象和调用者分离，使得调用者不需要知道目标对象的具体实现细节。</li>
 </ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
-</ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+<p><strong>例如：</strong></p>
+<p>使用黄牛代理，帮我买演唱会门票</p>
+<blockquote>
+<p>Human.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Human</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Me.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Me</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我看演唱会&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>HuangNiu.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HuangNiu</span> <span class="keyword">implements</span> <span class="title class_">Human</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Me me;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我吃饭&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">lookConcert</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.bug();</span><br><span class="line">        me.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bug</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;黄牛替我买演唱会门票&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>test.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Thread.StaticProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">HuangNiu</span> <span class="variable">huangNiu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HuangNiu</span>();</span><br><span class="line">        huangNiu.lookConcert();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>未完待续…</p>
+]]></content>
       <tags>
-        <tag>数据结构</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1874,81 +1694,40 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>排序</title>
-    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
-<li><strong>排序</strong>：从大到小或从小到大排序</li>
-<li><strong>排序的稳定性</strong>：<ul>
-<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
-<li>不稳定：相反</li>
-</ul>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
 </li>
-<li>排序算法的分类：<ul>
-<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
-<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
-</ul>
-</li>
-</ol>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
-<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
-<p>算法描述：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法分析：</p>
-<ul>
-<li><p>时间复杂度：</p>
-<p>最好的情况：比较次数n-1次</p>
-<p>最坏的情况：$$O(n^2)$$</p>
-<p>平均时间复杂度：$$O(n^2)$$</p>
-</li>
-<li><p>空间复杂度：$$O(1)$$</p>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
 </li>
 </ul>
-<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
-<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
-<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
-<p><strong>算法性能分析</strong>：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
-<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
-<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
-<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法性能分析：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：</p>
-<p>最好：$$O(1)$$</p>
-<p>最差：$$O(n^2)$$</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
-<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^2)$$</p>
-<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
-<ul>
-<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
-<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
-<p>大根堆：根&gt;&#x3D;左右节点</p>
-<p>小根堆：根&lt;&#x3D;左右节点</p>
-<ol>
-<li><p>建立大根堆</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
 </li>
-</ol>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
@@ -2030,6 +1809,86 @@ public interface English &#123;
 <p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
 <p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
 ]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序</title>
+    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
+<li><strong>排序</strong>：从大到小或从小到大排序</li>
+<li><strong>排序的稳定性</strong>：<ul>
+<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
+<li>不稳定：相反</li>
+</ul>
+</li>
+<li>排序算法的分类：<ul>
+<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
+<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
+</ul>
+</li>
+</ol>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
+<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
+<p>算法描述：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法分析：</p>
+<ul>
+<li><p>时间复杂度：</p>
+<p>最好的情况：比较次数n-1次</p>
+<p>最坏的情况：$$O(n^2)$$</p>
+<p>平均时间复杂度：$$O(n^2)$$</p>
+</li>
+<li><p>空间复杂度：$$O(1)$$</p>
+</li>
+</ul>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
+<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
+<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
+<p><strong>算法性能分析</strong>：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
+<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
+<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
+<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法性能分析：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：</p>
+<p>最好：$$O(1)$$</p>
+<p>最差：$$O(n^2)$$</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
+<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^2)$$</p>
+<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
+<ul>
+<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
+<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
+<p>大根堆：根&gt;&#x3D;左右节点</p>
+<p>小根堆：根&lt;&#x3D;左右节点</p>
+<ol>
+<li><p>建立大根堆</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
+</li>
+</ol>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
@@ -2416,6 +2275,226 @@ public interface English &#123;
 ]]></content>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>I/O流</title>
+    <url>/2023/06/23/IO%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
+<p>保存数据的地方</p>
+<p>2、 文件流</p>
+<ul>
+<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
+<li>输入流：将磁盘中的文件写入内存</li>
+<li>输出流：将内存中的内容写入磁盘</li>
+</ul>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>创建文件对象相关的构造器和方法<ul>
+<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
+<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
+<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
+<li>createNewFile创建新文件</li>
+</ul>
+</li>
+<li>获取文件的相关信息<ul>
+<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
+</ul>
+</li>
+<li>目录操作和文件删除<ul>
+<li>创建一级目录：mkdir</li>
+<li>创建多级目录：mkdirs</li>
+<li>删除空目录或文件：delete</li>
+</ul>
+</li>
+</ul>
+<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
+<li><p>Java IO原理</p>
+<ol>
+<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
+<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
+<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
+</ol>
+</li>
+<li><p>流的分类</p>
+<ol>
+<li><p>操作数据单元：字节流、字符流</p>
+</li>
+<li><p>数据流的流向：输入流、输出流</p>
+</li>
+<li><p>流的角色：节点流、处理流(字符流)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
+<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
+<li>关系图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
+<li>相关方法<ul>
+<li><code>new FileReader(File/String)</code></li>
+<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
+<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li><code>new String(char[])</code>:将char[]转成String</li>
+<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
+</ul>
+</li>
+</ol>
+<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
+<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
+<li>常用方法<ul>
+<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
+<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
+<li>write(int):写入单个字符</li>
+<li>write(char[]):写入指定数组</li>
+<li>write(char[],off,len):写入指定数组的指定部分</li>
+<li>writer(string):写入指定字符串</li>
+<li>writer(string,off,len):写入指定字符串放入指定部分</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li>String类</li>
+<li>toCharArray:将String转换成char[]</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<ul>
+<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
+</ul>
+<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
+<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
+<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
+<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
+<li>访问管道、访问字符流</li>
+</ul>
+</li>
+<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
+<li>节点流与处理流的区别与联系<ul>
+<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
+<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
+<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
+<ol start="4">
+<li><p>标准输入输出流</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型(编译类型)</th>
+<th>类型(运行类型)</th>
+<th>默认设备</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>System.in标准输入</td>
+<td>InputStream</td>
+<td>BufferedInputStream</td>
+<td>键盘</td>
+</tr>
+<tr>
+<td>System.out标准输出</td>
+<td>PrintStream</td>
+<td>PrintStream</td>
+<td>显示器</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
+<ul>
+<li>解决文件乱码问题</li>
+</ul>
+</li>
+<li><p>打印流-PrintStream和PrintWriter</p>
+<ul>
+<li>打印流只有输出流</li>
+<li>PrintStream(字节流)</li>
+<li>PrintWriter(字符流)</li>
+</ul>
+</li>
+</ol>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
+<li>序列化：在保存数据时，保存数据的值和数据类型</li>
+<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
+<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
+<li>Serializable:标记接口，没有方法</li>
+<li>Externalizable:该接口有方法需要实现</li>
+</ul>
+</li>
+</ol>
+<h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2><ol>
+<li>专门用于读取配置文件的的集合类<ul>
+<li>配置文件格式：键&#x3D;值</li>
+</ul>
+</li>
+<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
+<li>常见方法：<ul>
+<li>load：加载配置文件的键值对到Properties对象</li>
+<li>list：将数据显示到指定设备</li>
+<li>getProperty(key):根据键获取值</li>
+<li>setProperty(key,value):设置键值对到Properties对象</li>
+<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
+</ul>
+</li>
+</ol>
+<p>作用：存储和读取数据</p>
+<p>I：input</p>
+<p>O：output</p>
+<p>流：像水流一样传输数据</p>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/img/IO%E6%B5%81.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：a</p>
+<ul>
+<li>创建对象细节：<ul>
+<li>参数是字符串表示的路径或者是File对象都是可以的</li>
+<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
+<li>如果文件已经存在,则会清空文件</li>
+</ul>
+</li>
+<li>写出数据细节：<ul>
+<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
+</ul>
+</li>
+<li>释放资源细节：<ul>
+<li>每次使用完流之后都要释放资源</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>创建对象细节：如果文件不存在，直接报错</p>
+</li>
+<li><p>读取数据细节：</p>
+<ul>
+<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
+<li>读到文件末尾，read方法返回-1</li>
+</ul>
+</li>
+<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
+</li>
+</ul>
+<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
