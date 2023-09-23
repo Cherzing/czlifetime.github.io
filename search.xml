@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML</title>
+    <url>/2023/09/22/HTML/</url>
+    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><ul>
+<li><p>文本输入框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span> = <span class="string">&quot;第一个输入框&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type="text" value = "第一个输入框"/>
+</li>
+<li><p>选择框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "checkbox"/>
+</li>
+<li><p>单选&#x2F;复选按钮</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;radio&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "radio"/>
+</li>
+<li><p>按钮</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;button&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "button"/>
+</li>
+<li><p>文件上传</p>
+<p>&lt;input type &#x3D; “file”&gt;</p>
+</li>
+<li><p>密码输入</p>
+<p>&lt;input type &#x3D; “password”&gt;</p>
+</li>
+<li><p>下拉框</p>
+<p><select><option>选择</option></select></p>
+</li>
+<li><p>超链接</p>
+<p><a href = https://czlifetime.eu.org>活在当下的主页</a></p>
+</li>
+<li><p>表格</p>
+<table>
+    <tr><td>1</td><td>2</td></tr>
+    <tr><td>3</td><td>4</td></tr>
+    <tr><td>5</td><td>6</td></tr>
+</table>
+</li>
+<li><p>图片</p>
+<p>&lt;img src &#x3D; “…”&gt;</p>
+</li>
+<li><p>文本域</p>
+<textarea rows = “3" cols = “red"></textarea>
+</li>
+<li><p>加粗</p>
+<p><b></b></p>
+</li>
+<li><p>换行</p>
+<br>
+</li>
+<li><p>段落</p>
+<p>This is a paragraph.</p>
+
+<p>This is another paragraph.</p>
+</li>
+<li><p>注释</p>
+<!-- 这里是注释-->
+</li>
+<li><p>框架</p>
+<iframe> src = “https://czlifetime.eu.org” width = “200” height = “200”></it=frame>
+</li>
+<li><p>div 元素</p>
+<body>
+
+<div class = “head">
+    元素信息
+</div>
+
+
+
+</body></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++模板</title>
     <url>/2023/07/31/C++%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板的概念"><a href="#模板的概念" class="headerlink" title="模板的概念"></a>模板的概念</h2><p>模板就是建立<strong>通用的模具</strong>，大大<b>提高复用性</b></p>
@@ -268,6 +350,226 @@
       </tags>
   </entry>
   <entry>
+    <title>I/O流</title>
+    <url>/2023/06/23/IO%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
+<p>保存数据的地方</p>
+<p>2、 文件流</p>
+<ul>
+<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
+<li>输入流：将磁盘中的文件写入内存</li>
+<li>输出流：将内存中的内容写入磁盘</li>
+</ul>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
+<li>创建文件对象相关的构造器和方法<ul>
+<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
+<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
+<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
+<li>createNewFile创建新文件</li>
+</ul>
+</li>
+<li>获取文件的相关信息<ul>
+<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
+</ul>
+</li>
+<li>目录操作和文件删除<ul>
+<li>创建一级目录：mkdir</li>
+<li>创建多级目录：mkdirs</li>
+<li>删除空目录或文件：delete</li>
+</ul>
+</li>
+</ul>
+<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
+<li><p>Java IO原理</p>
+<ol>
+<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
+<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
+<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
+</ol>
+</li>
+<li><p>流的分类</p>
+<ol>
+<li><p>操作数据单元：字节流、字符流</p>
+</li>
+<li><p>数据流的流向：输入流、输出流</p>
+</li>
+<li><p>流的角色：节点流、处理流(字符流)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
+<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
+<li>关系图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
+<li>相关方法<ul>
+<li><code>new FileReader(File/String)</code></li>
+<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
+<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li><code>new String(char[])</code>:将char[]转成String</li>
+<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
+</ul>
+</li>
+</ol>
+<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
+<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
+<li>常用方法<ul>
+<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
+<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
+<li>write(int):写入单个字符</li>
+<li>write(char[]):写入指定数组</li>
+<li>write(char[],off,len):写入指定数组的指定部分</li>
+<li>writer(string):写入指定字符串</li>
+<li>writer(string,off,len):写入指定字符串放入指定部分</li>
+</ul>
+</li>
+<li>相关API<ul>
+<li>String类</li>
+<li>toCharArray:将String转换成char[]</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<ul>
+<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
+</ul>
+<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
+<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
+<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
+<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
+<li>访问管道、访问字符流</li>
+</ul>
+</li>
+<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
+<li>节点流与处理流的区别与联系<ul>
+<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
+<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
+<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
+<ol start="4">
+<li><p>标准输入输出流</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型(编译类型)</th>
+<th>类型(运行类型)</th>
+<th>默认设备</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>System.in标准输入</td>
+<td>InputStream</td>
+<td>BufferedInputStream</td>
+<td>键盘</td>
+</tr>
+<tr>
+<td>System.out标准输出</td>
+<td>PrintStream</td>
+<td>PrintStream</td>
+<td>显示器</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
+<ul>
+<li>解决文件乱码问题</li>
+</ul>
+</li>
+<li><p>打印流-PrintStream和PrintWriter</p>
+<ul>
+<li>打印流只有输出流</li>
+<li>PrintStream(字节流)</li>
+<li>PrintWriter(字符流)</li>
+</ul>
+</li>
+</ol>
+<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
+<li>序列化：在保存数据时，保存数据的值和数据类型</li>
+<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
+<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
+<li>Serializable:标记接口，没有方法</li>
+<li>Externalizable:该接口有方法需要实现</li>
+</ul>
+</li>
+</ol>
+<h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2><ol>
+<li>专门用于读取配置文件的的集合类<ul>
+<li>配置文件格式：键&#x3D;值</li>
+</ul>
+</li>
+<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
+<li>常见方法：<ul>
+<li>load：加载配置文件的键值对到Properties对象</li>
+<li>list：将数据显示到指定设备</li>
+<li>getProperty(key):根据键获取值</li>
+<li>setProperty(key,value):设置键值对到Properties对象</li>
+<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
+</ul>
+</li>
+</ol>
+<p>作用：存储和读取数据</p>
+<p>I：input</p>
+<p>O：output</p>
+<p>流：像水流一样传输数据</p>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/img/IO%E6%B5%81.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：a</p>
+<ul>
+<li>创建对象细节：<ul>
+<li>参数是字符串表示的路径或者是File对象都是可以的</li>
+<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
+<li>如果文件已经存在,则会清空文件</li>
+</ul>
+</li>
+<li>写出数据细节：<ul>
+<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
+</ul>
+</li>
+<li>释放资源细节：<ul>
+<li>每次使用完流之后都要释放资源</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>创建对象细节：如果文件不存在，直接报错</p>
+</li>
+<li><p>读取数据细节：</p>
+<ul>
+<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
+<li>读到文件末尾，read方法返回-1</li>
+</ul>
+</li>
+<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
+</li>
+</ul>
+<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JDBC</title>
     <url>/2023/09/09/JDBC/</url>
     <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
@@ -370,6 +672,22 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript</title>
+    <url>/2023/09/22/JavaScript/</url>
+    <content><![CDATA[<p>JavaScript是可插入HTML 页面的编程代码，用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用</p>
+<p>JavaScript插入HTML页面后，可由所有的浏览器执行</p>
+<ul>
+<li>轻量级、功能强大编程语言</li>
+<li>因特网上最流行的脚本语言</li>
+</ul>
+<p>脚本位置：</p>
+<ul>
+<li>位于\<script>\与\</script>\标签中</li>
+<li><body>和<head>中</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>JavaWeb</title>
     <url>/2023/09/09/JavaWeb/</url>
     <content><![CDATA[<h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有</p>
@@ -451,7 +769,57 @@
 <li>定义HelloController类，添加方法 hello，并添加注解</li>
 <li>运行测试</li>
 </ol>
-<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><h3 id="Web服务器-Tomcat"><a href="#Web服务器-Tomcat" class="headerlink" title="Web服务器-Tomcat"></a>Web服务器-Tomcat</h3>]]></content>
+<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p><code>Hyper Text Transfer Protocol</code>，超文本传输协议，规定了浏览器和服务器之间数据传输的规则</p>
+<p>特点：</p>
+<ul>
+<li>基于TCP协议：面向连接，安全</li>
+<li>基于请求-响应模型的：一次请求对应一次相应</li>
+<li>HTTP协议是无状态的协议：对于事务处理没有记忆能力<ul>
+<li>缺点：多次请求之间不能共享数据</li>
+<li>优点：速度快</li>
+</ul>
+</li>
+</ul>
+<h4 id="请求协议"><a href="#请求协议" class="headerlink" title="请求协议"></a>请求协议</h4><blockquote>
+<p>请求数据的格式</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/http%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E6%A1%88%E4%BE%8B.jpg"></p>
+<p>还有请求体</p>
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th>请求的主机名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>User-Agent</td>
+<td>浏览器版本</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>表示浏览器能接收到的资源类型</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>表示浏览器偏好的语言，服务器可以据此返回不同语言的网页</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>表示浏览器可以支持的压缩类型</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>请求主体的数据类型</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>请求主体的大小</td>
+</tr>
+</tbody></table>
+<h4 id="相应协议"><a href="#相应协议" class="headerlink" title="相应协议"></a>相应协议</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/http%E7%9B%B8%E5%BA%94%E6%A0%BC%E5%BC%8F.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/http%E7%9B%B8%E5%BA%94%E5%A4%B4.jpg"></p>
+<h4 id="协议解析"><a href="#协议解析" class="headerlink" title="协议解析"></a>协议解析</h4><h3 id="Web服务器-Tomcat"><a href="#Web服务器-Tomcat" class="headerlink" title="Web服务器-Tomcat"></a>Web服务器-Tomcat</h3>]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -1087,6 +1455,67 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>Junit</title>
+    <url>/2023/09/13/Junit/</url>
+    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
+<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
+<ul>
+<li>Eclipse</li>
+<li>Ant</li>
+<li>Maven</li>
+</ul>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
+<ul>
+<li>Fixtures</li>
+<li>测试套件</li>
+<li>测试运行器</li>
+<li>JUnit 类</li>
+</ul>
+<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
+<ul>
+<li>setUp() 方法，在每次测试调用之前运行。</li>
+<li>tearDown() 方法，在每个测试方法之后运行。</li>
+</ul>
+<p>让我们看一个例子 -</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
+<ul>
+<li><strong>Assert</strong> - 包含一组断言方法。</li>
+<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
+<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/2023/08/20/MySQL/</url>
     <content><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>服务启动与关闭：<code>net start mysql</code>,<code>net stop mysql</code></p>
@@ -1419,6 +1848,37 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>web自动化测试</title>
+    <url>/2023/09/21/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="web自动化测试"><a href="#web自动化测试" class="headerlink" title="web自动化测试"></a>web自动化测试</h1><h2 id="web自动化入门"><a href="#web自动化入门" class="headerlink" title="web自动化入门"></a>web自动化入门</h2><h3 id="认识自动化及自动化测试"><a href="#认识自动化及自动化测试" class="headerlink" title="认识自动化及自动化测试"></a>认识自动化及自动化测试</h3><p>自动化：</p>
+<ul>
+<li>机器代替人工自动完成指定目标的过程</li>
+</ul>
+<p>自动化测试：</p>
+<ul>
+<li>让程序代替人工取验证系统功能的过程</li>
+</ul>
+<p>自动化测试解决问题：</p>
+<ul>
+<li>回归测试</li>
+<li>压力测试</li>
+<li>兼容性测试</li>
+<li>提高测试效率，保证产品质量</li>
+</ul>
+<p>自动化测试的优点：</p>
+<ul>
+<li>较少的时间内可以运行更多的测试用例</li>
+<li>自动化脚本可重复运行</li>
+<li>减少人为错误</li>
+<li>克服手工测试的局限性</li>
+</ul>
+<h3 id="自动化测试工具选择"><a href="#自动化测试工具选择" class="headerlink" title="自动化测试工具选择"></a>自动化测试工具选择</h3><p>Selenium</p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h2 id="Selenium-API操作"><a href="#Selenium-API操作" class="headerlink" title="Selenium-API操作"></a>Selenium-API操作</h2><h3 id="元素定位方式"><a href="#元素定位方式" class="headerlink" title="元素定位方式"></a>元素定位方式</h3><h3 id="元素和浏览器的操作方法"><a href="#元素和浏览器的操作方法" class="headerlink" title="元素和浏览器的操作方法"></a>元素和浏览器的操作方法</h3><h3 id="鼠标和键盘操作"><a href="#鼠标和键盘操作" class="headerlink" title="鼠标和键盘操作"></a>鼠标和键盘操作</h3><h3 id="元素等待"><a href="#元素等待" class="headerlink" title="元素等待"></a>元素等待</h3><h3 id="HTML特殊元素处理"><a href="#HTML特殊元素处理" class="headerlink" title="HTML特殊元素处理"></a>HTML特殊元素处理</h3><h3 id="窗口截图"><a href="#窗口截图" class="headerlink" title="窗口截图"></a>窗口截图</h3><h3 id="验证码处理"><a href="#验证码处理" class="headerlink" title="验证码处理"></a>验证码处理</h3><h2 id="UnitTest框架"><a href="#UnitTest框架" class="headerlink" title="UnitTest框架"></a>UnitTest框架</h2><h3 id="UnitTest基本使用"><a href="#UnitTest基本使用" class="headerlink" title="UnitTest基本使用"></a>UnitTest基本使用</h3><h3 id="UnitTest断言"><a href="#UnitTest断言" class="headerlink" title="UnitTest断言"></a>UnitTest断言</h3><h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><h3 id="生成HTML测试报告"><a href="#生成HTML测试报告" class="headerlink" title="生成HTML测试报告"></a>生成HTML测试报告</h3><h2 id="PO测试"><a href="#PO测试" class="headerlink" title="PO测试"></a>PO测试</h2><h3 id="方法封装"><a href="#方法封装" class="headerlink" title="方法封装"></a>方法封装</h3><h3 id="PO模式介绍"><a href="#PO模式介绍" class="headerlink" title="PO模式介绍"></a>PO模式介绍</h3><h3 id="PO模式实战"><a href="#PO模式实战" class="headerlink" title="PO模式实战"></a>PO模式实战</h3><h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><h3 id="JSON读写"><a href="#JSON读写" class="headerlink" title="JSON读写"></a>JSON读写</h3><h3 id="数据驱动介绍"><a href="#数据驱动介绍" class="headerlink" title="数据驱动介绍"></a>数据驱动介绍</h3><h3 id="数据驱动实战"><a href="#数据驱动实战" class="headerlink" title="数据驱动实战"></a>数据驱动实战</h3><h2 id="日志采集"><a href="#日志采集" class="headerlink" title="日志采集"></a>日志采集</h2><h3 id="日志相关概念"><a href="#日志相关概念" class="headerlink" title="日志相关概念"></a>日志相关概念</h3><h3 id="日志的基本方法"><a href="#日志的基本方法" class="headerlink" title="日志的基本方法"></a>日志的基本方法</h3><h3 id="日志的高级方法"><a href="#日志的高级方法" class="headerlink" title="日志的高级方法"></a>日志的高级方法</h3><h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="自动化测试流程"><a href="#自动化测试流程" class="headerlink" title="自动化测试流程"></a>自动化测试流程</h3><h3 id="项目实战演练"><a href="#项目实战演练" class="headerlink" title="项目实战演练"></a>项目实战演练</h3>]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始搭建个人博客</title>
     <url>/2023/05/19/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="从零开始搭建个人博客"><a href="#从零开始搭建个人博客" class="headerlink" title="从零开始搭建个人博客"></a>从零开始搭建个人博客</h1><hr>
@@ -1604,6 +2064,20 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>C++中&amp;和*的区别</title>
+    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
+<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
+<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+</ul>
+<hr>
+<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>代理模式</title>
     <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
@@ -1641,17 +2115,42 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>C++中&amp;和*的区别</title>
-    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
-<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
-<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+</li>
 </ul>
-<hr>
-<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
-]]></content>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
       <tags>
-        <tag>C++</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1694,40 +2193,81 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+    <title>排序</title>
+    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
+<li><strong>排序</strong>：从大到小或从小到大排序</li>
+<li><strong>排序的稳定性</strong>：<ul>
+<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
+<li>不稳定：相反</li>
+</ul>
 </li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+<li>排序算法的分类：<ul>
+<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
+<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
+</ul>
+</li>
+</ol>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
+<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
+<p>算法描述：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法分析：</p>
+<ul>
+<li><p>时间复杂度：</p>
+<p>最好的情况：比较次数n-1次</p>
+<p>最坏的情况：$$O(n^2)$$</p>
+<p>平均时间复杂度：$$O(n^2)$$</p>
+</li>
+<li><p>空间复杂度：$$O(1)$$</p>
 </li>
 </ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
+<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
+<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
+<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
+<p><strong>算法性能分析</strong>：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
+<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
+<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
+<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法性能分析：</p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：</p>
+<p>最好：$$O(1)$$</p>
+<p>最差：$$O(n^2)$$</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
+<p>算法实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
+<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
+<p>空间复杂度：$$O(1)$$</p>
+<p>时间复杂度：$$O(n^2)$$</p>
+<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
+<ul>
+<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
+<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
 </ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
+<p>大根堆：根&gt;&#x3D;左右节点</p>
+<p>小根堆：根&lt;&#x3D;左右节点</p>
+<ol>
+<li><p>建立大根堆</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
 </li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+</ol>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
@@ -1809,86 +2349,6 @@ public interface English &#123;
 <p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
 <p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
 ]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序</title>
-    <url>/2023/07/30/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="第八章-排序"><a href="#第八章-排序" class="headerlink" title="第八章 排序"></a>第八章 排序</h1><h2 id="基本概念和排序方法"><a href="#基本概念和排序方法" class="headerlink" title="基本概念和排序方法"></a>基本概念和排序方法</h2><h3 id="排序的基本概念"><a href="#排序的基本概念" class="headerlink" title="排序的基本概念"></a>排序的基本概念</h3><ol>
-<li><strong>排序</strong>：从大到小或从小到大排序</li>
-<li><strong>排序的稳定性</strong>：<ul>
-<li>稳定的：关键字相同的元素在排序之后相对位置不变</li>
-<li>不稳定：相反</li>
-</ul>
-</li>
-<li>排序算法的分类：<ul>
-<li>内部排序：待排序记录全部放在<mark>计算机内存</mark>中*(关注算法时间、空间复杂度)*</li>
-<li>外部排序：数据过大，以至于内存中不能容纳全部的数据，在排序过程中，尚需对<mark>外存</mark>进行访问排序*(还要关注读取&#x2F;写磁盘的次数更少)*</li>
-</ul>
-</li>
-</ol>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p><strong>算法思想</strong>︰每次将一个待排序的记录按其关键字大小插入到前面已排好序的子序列中，直到全部记录插入完成。</p>
-<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>是一种最简单的排序方法，其基本操作是将一条记录插入已经排好序的表，从而得到一条新的、记录数量增1的有序表</p>
-<p>算法描述：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E5%B8%A6%E5%93%A8%E5%85%B5%EF%BC%89.png" alt="()"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法分析：</p>
-<ul>
-<li><p>时间复杂度：</p>
-<p>最好的情况：比较次数n-1次</p>
-<p>最坏的情况：$$O(n^2)$$</p>
-<p>平均时间复杂度：$$O(n^2)$$</p>
-</li>
-<li><p>空间复杂度：$$O(1)$$</p>
-</li>
-</ul>
-<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.png"></p>
-<p>时间复杂度<mark>依然是$O(n^2)$</mark></p>
-<p><strong>注意</strong>：一直到low&gt;high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low&#x3D;mid+1，以保证“稳定性”。最终应将当前元素插入到low所指位置(即high+1)</p>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先追求表中元素部分有序，在逐渐逼近全局有序(<mark>部分有序</mark>-&gt;<mark>全局有序</mark>)</p>
-<p><strong>希尔排序</strong>︰先将待排序表分割成若干形如$$L[i,i + d, i + 2d…, i + kd]$$的“特殊”子表，对各个子表分别进行直接插入排序。缩小<font color="red"><em>增量d</em>(每次将d减少一半)</font>，重复上述过程，直到d&#x3D;1为止。</p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.gif"></p>
-<p><strong>算法性能分析</strong>：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^{1.25})~O(1.6n^{1.25})$$</p>
-<p><strong>不稳定，仅适用于顺序表，不适用于链表</strong></p>
-<h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><p>基本思想：</p>
-<p>两两比较待排序记录的关键字，一旦发现两个记录不满足次序要求时则进行交换，一直到整个序列全部满足要求为止</p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法实现：<br><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法性能分析：</p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：</p>
-<p>最好：$$O(1)$$</p>
-<p>最差：$$O(n^2)$$</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>算法思想</strong>∶在待排序表$$L[1..n]$$中任取一个元素$$pivot$$作为枢轴(或基准，通常取首元素)，通过一趟排序将待排序表划分为独立的两部分$$L[1…k-1]$$和$$LIk+1..n]$$，使得$$[1…k-1]$$中的所有元素小于$$pivot$$，$$L[k+1..n]$$中的所有元素大于等于$$pivot$$，则$$pivot$$放在了其最终位置$$L(k)$$上，这个过程称为一次“划分”。然后分别递归地对两个子表重复上述过程，直至每部分内只有一个元素或空为止，即所有元素放在了其最终位置上。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif"></p>
-<p>算法实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.png"></p>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：每一趟在待排序元素中选取关键字最小（或最大）的元素假如有序子序列</p>
-<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F.gif"></p>
-<p>空间复杂度：$$O(1)$$</p>
-<p>时间复杂度：$$O(n^2)$$</p>
-<h3 id="树型选择排序"><a href="#树型选择排序" class="headerlink" title="树型选择排序"></a>树型选择排序</h3><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>堆的定义</strong>：n个元素的序列$${k_1,k_2,k_3,…,k_n}$$称之为堆，当且仅当满足以下条件时：</p>
-<ul>
-<li>$$k_i&gt;&#x3D;k_2i$$且$$k_i&gt;&#x3D;k_{2i+1}$$</li>
-<li>$$k_i&lt;&#x3D;k_{2i}$$且$$k_i&lt;&#x3D;k_P{2i+1}(1&lt;&#x3D;i&lt;&#x3D;\lfloor{n&#x2F;2}\rfloor)$$</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%A0%86.png"></p>
-<p>大根堆：根&gt;&#x3D;左右节点</p>
-<p>小根堆：根&lt;&#x3D;左右节点</p>
-<ol>
-<li><p>建立大根堆</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BB%BA%E7%AB%8B%E5%A4%A7%E6%A0%B9%E5%A0%86.png"></p>
-</li>
-</ol>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
@@ -2147,6 +2607,57 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>软件测试大赛准备</title>
+    <url>/2023/09/13/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%A4%A7%E8%B5%9B/</url>
+    <content><![CDATA[<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h2><ul>
+<li>TestCase:一个TestCase表示一个测试</li>
+<li>TestSuite:一个TestSuite包含一组TestCase，表示一组测试</li>
+<li>TestFixture:一个TestFixture表示一个测试环境</li>
+<li>TestResult: 用于收集测试结果</li>
+<li>TestRunner:用于运行测试</li>
+<li>TestListener: 用于监听测试过程，收集测试数据</li>
+<li>Assert:用于断言测试结果是否正确</li>
+</ul>
+<p>import static org.junit.Assert.*</p>
+<h3 id="使用Assert断言"><a href="#使用Assert断言" class="headerlink" title="使用Assert断言"></a>使用Assert断言</h3><ul>
+<li>断言相等: assertEquals(100,x)</li>
+<li>断言数组相等: assertArrayEquals({1,2,3},X)</li>
+<li>浮点数断言相等: assertEquals(3.1416,x,0.0001)</li>
+<li>断言为null: assertNull(x)</li>
+<li>断言为true&#x2F;false: assertTrue(x &gt; 0) assertFalse(x &lt; 0)</li>
+<li>其他: assertNotEquals&#x2F;assertNotNull</li>
+</ul>
+<h3 id="使用Before和After"><a href="#使用Before和After" class="headerlink" title="使用Before和After"></a>使用Before和After</h3><p>同一个单元测试内的多个测试方法：</p>
+<ul>
+<li>测试前需要初始化某些对象 : 在@Before方法中初始化测试资源</li>
+<li>测试后可能需要清理资源 <code>fileInputStream.close();</code>：在@After方法中释放资源</li>
+</ul>
+<h3 id="异常测试"><a href="#异常测试" class="headerlink" title="异常测试"></a>异常测试</h3><p>对可能抛出的异常进行测试：</p>
+<ul>
+<li>异常本身是方法签名的一部分<br>public static int parselnt(String s) throws NumberFormatException</li>
+<li>测试错误的输入是否导致特定的异常<br>Integer.parselnt(null)<br>Integer.parselnt(“”)<br>Integer.parselnt(“xyz”)</li>
+</ul>
+<blockquote>
+<p>使用expected测试异常</p>
+<p>注解：</p>
+<p>@Test(expected &#x3D; NumberFormatException.class)</p>
+</blockquote>
+<p><strong>对某个测试案例测试的结果进行分析测试</strong><sub>通用模板</sub></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.Junit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个Result对象，用于存储测试结果</span></span><br><span class="line">        <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit1.class);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历测试结果中的失败信息</span></span><br><span class="line">        <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">            <span class="comment">// 打印每个失败信息的字符串表示</span></span><br><span class="line">            System.out.println(failure.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 打印测试是否成功的结果</span></span><br><span class="line">        System.out.println(result.wasSuccessful());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Web测试"><a href="#Web测试" class="headerlink" title="Web测试"></a>Web测试</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="基本元素定位"><a href="#基本元素定位" class="headerlink" title="基本元素定位"></a>基本元素定位</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E8%BD%AF%E6%B5%8B%20%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">        <span class="comment">//id</span></span><br><span class="line">        chromeDriver.findElement(By.id(<span class="string">&quot;kw&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//name</span></span><br><span class="line">        chromeDriver.findElement(By.name(<span class="string">&quot;wd&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//tagName</span></span><br><span class="line">        chromeDriver.findElementByTagName(<span class="string">&quot;input&quot;</span>);</span><br><span class="line">        <span class="comment">//className</span></span><br><span class="line">        chromeDriver.findElement(By.className(<span class="string">&quot;soutu-btn&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//linkText</span></span><br><span class="line">        chromeDriver.findElement(By.linkText(<span class="string">&quot;图片&quot;</span>)).click();</span><br><span class="line">        <span class="comment">//partialLinkText</span></span><br><span class="line">        chromeDriver.findElementByPartialLinkText(<span class="string">&quot;丰收里的中国色&quot;</span>).click();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>软件测试、Web测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性表</title>
     <url>/2023/07/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的顺序表示和实现"><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h2><ol>
@@ -2275,226 +2786,6 @@ public interface English &#123;
 ]]></content>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>I/O流</title>
-    <url>/2023/06/23/IO%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
-<p>保存数据的地方</p>
-<p>2、 文件流</p>
-<ul>
-<li>流：数据在数据源(文件)和程序(内存)之间的路径</li>
-<li>输入流：将磁盘中的文件写入内存</li>
-<li>输出流：将内存中的内容写入磁盘</li>
-</ul>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ul>
-<li>创建文件对象相关的构造器和方法<ul>
-<li><code>new File(String pathname)</code>根据路径创建一个File对象</li>
-<li><code>new File(File parent,String chil)</code>根据父目录文件+子路径构建</li>
-<li><code>new File(String parent,String child)</code>根据父目录+子路径构建</li>
-<li>createNewFile创建新文件</li>
-</ul>
-</li>
-<li>获取文件的相关信息<ul>
-<li>getName、getAbsolutePath、getParent、length、exists、isFile、isDirectory</li>
-</ul>
-</li>
-<li>目录操作和文件删除<ul>
-<li>创建一级目录：mkdir</li>
-<li>创建多级目录：mkdirs</li>
-<li>删除空目录或文件：delete</li>
-</ul>
-</li>
-</ul>
-<h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><ul>
-<li><p>Java IO原理</p>
-<ol>
-<li>IO流是input、output的缩写，用于处理数据传输，如读写文件、网络通信</li>
-<li>在Java程序中，对于数据的输入。输出以“流(stream)”的方式进行</li>
-<li>java.io包下提供了各种“流”的类和接口，用于获取不同种类的数据，并通过方法输入或输出数据</li>
-</ol>
-</li>
-<li><p>流的分类</p>
-<ol>
-<li><p>操作数据单元：字节流、字符流</p>
-</li>
-<li><p>数据流的流向：输入流、输出流</p>
-</li>
-<li><p>流的角色：节点流、处理流(字符流)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/IO%E6%B5%81%E5%A4%A7%E7%BA%B2.png"></p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="输入流"><a href="#输入流" class="headerlink" title="*输入流"></a>*输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
-<h3 id="Reader-字节输入流"><a href="#Reader-字节输入流" class="headerlink" title="Reader(字节输入流)"></a>Reader(字节输入流)</h3><ul>
-<li>关系图</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileReader%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><ol>
-<li>相关方法<ul>
-<li><code>new FileReader(File/String)</code></li>
-<li><code>read</code>:每次读取单个字符，返回该字符，如果到文件末尾，返回-1</li>
-<li><code>read(char[])</code>:批量读取多个字符到数组，返回读取到的字符数，如果到文件末尾，返回-1</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li><code>new String(char[])</code>:将char[]转成String</li>
-<li><code>new String(char[],off,len)</code>:将char []的指定部分转换成String</li>
-</ul>
-</li>
-</ol>
-<h2 id="输出流"><a href="#输出流" class="headerlink" title="*输出流"></a>*输出流</h2><h3 id="OutputStream-字节"><a href="#OutputStream-字节" class="headerlink" title="OutputStream(字节)"></a>OutputStream(字节)</h3><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileInputStream.png"></p>
-<h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="Writer-字符"><a href="#Writer-字符" class="headerlink" title="Writer(字符)"></a>Writer(字符)</h3><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><ol>
-<li>常用方法<ul>
-<li>new FileWriter(File&#x2F;String):覆盖模式，相当于流的指针在首段</li>
-<li>new FileWriter(File&#x2F;String,true):追加模式，相当于流的指针在尾端</li>
-<li>write(int):写入单个字符</li>
-<li>write(char[]):写入指定数组</li>
-<li>write(char[],off,len):写入指定数组的指定部分</li>
-<li>writer(string):写入指定字符串</li>
-<li>writer(string,off,len):写入指定字符串放入指定部分</li>
-</ul>
-</li>
-<li>相关API<ul>
-<li>String类</li>
-<li>toCharArray:将String转换成char[]</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/FileWriter%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
-<ul>
-<li>注意：FileWriter使用后，必须关闭(close)或刷新(flush)，否则写入不到指定文件</li>
-</ul>
-<h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><h3 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h3><ol>
-<li>节点流可以从一个特定的数据源读取数据，如FileReader、FileWriter<ul>
-<li>文件节点流：FileInputStream、FileOutputStream、FileReader、FileWriter</li>
-<li>数组节点流：ByteArrayInputStream、ByteArrayOutStream、CharAttayReader、CharArrayWriter</li>
-<li>访问管道、访问字符流</li>
-</ul>
-</li>
-<li>处理流(包装流)是”连接”在已存在的流(节点流或处理流)之上，为程序提供更为强大的读写功能，更加灵活，如BufferedReader、BufferedWriter</li>
-<li>节点流与处理流的区别与联系<ul>
-<li>节点流是底层流&#x2F;低级流，直接跟数据源相接</li>
-<li>处理流包含节点流，及可以消除不同节点流的实现差异，也可以提供更方便的方法来完成输入输出</li>
-<li>处理流对节点流进行包装，使用了修饰器设计模式，不会直接与数据源相连</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%A4%84%E7%90%86%E6%B5%81.png"></p>
-<ol start="4">
-<li><p>标准输入输出流</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>类型(编译类型)</th>
-<th>类型(运行类型)</th>
-<th>默认设备</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>System.in标准输入</td>
-<td>InputStream</td>
-<td>BufferedInputStream</td>
-<td>键盘</td>
-</tr>
-<tr>
-<td>System.out标准输出</td>
-<td>PrintStream</td>
-<td>PrintStream</td>
-<td>显示器</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>转换流-InputStreamReader和OutputStreamWriter</p>
-<ul>
-<li>解决文件乱码问题</li>
-</ul>
-</li>
-<li><p>打印流-PrintStream和PrintWriter</p>
-<ul>
-<li>打印流只有输出流</li>
-<li>PrintStream(字节流)</li>
-<li>PrintWriter(字符流)</li>
-</ul>
-</li>
-</ol>
-<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><ol>
-<li>序列化：在保存数据时，保存数据的值和数据类型</li>
-<li>反序列化：在恢复数据时，恢复数据的值和数据类型</li>
-<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的(实现接口：Serializable或Externalizable)<ul>
-<li>Serializable:标记接口，没有方法</li>
-<li>Externalizable:该接口有方法需要实现</li>
-</ul>
-</li>
-</ol>
-<h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2><ol>
-<li>专门用于读取配置文件的的集合类<ul>
-<li>配置文件格式：键&#x3D;值</li>
-</ul>
-</li>
-<li>注意：键值对不需要有空格，值不需要用引号括起来。默认类型是String</li>
-<li>常见方法：<ul>
-<li>load：加载配置文件的键值对到Properties对象</li>
-<li>list：将数据显示到指定设备</li>
-<li>getProperty(key):根据键获取值</li>
-<li>setProperty(key,value):设置键值对到Properties对象</li>
-<li>store:将Properties中的键值对存储到配置文件中，在idea中，保存信息到配置文件，如果含有中文，会存储为UNICode码</li>
-</ul>
-</li>
-</ol>
-<p>作用：存储和读取数据</p>
-<p>I：input</p>
-<p>O：output</p>
-<p>流：像水流一样传输数据</p>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/img/IO%E6%B5%81.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AD%97%E8%8A%82%E6%B5%81.png"></p>
-<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="FileOutputStream-1"><a href="#FileOutputStream-1" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>操作本地文件的字节输出流，可以把程序中的数据写到本地文件中</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123; <span class="comment">//抛出异常</span></span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>)<span class="comment">//创建对象的路径</span></span><br><span class="line">        <span class="comment">//2.写出数据</span></span><br><span class="line">        fos.write(<span class="number">97</span>);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行结果：a</p>
-<ul>
-<li>创建对象细节：<ul>
-<li>参数是字符串表示的路径或者是File对象都是可以的</li>
-<li>如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。</li>
-<li>如果文件已经存在,则会清空文件</li>
-</ul>
-</li>
-<li>写出数据细节：<ul>
-<li>write方法的参数是整数，但是实际上写到本地文件中的是整数在ASCII上对应的字符</li>
-</ul>
-</li>
-<li>释放资源细节：<ul>
-<li>每次使用完流之后都要释放资源</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>						<span class="comment">//一次写一个字节数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>					<span class="comment">//一次写一个字节数组数据</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b,<span class="type">int</span> off,<span class="type">int</span> len)</span>	<span class="comment">//一次写一个字节数组的部分数据</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="FileInputStream-1"><a href="#FileInputStream-1" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><p>操作本地文件的字节输入流，可以把本地文件中的数据读取到程序中来</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotException&#123;</span><br><span class="line">        <span class="comment">//步骤：</span></span><br><span class="line">        <span class="comment">//1.创建对象</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//2.读取数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> fis.read();</span><br><span class="line">        System.out.println(b1);</span><br><span class="line">        <span class="comment">//3.释放资源</span></span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>创建对象细节：如果文件不存在，直接报错</p>
-</li>
-<li><p>读取数据细节：</p>
-<ul>
-<li>一次读取一个字节，读出来的就是数据在ASCII上对应的数字</li>
-<li>读到文件末尾，read方法返回-1</li>
-</ul>
-</li>
-<li><p>释放资源细节：每次使用完流之后都要释放资源</p>
-</li>
-</ul>
-<h4 id="字节输入流循环读取"><a href="#字节输入流循环读取" class="headerlink" title="字节输入流循环读取"></a>字节输入流循环读取</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ByteStreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;myio\\a.tet&quot;</span>);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println((<span class="type">char</span>)b);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BytestreamText</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\原路径.mp4&quot;</span>);</span><br><span class="line">        <span class="type">FileOutStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
 </search>
