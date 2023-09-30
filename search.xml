@@ -672,20 +672,60 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript</title>
-    <url>/2023/09/22/JavaScript/</url>
-    <content><![CDATA[<p>JavaScript是可插入HTML 页面的编程代码，用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用</p>
-<p>JavaScript插入HTML页面后，可由所有的浏览器执行</p>
-<ul>
-<li>轻量级、功能强大编程语言</li>
-<li>因特网上最流行的脚本语言</li>
+    <title>JMeter</title>
+    <url>/2023/09/29/JMeter/</url>
+    <content><![CDATA[<h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JMeter简介"><a href="#JMeter简介" class="headerlink" title="JMeter简介"></a>JMeter简介</h3><ol>
+<li>可以对于服务器。网络或对象模拟巨大的负载</li>
+<li>可以创建带有断言的脚本来验证程序是否能返回期望的结果</li>
+</ol>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ol>
+<li>开源、免费</li>
+<li>跨平台</li>
+<li>支持多协议</li>
+<li>小巧</li>
+<li>功能强大</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>不支持IP欺骗</li>
+<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要和Selenium配合来完成Web2.0应用的测试</li>
+</ol>
+<h3 id="JMeter基本使用"><a href="#JMeter基本使用" class="headerlink" title="JMeter基本使用"></a>JMeter基本使用</h3><h4 id="两个特殊的线程组"><a href="#两个特殊的线程组" class="headerlink" title="两个特殊的线程组"></a>两个特殊的线程组</h4><ul>
+<li>setUp线程组：最优先执行的线程组</li>
+<li>tearDown线程组：最后执行的线程组</li>
 </ul>
-<p>脚本位置：</p>
-<ul>
-<li>位于\<script>\与\</script>\标签中</li>
-<li><body>和<head>中</li>
-</ul>
-]]></content>
+<h4 id="操作线程组"><a href="#操作线程组" class="headerlink" title="操作线程组"></a>操作线程组</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7.bmp"></p>
+<h4 id="http请求默认值"><a href="#http请求默认值" class="headerlink" title="http请求默认值"></a>http请求默认值</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC2.bmp"></p>
+<h4 id="信息头管理器"><a href="#信息头管理器" class="headerlink" title="信息头管理器"></a>信息头管理器</h4><p>新增修改实现时提交的数据时JSON格式的，需申明提交的数据的内容类型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A8.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A82.bmp"></p>
+<h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><p>当提交的数据量较大，参数化可以动态的获取、设置或生成数据，是一种有程序驱动代替人工驱动的数据设计方案，提高脚本的编写效率以及编写质量</p>
+<p>以下四种方式实现参数化：</p>
+<ol>
+<li><p>用户数据文件设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F2.bmp"></p>
+</li>
+<li><p>CSV数据文件设置</p>
+<p>CSV：逗号分隔符，是一种简洁且常见的数据存储格式</p>
+<p>实现步骤：</p>
+<ol>
+<li>使用CSV文件存储测试数据</li>
+<li>编写被复用的学院新增脚本模板(编码集使用UTF-8，无BOM格式)</li>
+<li>关联脚本与数据(将文件数据倒入脚本)</li>
+</ol>
+</li>
+<li><p>用户参数</p>
+</li>
+<li><p>函数</p>
+</li>
+</ol>
+<h3 id="直链数据库"><a href="#直链数据库" class="headerlink" title="直链数据库"></a>直链数据库</h3><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3>]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
   </entry>
   <entry>
     <title>JavaWeb</title>
@@ -825,6 +865,22 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript</title>
+    <url>/2023/09/22/JavaScript/</url>
+    <content><![CDATA[<p>JavaScript是可插入HTML 页面的编程代码，用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用</p>
+<p>JavaScript插入HTML页面后，可由所有的浏览器执行</p>
+<ul>
+<li>轻量级、功能强大编程语言</li>
+<li>因特网上最流行的脚本语言</li>
+</ul>
+<p>脚本位置：</p>
+<ul>
+<li>位于\<script>\与\</script>\标签中</li>
+<li><body>和<head>中</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Java网络</title>
     <url>/2023/08/18/Java%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h2><ul>
@@ -914,6 +970,12 @@
       <tags>
         <tag>Java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/09/24/%E4%B8%8D%E4%BC%9A%E7%9A%84%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AE%8B%E6%B5%A9%20%E7%BB%83%E4%B9%A0%E6%9C%AA%E5%81%9A.jpg"></p>
+]]></content>
   </entry>
   <entry>
     <title>Java面向对象编程</title>
@@ -1455,67 +1517,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>Junit</title>
-    <url>/2023/09/13/Junit/</url>
-    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
-<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
-<ul>
-<li>Eclipse</li>
-<li>Ant</li>
-<li>Maven</li>
-</ul>
-</li>
-<li><p><em></em></p>
-<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
-<ul>
-<li>Fixtures</li>
-<li>测试套件</li>
-<li>测试运行器</li>
-<li>JUnit 类</li>
-</ul>
-<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
-<ul>
-<li>setUp() 方法，在每次测试调用之前运行。</li>
-<li>tearDown() 方法，在每个测试方法之后运行。</li>
-</ul>
-<p>让我们看一个例子 -</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p><em></em></p>
-<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
-<ul>
-<li><strong>Assert</strong> - 包含一组断言方法。</li>
-<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
-<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>软件测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/2023/08/20/MySQL/</url>
     <content><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>服务启动与关闭：<code>net start mysql</code>,<code>net stop mysql</code></p>
@@ -1848,6 +1849,67 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>Junit</title>
+    <url>/2023/09/13/Junit/</url>
+    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
+<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
+<ul>
+<li>Eclipse</li>
+<li>Ant</li>
+<li>Maven</li>
+</ul>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
+<ul>
+<li>Fixtures</li>
+<li>测试套件</li>
+<li>测试运行器</li>
+<li>JUnit 类</li>
+</ul>
+<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
+<ul>
+<li>setUp() 方法，在每次测试调用之前运行。</li>
+<li>tearDown() 方法，在每个测试方法之后运行。</li>
+</ul>
+<p>让我们看一个例子 -</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
+<ul>
+<li><strong>Assert</strong> - 包含一组断言方法。</li>
+<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
+<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>web自动化测试</title>
     <url>/2023/09/21/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h1 id="web自动化测试"><a href="#web自动化测试" class="headerlink" title="web自动化测试"></a>web自动化测试</h1><h2 id="web自动化入门"><a href="#web自动化入门" class="headerlink" title="web自动化入门"></a>web自动化入门</h2><h3 id="认识自动化及自动化测试"><a href="#认识自动化及自动化测试" class="headerlink" title="认识自动化及自动化测试"></a>认识自动化及自动化测试</h3><p>自动化：</p>
@@ -2064,20 +2126,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>C++中&amp;和*的区别</title>
-    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
-<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
-<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
-</ul>
-<hr>
-<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>代理模式</title>
     <url>/2023/08/15/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p><mark>静态代理</mark>是一种设计模式，它可以在不修改原始类的情况下增强其功能。静态代理的好处有以下几点：</p>
@@ -2151,6 +2199,20 @@ public interface English &#123;
 <h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++中&amp;和*的区别</title>
+    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
+<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
+<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+</ul>
+<hr>
+<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2607,57 +2669,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>软件测试大赛准备</title>
-    <url>/2023/09/13/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%A4%A7%E8%B5%9B/</url>
-    <content><![CDATA[<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h2><ul>
-<li>TestCase:一个TestCase表示一个测试</li>
-<li>TestSuite:一个TestSuite包含一组TestCase，表示一组测试</li>
-<li>TestFixture:一个TestFixture表示一个测试环境</li>
-<li>TestResult: 用于收集测试结果</li>
-<li>TestRunner:用于运行测试</li>
-<li>TestListener: 用于监听测试过程，收集测试数据</li>
-<li>Assert:用于断言测试结果是否正确</li>
-</ul>
-<p>import static org.junit.Assert.*</p>
-<h3 id="使用Assert断言"><a href="#使用Assert断言" class="headerlink" title="使用Assert断言"></a>使用Assert断言</h3><ul>
-<li>断言相等: assertEquals(100,x)</li>
-<li>断言数组相等: assertArrayEquals({1,2,3},X)</li>
-<li>浮点数断言相等: assertEquals(3.1416,x,0.0001)</li>
-<li>断言为null: assertNull(x)</li>
-<li>断言为true&#x2F;false: assertTrue(x &gt; 0) assertFalse(x &lt; 0)</li>
-<li>其他: assertNotEquals&#x2F;assertNotNull</li>
-</ul>
-<h3 id="使用Before和After"><a href="#使用Before和After" class="headerlink" title="使用Before和After"></a>使用Before和After</h3><p>同一个单元测试内的多个测试方法：</p>
-<ul>
-<li>测试前需要初始化某些对象 : 在@Before方法中初始化测试资源</li>
-<li>测试后可能需要清理资源 <code>fileInputStream.close();</code>：在@After方法中释放资源</li>
-</ul>
-<h3 id="异常测试"><a href="#异常测试" class="headerlink" title="异常测试"></a>异常测试</h3><p>对可能抛出的异常进行测试：</p>
-<ul>
-<li>异常本身是方法签名的一部分<br>public static int parselnt(String s) throws NumberFormatException</li>
-<li>测试错误的输入是否导致特定的异常<br>Integer.parselnt(null)<br>Integer.parselnt(“”)<br>Integer.parselnt(“xyz”)</li>
-</ul>
-<blockquote>
-<p>使用expected测试异常</p>
-<p>注解：</p>
-<p>@Test(expected &#x3D; NumberFormatException.class)</p>
-</blockquote>
-<p><strong>对某个测试案例测试的结果进行分析测试</strong><sub>通用模板</sub></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.Junit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个Result对象，用于存储测试结果</span></span><br><span class="line">        <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit1.class);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历测试结果中的失败信息</span></span><br><span class="line">        <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">            <span class="comment">// 打印每个失败信息的字符串表示</span></span><br><span class="line">            System.out.println(failure.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 打印测试是否成功的结果</span></span><br><span class="line">        System.out.println(result.wasSuccessful());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="Web测试"><a href="#Web测试" class="headerlink" title="Web测试"></a>Web测试</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="基本元素定位"><a href="#基本元素定位" class="headerlink" title="基本元素定位"></a>基本元素定位</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E8%BD%AF%E6%B5%8B%20%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D.png"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">        <span class="comment">//id</span></span><br><span class="line">        chromeDriver.findElement(By.id(<span class="string">&quot;kw&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//name</span></span><br><span class="line">        chromeDriver.findElement(By.name(<span class="string">&quot;wd&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//tagName</span></span><br><span class="line">        chromeDriver.findElementByTagName(<span class="string">&quot;input&quot;</span>);</span><br><span class="line">        <span class="comment">//className</span></span><br><span class="line">        chromeDriver.findElement(By.className(<span class="string">&quot;soutu-btn&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//linkText</span></span><br><span class="line">        chromeDriver.findElement(By.linkText(<span class="string">&quot;图片&quot;</span>)).click();</span><br><span class="line">        <span class="comment">//partialLinkText</span></span><br><span class="line">        chromeDriver.findElementByPartialLinkText(<span class="string">&quot;丰收里的中国色&quot;</span>).click();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>软件测试、Web测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线性表</title>
     <url>/2023/07/20/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="线性表的顺序表示和实现"><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h2><ol>
@@ -2786,6 +2797,272 @@ public interface English &#123;
 ]]></content>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件测试大赛准备</title>
+    <url>/2023/09/13/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%A4%A7%E8%B5%9B/</url>
+    <content><![CDATA[<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h2><ul>
+<li>TestCase:一个TestCase表示一个测试</li>
+<li>TestSuite:一个TestSuite包含一组TestCase，表示一组测试</li>
+<li>TestFixture:一个TestFixture表示一个测试环境</li>
+<li>TestResult: 用于收集测试结果</li>
+<li>TestRunner:用于运行测试</li>
+<li>TestListener: 用于监听测试过程，收集测试数据</li>
+<li>Assert:用于断言测试结果是否正确</li>
+</ul>
+<p>import static org.junit.Assert.*</p>
+<h3 id="使用Assert断言"><a href="#使用Assert断言" class="headerlink" title="使用Assert断言"></a>使用Assert断言</h3><ul>
+<li>断言相等: assertEquals(100,x)</li>
+<li>断言数组相等: assertArrayEquals({1,2,3},X)</li>
+<li>浮点数断言相等: assertEquals(3.1416,x,0.0001)</li>
+<li>断言为null: assertNull(x)</li>
+<li>断言为true&#x2F;false: assertTrue(x &gt; 0) assertFalse(x &lt; 0)</li>
+<li>其他: assertNotEquals&#x2F;assertNotNull</li>
+</ul>
+<h3 id="使用Before和After"><a href="#使用Before和After" class="headerlink" title="使用Before和After"></a>使用Before和After</h3><p>同一个单元测试内的多个测试方法：</p>
+<ul>
+<li>测试前需要初始化某些对象 : 在@Before方法中初始化测试资源</li>
+<li>测试后可能需要清理资源 <code>fileInputStream.close();</code>：在@After方法中释放资源</li>
+</ul>
+<h3 id="异常测试"><a href="#异常测试" class="headerlink" title="异常测试"></a>异常测试</h3><p>对可能抛出的异常进行测试：</p>
+<ul>
+<li>异常本身是方法签名的一部分<br>public static int parselnt(String s) throws NumberFormatException</li>
+<li>测试错误的输入是否导致特定的异常<br>Integer.parselnt(null)<br>Integer.parselnt(“”)<br>Integer.parselnt(“xyz”)</li>
+</ul>
+<blockquote>
+<p>使用expected测试异常</p>
+<p>注解：</p>
+<p>@Test(expected &#x3D; NumberFormatException.class)</p>
+</blockquote>
+<p><strong>对某个测试案例测试的结果进行分析测试</strong><sub>通用模板</sub></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> org.Junit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个Result对象，用于存储测试结果</span></span><br><span class="line">        <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit1.class);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历测试结果中的失败信息</span></span><br><span class="line">        <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">            <span class="comment">// 打印每个失败信息的字符串表示</span></span><br><span class="line">            System.out.println(failure.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 打印测试是否成功的结果</span></span><br><span class="line">        System.out.println(result.wasSuccessful());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Web测试"><a href="#Web测试" class="headerlink" title="Web测试"></a>Web测试</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="基本元素定位"><a href="#基本元素定位" class="headerlink" title="基本元素定位"></a>基本元素定位</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E8%BD%AF%E6%B5%8B%20%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEdge</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ChromeDriver chromeDriver;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        opeanEdge();</span><br><span class="line">        <span class="comment">//id</span></span><br><span class="line">        chromeDriver.findElement(By.id(<span class="string">&quot;kw&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//name</span></span><br><span class="line">        chromeDriver.findElement(By.name(<span class="string">&quot;wd&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//tagName</span></span><br><span class="line">        chromeDriver.findElementByTagName(<span class="string">&quot;input&quot;</span>);</span><br><span class="line">        <span class="comment">//className</span></span><br><span class="line">        chromeDriver.findElement(By.className(<span class="string">&quot;soutu-btn&quot;</span>)).sendKeys(<span class="string">&quot;软件测试&quot;</span>);</span><br><span class="line">        <span class="comment">//linkText</span></span><br><span class="line">        chromeDriver.findElement(By.linkText(<span class="string">&quot;图片&quot;</span>)).click();</span><br><span class="line">        <span class="comment">//partialLinkText</span></span><br><span class="line">        chromeDriver.findElementByPartialLinkText(<span class="string">&quot;丰收里的中国色&quot;</span>).click();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">opeanEdge</span><span class="params">()</span> &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;webdriver.chrome.driver&quot;</span>, <span class="string">&quot;C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe&quot;</span>);</span><br><span class="line">        chromeDriver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>();</span><br><span class="line">        chromeDriver.get(<span class="string">&quot;https://baidu.com/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="元素定位cssSelect"><a href="#元素定位cssSelect" class="headerlink" title="元素定位cssSelect"></a>元素定位cssSelect</h2><ul>
+<li><p>根据tagName</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">By.cssSelector(<span class="string">&quot;input&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>根据ID</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">By.cssSelect(<span class="string">&quot;input#id&quot;</span>);</span><br><span class="line">By.cssSelect(<span class="string">&quot;#id&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>根据className</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">By.cssSelector(<span class="string">&quot;.className&quot;</span>);</span><br><span class="line">By.cssSelector(<span class="string">&quot;input.className&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>精确定位 css</p>
+<ul>
+<li><p>根据元素属性，属性名&#x3D;属性值，id，class，等都可以写成这种形式</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">By.cssSelector(<span class="string">&quot;标签名[属性名=&#x27;属性值&#x27;]&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多属性</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">By.cssSelector(<span class="string">&quot;标签名[属性1=&#x27;属性值&#x27;][属性2=&#x27;属性值&#x27;]&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="元素定位-Xpath"><a href="#元素定位-Xpath" class="headerlink" title="元素定位 Xpath"></a>元素定位 Xpath</h2><p>xpath是一个path，一个描述页面元素位置信息的路径，相当于元素的坐标</p>
+<p>xpath基于XML文档树状结构，是XML路径语言，用来查询xml文档中的节点</p>
+<ul>
+<li><p>绝对定位：从跟开始找</p>
+</li>
+<li><p>相对路径：</p>
+<blockquote>
+<p>例：*[@name&#x3D;‘phone’]</p>
+<ul>
+<li>&#x2F;&#x2F; 匹配指定节点，不考虑他们的位置</li>
+<li>* 通配符：匹配任意元素节点</li>
+<li>@ 选取属性</li>
+<li>[] 属性判断条件表达式</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="元素操作API"><a href="#元素操作API" class="headerlink" title="元素操作API"></a>元素操作API</h2><ul>
+<li>click()：触发点击</li>
+<li>clear()：清空内容</li>
+<li>sendKeys：往文本框中写入内容</li>
+<li>getTagName()：获取元素的标签名</li>
+<li>getAttribute(属性名)：根据属性名获取元素属性值</li>
+<li>isDisplayed()：查看元素是否显示</li>
+</ul>
+<h2 id="WebDriver相关API"><a href="#WebDriver相关API" class="headerlink" title="WebDriver相关API"></a>WebDriver相关API</h2><ul>
+<li><p>get(String url)：访问指定URL</p>
+</li>
+<li><p>getCurrentUrl()：获取当前页面的URL地址</p>
+</li>
+<li><p>getPageSource()：源代码</p>
+</li>
+<li><p>getTitle()：获取当前页面的标题</p>
+</li>
+<li><p>quit()：关闭驱动对象以及所有相关的窗口</p>
+</li>
+<li><p>close()：关闭当前窗口</p>
+</li>
+<li><p>getWindowsHandle()：返回当前页面句柄</p>
+</li>
+<li><p>getWindowsHandles()：返回所有由驱动对象打开页面所有的句柄，页面不同，句柄不一样</p>
+</li>
+<li><p>manage()：获取Options—浏览器菜单操作对象</p>
+</li>
+<li><p>navigate对象：导航–&gt;对浏览器的刷新、回退等操作</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">WebDriver.<span class="type">Navigation</span> <span class="variable">navigate</span> <span class="operator">=</span> chromeDriver.navigate();</span><br><span class="line">navigate.to(<span class="string">&quot;https://czlifetime.eu.org/&quot;</span>);</span><br><span class="line">sleep(<span class="number">5000</span>);</span><br><span class="line">navigate.refresh();</span><br><span class="line">sleep(<span class="number">5000</span>);</span><br><span class="line">navigate.back();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="元素三大等待"><a href="#元素三大等待" class="headerlink" title="元素三大等待"></a>元素三大等待</h2><h3 id="硬性等待"><a href="#硬性等待" class="headerlink" title="硬性等待"></a>硬性等待</h3><ul>
+<li><p>线程休眠，强制等待</p>
+<blockquote>
+<p>Thread.sleep(long millis);</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="隐式等待"><a href="#隐式等待" class="headerlink" title="隐式等待"></a>隐式等待</h3><ul>
+<li><p>在设置的超过时间范围内不断查找元素，直到找到元素或者超时</p>
+<blockquote>
+<p>driver.manage.timeouts().implicityWait(long time,TimeUnit unit);</p>
+<ul>
+<li>优点：相对灵活</li>
+<li>设置是针对全局的，在WebDriver实例整个生命周期有效，但并不是所有的元素都需要等待</li>
+<li>在opeanChrome()方法之前</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="显示等待"><a href="#显示等待" class="headerlink" title="显示等待"></a>显示等待</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85%E6%9D%A1%E4%BB%B6.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/webExpectedConditions%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85%E6%9D%A1%E4%BB%B6.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/webExpectedConditions%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85%E6%9D%A1%E4%BB%B62.jpg"></p>
+<ul>
+<li><p>用来等待某个条件发生后再继续执行后续代码(如找到元素、元素可点击、元素已显示等)</p>
+</li>
+<li><p>方式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">WebDriverWait</span> <span class="variable">wait</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">WebDriverWait</span>();</span><br><span class="line"><span class="type">WebElement</span> <span class="variable">element</span> <span class="operator">=</span> wait.until(expectCondition);</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>等待条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>visibilityOfElementLocated(By locator)</td>
+<td>页面元素在页面存在并且可见</td>
+</tr>
+<tr>
+<td>elementToBeClickable(By locator)</td>
+<td>页面元素是否在页面上可用和可被单击</td>
+</tr>
+<tr>
+<td>elementToBeSelected(WebElement element)</td>
+<td>页面元素处于被选中状态</td>
+</tr>
+<tr>
+<td>textToBePresentInElement(By locator)</td>
+<td>在页面元素中是否存在包含特定的文本</td>
+</tr>
+<tr>
+<td>presenceOfElementLocated(By locator)</td>
+<td>页面元素在页面中存在</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="特殊元素操作"><a href="#特殊元素操作" class="headerlink" title="特殊元素操作"></a>特殊元素操作</h2><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E9%80%89%E6%8B%A9.jpg"></p>
+<h3 id="模态框"><a href="#模态框" class="headerlink" title="模态框"></a>模态框</h3><p>Modal Dialogue Box，模式对话框，是指在用户想要对对话框以外的应用程序进行操作是，必须首先对该对话框进行响应。如单击【确定】或【取消】按钮等对该对话框关闭</p>
+<h4 id="alter弹框"><a href="#alter弹框" class="headerlink" title="alter弹框"></a>alter弹框</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">opeanChrome();</span><br><span class="line">chromeDriver.get(<span class="string">&quot;D:\\Java\\JavaCompile\\WebCompetition\\alter.html&quot;</span>);</span><br><span class="line">Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">chromeDriver.findElement(By.id(<span class="string">&quot;asd&quot;</span>)).click();</span><br><span class="line"><span class="comment">//switchTo().alert()找到对应的alert弹框</span></span><br><span class="line"><span class="type">Alert</span> <span class="variable">alert</span> <span class="operator">=</span> chromeDriver.switchTo().alert();</span><br><span class="line"><span class="comment">//获取文本</span></span><br><span class="line">System.out.println(alert.getText());</span><br><span class="line"><span class="comment">//确定</span></span><br><span class="line">alert.accept();</span><br><span class="line"><span class="comment">//取消</span></span><br><span class="line"><span class="comment">//alert.dismiss();</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="comfirm弹框"><a href="#comfirm弹框" class="headerlink" title="comfirm弹框"></a>comfirm弹框</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">chromeDriver.get(<span class="string">&quot;D:\\Java\\JavaCompile\\WebCompetition\\confirm.html&quot;</span>);</span><br><span class="line">chromeDriver.findElement(By.id(<span class="string">&quot;wasd&quot;</span>)).click();</span><br><span class="line"><span class="type">Alert</span> <span class="variable">alter</span> <span class="operator">=</span> chromeDriver.switchTo().alert();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="iframe切换"><a href="#iframe切换" class="headerlink" title="iframe切换"></a>iframe切换</h3><p>四种切换模式：</p>
+<ul>
+<li>driver.switchTo().frame(index);</li>
+<li>driver.switchTo().frame(id);</li>
+<li>driver.switchTo().frame(name);</li>
+<li>driver.switchTo().frame(WebElement)</li>
+</ul>
+<p>切换之后，回到默认内容页面（否则会找不到元素）</p>
+<p>driver.switchTo().defaultContent();</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/iframe%E5%80%9F%E9%89%B41.jpg"></p>
+<h3 id="Window切换"><a href="#Window切换" class="headerlink" title="Window切换"></a>Window切换</h3><p>当要操作另外一个窗口页面的元素时，一定要注意先切换窗口</p>
+<p>切换方式：传入要操作窗口的name或者句柄handle</p>
+<p><code>driver.switchTo.window(nameOrHandle);</code></p>
+<p>如何获取到窗口页面的句柄：</p>
+<ul>
+<li><code>driver.getWindowHandle();</code>获取当前操作窗口的句柄</li>
+<li><code>driver.getWindowHandles();</code>获取测试时打开的所有窗口句柄</li>
+</ul>
+<h3 id="select下拉框"><a href="#select下拉框" class="headerlink" title="select下拉框"></a>select下拉框</h3><p>如果页面元素时是一个下拉框，可以将次Web元素封装为Select对象</p>
+<ul>
+<li><code>Select select = new Select(WebElement element);</code></li>
+</ul>
+<p>Select对象常用API</p>
+<ul>
+<li><code>select.getOptions();</code>获取所有选项</li>
+<li><code>select.selectByIndex(index);</code>获取索引选中对应的元素</li>
+<li><code>select.selectByValue(value);</code>选中指定value值对应的选项</li>
+<li><code>select.selectByVisibleText(text)</code>选中文本值对应的选项</li>
+</ul>
+<h3 id="时间日期控件"><a href="#时间日期控件" class="headerlink" title="时间日期控件"></a>时间日期控件</h3><p>分为两种情况：</p>
+<ul>
+<li><p>控件没有限制手动输入，测直接调用sendKeys方法写入时间数据</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//时间日期控件</span></span><br><span class="line">opeanChrome();</span><br><span class="line">chromeDriver.get(<span class="string">&quot;https://www.fliggy.com/?ali_trackid=2:mm_580840021_2968100290_115013700224:1695795842_087_879488174&amp;union_lens=lensId:PUB@1694669594@0be085cd_09df_18a922ddf56_d0eb@01@eyJmbG9vcklkIjozODg1Miiwiic3BtQiiI6Il9wb3J0YWxfdjJfcGFnZXNfYWN0aXZpdHlfb2ZmaWNpYWxfaW5kZXhfaHRtIn0ie;recoveryid:087_41852627@1695795842353&amp;rootPageId=20150318020010234&amp;bxsign=tbktK07IRSYD_ottbYadojTdnlVU4NrusREkCNNuZWqcG0iY9VggecxE0I7oNA6SD-MH5FIEV3RbK9JUJbFFjsG0oCrFYAUIAHRNK3UdMjtcUaEWG_JPVEmj7u5AZVETJpaxf6UBwBotkDBJwoUpoHafQ&quot;</span>);</span><br><span class="line">Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">chromeDriver.findElement(By.xpath(<span class="string">&quot;//form[@id=&#x27;J_FlightForm&#x27;]//input[@name=&#x27;depDate&#x27;]&quot;</span>)).sendKeys(<span class="string">&quot;2023-09-27&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>控件有限制输入，则可以执行一段js来改变元素的value属性值</p>
+<p><code>JavascriptExeutor jsExecutor = (JavascriptExecutor)driver;</code></p>
+<p><code>jsExecutor.executeScript(&quot;...&quot;);</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">chromeDriver.get(<span class="string">&quot;www.12306.cn/index/&quot;</span>);</span><br><span class="line"><span class="comment">//解除输入的时间日期限制</span></span><br><span class="line"><span class="type">JavascriptExecutor</span> <span class="variable">javascriptExecutor</span> <span class="operator">=</span> (JavascriptExecutor)chromeDriver;</span><br><span class="line">javascriptExecutor.executeScript(<span class="string">&quot;document.getElementById(&quot;</span>\train_date\<span class="string">&quot;).removeAttribute(\&quot;readonly\&quot;)&quot;</span>);</span><br><span class="line">chromeDriver.findElement(By.id(<span class="string">&quot;train_date&quot;</span>)).sendKeys(<span class="string">&quot;2023-10-01&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="鼠标操作-未完待续"><a href="#鼠标操作-未完待续" class="headerlink" title="鼠标操作(未完待续)"></a>鼠标操作(未完待续)</h3><p>使用Selenium的Actions类来模拟鼠标键盘操作，通过Actions对象可以发起鼠标左键、右键、移动鼠标等操作，最后使用perform方法执行操作</p>
+<p><code>actions.clickAndHold(onElement).moveToElement(toElement).release().build().perform()</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">opeanChrome();</span><br><span class="line">chromeDriver.get(<span class="string">&quot;https://www.treejs.cn/v3/demo/cn/exedit/drag.html&quot;</span>);</span><br><span class="line"><span class="type">WebElement</span> <span class="variable">sourceElement</span> <span class="operator">=</span> chromeDriver.findElement(By.id(<span class="string">&quot;treeDemo_2_span&quot;</span>));</span><br><span class="line"><span class="type">WebElement</span> <span class="variable">targetElement</span> <span class="operator">=</span> chromeDriver.findElement(By.id(<span class="string">&quot;treeDemo_4_span&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="type">Actions</span> <span class="variable">actions</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Actions</span>(chromeDriver);</span><br><span class="line">actions.clickAndHold(sourceElement).moveToElement(targetElement).release().click().perform();</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件上传、验证码"><a href="#文件上传、验证码" class="headerlink" title="文件上传、验证码"></a>文件上传、验证码</h3><ul>
+<li>如果有<code>input</code>，使用sendKeys写入文件路径</li>
+<li>如果不是<code>input</code>元素，使用第三方工具，如:autoit</li>
+</ul>
+<h3 id="截屏操作"><a href="#截屏操作" class="headerlink" title="截屏操作"></a>截屏操作</h3><h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><hr>
+<blockquote>
+<p>Web性能测试是为了考察大家对JMeter工具的基础使用情况，我们从 (1) 线程名称、 (2) 线程数、 (3) 启动时间、 (4) 运行时、 (5) 事务控制器、 (6) 集合点、 (7) 参数化、 (8) 请求成功率等方面作为得分点，来检测大家对生成测试脚本的测试能力。</p>
+<p>性能测试总分共计100分，其中线程名称占比10%、线程数占比10%、启动时间占比10%、运行时间占比10%、事务控制器占10%、集合点占比20%、参数化占比20%、请求成功率占比10%。</p>
+</blockquote>
+<hr>
+<h2 id="JMeter取样器及脚本录制"><a href="#JMeter取样器及脚本录制" class="headerlink" title="JMeter取样器及脚本录制"></a>JMeter取样器及脚本录制</h2><h3 id="录制流量"><a href="#录制流量" class="headerlink" title="录制流量"></a>录制流量</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BD%95%E5%88%B6%E6%B5%81%E9%87%8F.png"></p>
+<p>英文：<code>HTTP(s) Test Script Recorder</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BD%95%E5%88%B6%E7%BD%91%E7%AB%99%E6%B5%81%E9%87%8F.png"></p>
+<h2 id="JMeter的运行参数设置"><a href="#JMeter的运行参数设置" class="headerlink" title="JMeter的运行参数设置"></a>JMeter的运行参数设置</h2><ul>
+<li>线程组的设置</li>
+<li>集合点的设置</li>
+</ul>
+<h2 id="数据驱动的JMeter参数化设置"><a href="#数据驱动的JMeter参数化设置" class="headerlink" title="数据驱动的JMeter参数化设置"></a>数据驱动的JMeter参数化设置</h2><p><a href="https://www.bilibili.com/video/BV1S84y1U7xo?t=1754.2">未完待续</a></p>
+<h2 id="模拟时间间隔"><a href="#模拟时间间隔" class="headerlink" title="模拟时间间隔"></a>模拟时间间隔</h2><ol>
+<li>固定定时器</li>
+</ol>
+<p>当要访问一个网站的首页、第二页面、第三页面等网页时，模拟正常的用户访问顺序、时间，这时，可以设置<strong>固定定时器</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%9B%BA%E5%AE%9A%E5%AE%9A%E6%97%B6%E5%99%A8.png"></p>
+<ol start="2">
+<li><p>测试活动取样器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8%E5%8F%96%E6%A0%B7%E5%99%A8.png"></p>
+</li>
+</ol>
+<h2 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h2><p>命令行：</p>
+<p><code>D:\CSC\Jmeter\mooctest-jmeter-v5\bin\jmeter -n -t (测试案例的名字).jmx  -l log.jtl</code></p>
+]]></content>
+      <tags>
+        <tag>软件测试、Web测试</tag>
       </tags>
   </entry>
 </search>
