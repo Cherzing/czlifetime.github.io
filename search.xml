@@ -268,6 +268,246 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML</title>
+    <url>/2023/09/22/HTML/</url>
+    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><ul>
+<li><p>文本输入框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span> = <span class="string">&quot;第一个输入框&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type="text" value = "第一个输入框"/>
+</li>
+<li><p>选择框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "checkbox"/>
+</li>
+<li><p>单选&#x2F;复选按钮</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;radio&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "radio"/>
+</li>
+<li><p>按钮</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;button&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<input type = "button"/>
+</li>
+<li><p>文件上传</p>
+<p>&lt;input type &#x3D; “file”&gt;</p>
+</li>
+<li><p>密码输入</p>
+<p>&lt;input type &#x3D; “password”&gt;</p>
+</li>
+<li><p>下拉框</p>
+<p><select><option>选择</option></select></p>
+</li>
+<li><p>超链接</p>
+<p><a href = https://czlifetime.eu.org>活在当下的主页</a></p>
+</li>
+<li><p>表格</p>
+<table>
+    <tr><td>1</td><td>2</td></tr>
+    <tr><td>3</td><td>4</td></tr>
+    <tr><td>5</td><td>6</td></tr>
+</table>
+</li>
+<li><p>图片</p>
+<p>&lt;img src &#x3D; “…”&gt;</p>
+</li>
+<li><p>文本域</p>
+<textarea rows = “3" cols = “red"></textarea>
+</li>
+<li><p>加粗</p>
+<p><b></b></p>
+</li>
+<li><p>换行</p>
+<br>
+</li>
+<li><p>段落</p>
+<p>This is a paragraph.</p>
+
+<p>This is another paragraph.</p>
+</li>
+<li><p>注释</p>
+<!-- 这里是注释-->
+</li>
+<li><p>框架</p>
+<iframe> src = “https://czlifetime.eu.org” width = “200” height = “200”></it=frame>
+</li>
+<li><p>div 元素</p>
+<body>
+
+<div class = “head">
+    元素信息
+</div>
+
+
+
+</body></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter</title>
+    <url>/2023/09/29/JMeter/</url>
+    <content><![CDATA[<h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JMeter简介"><a href="#JMeter简介" class="headerlink" title="JMeter简介"></a>JMeter简介</h3><ol>
+<li>可以对于服务器。网络或对象模拟巨大的负载</li>
+<li>可以创建带有断言的脚本来验证程序是否能返回期望的结果</li>
+</ol>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ol>
+<li>开源、免费</li>
+<li>跨平台</li>
+<li>支持多协议</li>
+<li>小巧</li>
+<li>功能强大</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>不支持IP欺骗</li>
+<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要和Selenium配合来完成Web2.0应用的测试</li>
+</ol>
+<h3 id="JMeter基本使用"><a href="#JMeter基本使用" class="headerlink" title="JMeter基本使用"></a>JMeter基本使用</h3><h4 id="两个特殊的线程组"><a href="#两个特殊的线程组" class="headerlink" title="两个特殊的线程组"></a>两个特殊的线程组</h4><ul>
+<li>setUp线程组：最优先执行的线程组</li>
+<li>tearDown线程组：最后执行的线程组</li>
+</ul>
+<h4 id="操作线程组"><a href="#操作线程组" class="headerlink" title="操作线程组"></a>操作线程组</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7.bmp"></p>
+<h4 id="http请求默认值"><a href="#http请求默认值" class="headerlink" title="http请求默认值"></a>http请求默认值</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC2.bmp"></p>
+<h4 id="信息头管理器"><a href="#信息头管理器" class="headerlink" title="信息头管理器"></a>信息头管理器</h4><p>新增修改实现时提交的数据时JSON格式的，需申明提交的数据的内容类型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A8.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A82.bmp"></p>
+<h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><p>当提交的数据量较大，参数化可以动态的获取、设置或生成数据，是一种有程序驱动代替人工驱动的数据设计方案，提高脚本的编写效率以及编写质量</p>
+<p>以下四种方式实现参数化：</p>
+<ol>
+<li><p>用户数据文件设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F2.bmp"></p>
+</li>
+<li><p>CSV数据文件设置</p>
+<p>CSV：逗号分隔符，是一种简洁且常见的数据存储格式</p>
+<p>实现步骤：</p>
+<ol>
+<li>使用CSV文件存储测试数据</li>
+<li>编写被复用的学院新增脚本模板(编码集使用UTF-8，无BOM格式)</li>
+<li>关联脚本与数据(将文件数据倒入脚本)</li>
+</ol>
+</li>
+<li><p>用户参数</p>
+</li>
+<li><p>函数</p>
+</li>
+</ol>
+<h3 id="直链数据库"><a href="#直链数据库" class="headerlink" title="直链数据库"></a>直链数据库</h3><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3>]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JDBC</title>
+    <url>/2023/09/09/JDBC/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
+<h2 id="JDBC-入门"><a href="#JDBC-入门" class="headerlink" title="JDBC 入门"></a>JDBC 入门</h2><ol>
+<li><p>创建工程，导入jar包</p>
+</li>
+<li><p>注册驱动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取连接</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/jdbc_test&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;cz&quot;</span>;</span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>定义SQL语句</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update account set money = 2000 where id =1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取执行SQL对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> conn.createStatement();</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行SQL</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>处理返回结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>释放资源</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">statement.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="JDBC-API-详解"><a href="#JDBC-API-详解" class="headerlink" title="JDBC API 详解"></a>JDBC API 详解</h2><h3 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h3><ul>
+<li>作用<ul>
+<li>注册驱动</li>
+<li>获取数据库连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
+<li><p>作用</p>
+<ol>
+<li><p>获取执行SQL的对象</p>
+<ul>
+<li><p>普通执行SQL对象</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Statement <span class="title function_">createStatement</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>预编译SQL的执行SQL对象：防止SQL注入</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PreparedStatement <span class="title function_">prepareStatement</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行存储过程的对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CallableStatement <span class="title function_">prepaareCall</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>管理事务</p>
+<ul>
+<li><p>MySQL事务管理</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开启事务：<span class="keyword">BEGIN</span>；<span class="operator">/</span><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">提交事务：<span class="keyword">COMMIT</span>;</span><br><span class="line">回滚事务：<span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>JDBC事务管理</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">开启事务：setAutoCommit(<span class="type">boolean</span> autoCommit):<span class="literal">true</span>为自动提交；FALSE为手动提交，几位开始事务</span><br><span class="line">提交事务:commit();</span><br><span class="line">回滚事务:rollback();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><ul>
+<li><p>作用：</p>
+<ol>
+<li><p>执行SQL语句</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20statement.jpg"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><ul>
+<li><p>封装了DQL语句查询结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20resultset.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20result%E6%96%B9%E6%B3%95.jpg"></p>
+</li>
+</ul>
+<h3 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h3><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+<h2 id="据库连接池"><a href="#据库连接池" class="headerlink" title="据库连接池"></a>据库连接池</h2><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>I/O流</title>
     <url>/2023/06/23/IO%E6%B5%81/</url>
     <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
@@ -488,246 +728,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JDBC</title>
-    <url>/2023/09/09/JDBC/</url>
-    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
-<h2 id="JDBC-入门"><a href="#JDBC-入门" class="headerlink" title="JDBC 入门"></a>JDBC 入门</h2><ol>
-<li><p>创建工程，导入jar包</p>
-</li>
-<li><p>注册驱动</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>获取连接</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/jdbc_test&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;cz&quot;</span>;</span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>定义SQL语句</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update account set money = 2000 where id =1&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>获取执行SQL对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> conn.createStatement();</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>执行SQL</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>处理返回结果</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>释放资源</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">statement.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="JDBC-API-详解"><a href="#JDBC-API-详解" class="headerlink" title="JDBC API 详解"></a>JDBC API 详解</h2><h3 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h3><ul>
-<li>作用<ul>
-<li>注册驱动</li>
-<li>获取数据库连接</li>
-</ul>
-</li>
-</ul>
-<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
-<li><p>作用</p>
-<ol>
-<li><p>获取执行SQL的对象</p>
-<ul>
-<li><p>普通执行SQL对象</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Statement <span class="title function_">createStatement</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>预编译SQL的执行SQL对象：防止SQL注入</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PreparedStatement <span class="title function_">prepareStatement</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>执行存储过程的对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CallableStatement <span class="title function_">prepaareCall</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>管理事务</p>
-<ul>
-<li><p>MySQL事务管理</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开启事务：<span class="keyword">BEGIN</span>；<span class="operator">/</span><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">提交事务：<span class="keyword">COMMIT</span>;</span><br><span class="line">回滚事务：<span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>JDBC事务管理</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">开启事务：setAutoCommit(<span class="type">boolean</span> autoCommit):<span class="literal">true</span>为自动提交；FALSE为手动提交，几位开始事务</span><br><span class="line">提交事务:commit();</span><br><span class="line">回滚事务:rollback();</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><ul>
-<li><p>作用：</p>
-<ol>
-<li><p>执行SQL语句</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20statement.jpg"></p>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><ul>
-<li><p>封装了DQL语句查询结果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20resultset.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20result%E6%96%B9%E6%B3%95.jpg"></p>
-</li>
-</ul>
-<h3 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h3><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
-<h2 id="据库连接池"><a href="#据库连接池" class="headerlink" title="据库连接池"></a>据库连接池</h2><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML</title>
-    <url>/2023/09/22/HTML/</url>
-    <content><![CDATA[<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><ul>
-<li><p>文本输入框</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span> = <span class="string">&quot;第一个输入框&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<input type="text" value = "第一个输入框"/>
-</li>
-<li><p>选择框</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;checkbox&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<input type = "checkbox"/>
-</li>
-<li><p>单选&#x2F;复选按钮</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;radio&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<input type = "radio"/>
-</li>
-<li><p>按钮</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;button&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<input type = "button"/>
-</li>
-<li><p>文件上传</p>
-<p>&lt;input type &#x3D; “file”&gt;</p>
-</li>
-<li><p>密码输入</p>
-<p>&lt;input type &#x3D; “password”&gt;</p>
-</li>
-<li><p>下拉框</p>
-<p><select><option>选择</option></select></p>
-</li>
-<li><p>超链接</p>
-<p><a href = https://czlifetime.eu.org>活在当下的主页</a></p>
-</li>
-<li><p>表格</p>
-<table>
-    <tr><td>1</td><td>2</td></tr>
-    <tr><td>3</td><td>4</td></tr>
-    <tr><td>5</td><td>6</td></tr>
-</table>
-</li>
-<li><p>图片</p>
-<p>&lt;img src &#x3D; “…”&gt;</p>
-</li>
-<li><p>文本域</p>
-<textarea rows = “3" cols = “red"></textarea>
-</li>
-<li><p>加粗</p>
-<p><b></b></p>
-</li>
-<li><p>换行</p>
-<br>
-</li>
-<li><p>段落</p>
-<p>This is a paragraph.</p>
-
-<p>This is another paragraph.</p>
-</li>
-<li><p>注释</p>
-<!-- 这里是注释-->
-</li>
-<li><p>框架</p>
-<iframe> src = “https://czlifetime.eu.org” width = “200” height = “200”></it=frame>
-</li>
-<li><p>div 元素</p>
-<body>
-
-<div class = “head">
-    元素信息
-</div>
-
-
-
-</body></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter</title>
-    <url>/2023/09/29/JMeter/</url>
-    <content><![CDATA[<h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JMeter简介"><a href="#JMeter简介" class="headerlink" title="JMeter简介"></a>JMeter简介</h3><ol>
-<li>可以对于服务器。网络或对象模拟巨大的负载</li>
-<li>可以创建带有断言的脚本来验证程序是否能返回期望的结果</li>
-</ol>
-<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
-<ol>
-<li>开源、免费</li>
-<li>跨平台</li>
-<li>支持多协议</li>
-<li>小巧</li>
-<li>功能强大</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>不支持IP欺骗</li>
-<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要和Selenium配合来完成Web2.0应用的测试</li>
-</ol>
-<h3 id="JMeter基本使用"><a href="#JMeter基本使用" class="headerlink" title="JMeter基本使用"></a>JMeter基本使用</h3><h4 id="两个特殊的线程组"><a href="#两个特殊的线程组" class="headerlink" title="两个特殊的线程组"></a>两个特殊的线程组</h4><ul>
-<li>setUp线程组：最优先执行的线程组</li>
-<li>tearDown线程组：最后执行的线程组</li>
-</ul>
-<h4 id="操作线程组"><a href="#操作线程组" class="headerlink" title="操作线程组"></a>操作线程组</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7.bmp"></p>
-<h4 id="http请求默认值"><a href="#http请求默认值" class="headerlink" title="http请求默认值"></a>http请求默认值</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC2.bmp"></p>
-<h4 id="信息头管理器"><a href="#信息头管理器" class="headerlink" title="信息头管理器"></a>信息头管理器</h4><p>新增修改实现时提交的数据时JSON格式的，需申明提交的数据的内容类型：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A8.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A82.bmp"></p>
-<h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><p>当提交的数据量较大，参数化可以动态的获取、设置或生成数据，是一种有程序驱动代替人工驱动的数据设计方案，提高脚本的编写效率以及编写质量</p>
-<p>以下四种方式实现参数化：</p>
-<ol>
-<li><p>用户数据文件设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F2.bmp"></p>
-</li>
-<li><p>CSV数据文件设置</p>
-<p>CSV：逗号分隔符，是一种简洁且常见的数据存储格式</p>
-<p>实现步骤：</p>
-<ol>
-<li>使用CSV文件存储测试数据</li>
-<li>编写被复用的学院新增脚本模板(编码集使用UTF-8，无BOM格式)</li>
-<li>关联脚本与数据(将文件数据倒入脚本)</li>
-</ol>
-</li>
-<li><p>用户参数</p>
-</li>
-<li><p>函数</p>
-</li>
-</ol>
-<h3 id="直链数据库"><a href="#直链数据库" class="headerlink" title="直链数据库"></a>直链数据库</h3><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3>]]></content>
-      <tags>
-        <tag>软件测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript</title>
     <url>/2023/09/22/JavaScript/</url>
     <content><![CDATA[<p>JavaScript是可插入HTML 页面的编程代码，用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用</p>
@@ -742,97 +742,6 @@
 <li><body>和<head>中</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Java网络</title>
-    <url>/2023/08/18/Java%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h2><ul>
-<li>获取本机InetAddress对象：<code>getLocalHost()</code></li>
-<li>根据指定主机名&#x2F;域名获取ip地址对象：<code>getByName()</code></li>
-<li>获取InetAddress对象的主机名：<code>getHostName()</code></li>
-<li>获取InetAddress对象的地址：<code>getHostAddress()</code></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">API_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException &#123;</span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">localHost</span> <span class="operator">=</span> InetAddress.getLocalHost();</span><br><span class="line">        System.out.println(localHost);</span><br><span class="line"></span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">byName</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;MaxLifetime-LAPTOP&quot;</span>);</span><br><span class="line">        System.out.println(byName);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">lh1</span> <span class="operator">=</span> localHost.getHostName();</span><br><span class="line">        System.out.println(lh1);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">hm</span> <span class="operator">=</span> byName.getHostName();</span><br><span class="line">        System.out.println(hm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ol>
-<li><p>套接字(Socket)开发网络应用程序被广泛采用，以至于成为事实上的标准</p>
-</li>
-<li><p>通信的两端都要有插座，是两台机器间通信的端点</p>
-</li>
-<li><p>网络通信其实就是Socket间的通信.</p>
-</li>
-<li><p>Socket允许程序把网络连接当成一个流，数据在两个套接字间通过IO传输</p>
-</li>
-<li><p>一般主动发起通信的应用程序属客户端，等待通信请求的为服务端</p>
-</li>
-</ol>
-<h3 id="TCP网络通信编程"><a href="#TCP网络通信编程" class="headerlink" title="TCP网络通信编程"></a>TCP网络通信编程</h3><ol>
-<li>基本介绍<ul>
-<li>基于客户端——服务端的网络通信</li>
-<li>底层使用的是TCP&#x2F;IP协议</li>
-<li>应用场景举例：客户端发送数据、服务端接受并显示</li>
-<li>基于Socket的TCP编程</li>
-<li>（可靠）</li>
-</ul>
-</li>
-</ol>
-<h3 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a>UDP编程</h3><p>（不可靠）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCP%E9%80%9A%E4%BF%A1%E7%BC%96%E7%A8%8B.png"></p>
-<blockquote>
-<p>练习1.：</p>
-<p>1.编写一个服务器端,和一个客户端<br>2.服务器端在 9999端口监听<br>3.客户端连接到服务器端，发送“hello,server”，然后退出<br>4.服务器端接收到 客户端发送的 信息，输出，并退出</p>
-<p>思路：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMind.jpg"></p>
-<blockquote>
-<p><Strong>Server:</Strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCPServer</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;等待连接&quot;</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span>  <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes ,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(<span class="string">&quot;关闭&quot;</span>);</span><br><span class="line">        serverSocket.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><Strong>Client：</Strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCPClient</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> <span class="string">&quot;Hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line">        outputStream.write(string.getBytes());</span><br><span class="line"></span><br><span class="line">        outputStream.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-</blockquote>
-<blockquote>
-<p>练习2：(使用字节流)</p>
-<ol>
-<li>编写一个服务端，和一个客户端</li>
-<li>服务器端在9999端口监听</li>
-<li>客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</li>
-<li>服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</li>
-</ol>
-<p>思路：</p>
-<p> &#x2F;+ 以上思路</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMindTest2.jpg"></p>
-<blockquote>
-<p><strong>Server:</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP2Server</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//2.服务器端在9999端口监听</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nServer收到“你好，服务器”&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好，客户&quot;</span>.getBytes());</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line">        serverSocket.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><Strong>Client:</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP2Client</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好，服务器&quot;</span>.getBytes());</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        socket.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>练习3：(使用字节流)</p>
-<ol>
-<li>编写一个服务端，和一个客户端</li>
-<li>服务器端在9999端口监听</li>
-<li>客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</li>
-<li>服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMindTest3.jpg"></p>
-<blockquote>
-<p><strong>Client:</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP3Client</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="comment">//使用字符流</span></span><br><span class="line">        <span class="type">BufferedWriter</span> <span class="variable">bufferedWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(outputStream));</span><br><span class="line">        bufferedWriter.write(<span class="string">&quot;hello Server&quot;</span>);</span><br><span class="line">        bufferedWriter.newLine();</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> bufferedReader.readLine();</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        socket.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        bufferedReader.close();</span><br><span class="line">        bufferedWriter.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>Server:</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP3Server</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//2.服务器端在9999端口监听</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> bufferedReader.readLine();</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nServer收到“你好，服务器”&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="type">BufferedWriter</span> <span class="variable">bufferedWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(outputStream));</span><br><span class="line">        bufferedWriter.write(<span class="string">&quot;Hello Client&quot;</span>);</span><br><span class="line">        bufferedWriter.newLine();</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line"></span><br><span class="line">        serverSocket.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        bufferedWriter.close();</span><br><span class="line">        bufferedReader.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
   </entry>
   <entry>
     <title>JavaWeb</title>
@@ -911,7 +820,117 @@
 </ol>
 </li>
 </ol>
-<h4 id="MyBatis核心配置文件"><a href="#MyBatis核心配置文件" class="headerlink" title="MyBatis核心配置文件"></a>MyBatis核心配置文件</h4><h4 id="配置文件完成增删改查"><a href="#配置文件完成增删改查" class="headerlink" title="配置文件完成增删改查"></a>配置文件完成增删改查</h4><h4 id="注解完成增删改查"><a href="#注解完成增删改查" class="headerlink" title="注解完成增删改查"></a>注解完成增删改查</h4><h4 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h4><h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><h3 id="SpringBootWeb入门"><a href="#SpringBootWeb入门" class="headerlink" title="SpringBootWeb入门"></a>SpringBootWeb入门</h3><ol>
+<h4 id="MyBatis核心配置文件"><a href="#MyBatis核心配置文件" class="headerlink" title="MyBatis核心配置文件"></a>MyBatis核心配置文件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 配置数据库的连接信息 <span class="comment">-- 四要素</span></span><br><span class="line"># 驱动类名称</span><br><span class="line">spring.datasource.driver<span class="operator">-</span>class<span class="operator">-</span>name<span class="operator">=</span>com.mysql.cj.jdbc.Driver</span><br><span class="line"># 数据库连接的url</span><br><span class="line">spring.datasource.url<span class="operator">=</span>jdbc:mysql:<span class="operator">/</span><span class="operator">/</span>localhost:<span class="number">3306</span><span class="operator">/</span>mybatis</span><br><span class="line"># 连接数据库的用户名</span><br><span class="line">spring.datasource.username<span class="operator">=</span>root</span><br><span class="line"># 连接数据库的密码</span><br><span class="line">spring.datasource.password<span class="operator">=</span><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h4><ul>
+<li>Lombok是一个使用的Java类库，能通过注解的形式自动生成构造器getter&#x2F;setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化Java开发、提高效率</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Getter&#x2F;@Setter</td>
+<td>为所有的属性提供get&#x2F;set方法</td>
+</tr>
+<tr>
+<td>@ToString</td>
+<td>会根据类自动生成易阅读的toString方法</td>
+</tr>
+<tr>
+<td>@EqualsAndHashCode</td>
+<td>根据类所拥有的非静态字段自动重写equals方法和hashCode方法</td>
+</tr>
+<tr>
+<td>@Data</td>
+<td>提供更综合的生成代码功能(@Getter+@Setter+@ToString+@EqualsAndHashCode)</td>
+</tr>
+<tr>
+<td>@NoArgsConstructor</td>
+<td>为实体类生成无参的构造方法</td>
+</tr>
+<tr>
+<td>@AllArgsConstructor</td>
+<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法</td>
+</tr>
+</tbody></table>
+<h4 id="注解完成增删改查-RUID"><a href="#注解完成增删改查-RUID" class="headerlink" title="注解完成增删改查(RUID)"></a>注解完成增删改查(RUID)</h4><h5 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h5><ul>
+<li><p>预编译SQL</p>
+<ul>
+<li><p>性能更高</p>
+</li>
+<li><p>更安全、防止SQL注入</p>
+<ul>
+<li><p>SQL注入：通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法<code>password = &#39; or &#39;1&#39; = &#39;1</code></p>
+<blockquote>
+<p>参数占位符：</p>
+<ul>
+<li><code>#&#123;...&#125;</code><ul>
+<li>执行SQL时，会将<code>#&#123;...&#125;</code>替换为？，生成预编译SQL，会自动设置参数值</li>
+<li>使用时机：参数传递，都使用<code>#&#123;...&#125;</code></li>
+</ul>
+</li>
+<li><code>$&#123;…&#125;</code><ul>
+<li>拼接SQL。直接将参数拼接在SQL语句中，存在SQL注入问题</li>
+<li>使用时机：如果对表名、列表进行动态设置使用</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h5><h5 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h5><h5 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h5><ul>
+<li><p>当SQL的字段与实体类的属性不一致</p>
+<ul>
+<li><p>给字段起别名，让别名与实体类属性一致</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E6%97%B61.png"></p>
+</li>
+<li><p>通过<code>@Results</code>,手动映射封装</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E6%9F%A5%E8%AF%A2%E4%B8%BA%E7%A9%BA%E6%97%B62.png"></p>
+</li>
+<li><p>打开mybatis的驼峰命名自动映射开关</p>
+<p><code>application.properties</code>文件中：<code>mybatis.configuration.map-underscore-to-camel-case=true</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//根据ID删除数据</span></span><br><span class="line">    <span class="meta">@Delete(&quot;delete from emp where id = #&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(Integer id)</span>;</span><br><span class="line">    <span class="comment">//public int delete(Integer id);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//新增员工</span></span><br><span class="line">    <span class="meta">@Options(useGeneratedKeys = true, keyProperty = &quot;id&quot;)</span></span><br><span class="line">    <span class="meta">@Insert(&quot;insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)&quot; +</span></span><br><span class="line"><span class="meta">            &quot; values (#&#123;username&#125;,#&#123;name&#125;,#&#123;gender&#125;,#&#123;image&#125;,#&#123;job&#125;,#&#123;entrydate&#125;,#&#123;deptId&#125;,#&#123;createTime&#125;,#&#123;updateTime&#125;)&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(Emp emp)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//更新员工</span></span><br><span class="line">    <span class="meta">@Update(&quot;update emp set username = #&#123;username&#125;, name = #&#123;name&#125;, gender = #&#123;gender&#125;, image = #&#123;image&#125;,&quot; +</span></span><br><span class="line"><span class="meta">            &quot; job = #&#123;job&#125;, entrydate = #&#123;entrydate&#125;, dept_id = #&#123;deptId&#125;,update_time = #&#123;updateTime&#125; where id = #&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(Emp emp)</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置文件完成增删改查-XML"><a href="#配置文件完成增删改查-XML" class="headerlink" title="配置文件完成增删改查(XML)"></a>配置文件完成增删改查(XML)</h4><ul>
+<li>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下(同包同名)</li>
+<li>XML映射文件的namespace属性为Mapper接口全限定名一致</li>
+<li>XML映射文件中的SQL语句的id与Mapper接口中的方法名一致，并保持返回类型一致</li>
+</ul>
+<h4 id="Mybatis动态SQL"><a href="#Mybatis动态SQL" class="headerlink" title="Mybatis动态SQL"></a>Mybatis动态SQL</h4><ul>
+<li><p>&lt;if&gt;：用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%20mybatis%20if.png"></p>
+</li>
+<li><p>&lt;where&gt;：只会在子元素有内容的情况下才会插入where子句。而且会自动去除子句的开头的AND或OR</p>
+</li>
+<li><p>&lt;set&gt;：动态地在行首插入set关键字，并会删除掉额外的逗号(用在Update语句中)</p>
+</li>
+<li><p>&lt;foreach&gt;</p>
+<ul>
+<li>collection：遍历的集合</li>
+<li>item：遍历出来的元素</li>
+<li>separator：分隔符</li>
+<li>opean：遍历开始前拼接的SQL片段</li>
+<li>close：遍历结束后拼接的SQL片段</li>
+</ul>
+</li>
+<li><p>&lt;sql&gt;：定义可重用的SQL片段</p>
+</li>
+<li><p>&lt;include&gt;：通过属性refid，指定包含的SQL片段</p>
+</li>
+</ul>
+<h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><h3 id="SpringBootWeb入门"><a href="#SpringBootWeb入门" class="headerlink" title="SpringBootWeb入门"></a>SpringBootWeb入门</h3><ol>
 <li>创建springboot工程，并勾选web开发相关依赖。</li>
 <li>定义HelloController类，添加方法 hello，并添加注解</li>
 <li>运行测试</li>
@@ -964,9 +983,102 @@
 <td>请求主体的大小</td>
 </tr>
 </tbody></table>
+<p>例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E7%BD%91%E5%9D%80%E8%AF%B7%E6%B1%82.png"></p>
 <h4 id="相应协议"><a href="#相应协议" class="headerlink" title="相应协议"></a>相应协议</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/http%E7%9B%B8%E5%BA%94%E6%A0%BC%E5%BC%8F.jpg"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/http%E7%9B%B8%E5%BA%94%E5%A4%B4.jpg"></p>
-<h4 id="协议解析"><a href="#协议解析" class="headerlink" title="协议解析"></a>协议解析</h4><h3 id="Web服务器-Tomcat"><a href="#Web服务器-Tomcat" class="headerlink" title="Web服务器-Tomcat"></a>Web服务器-Tomcat</h3>]]></content>
+<p>常见状态码：</p>
+<ul>
+<li>200： 客户端请求成功</li>
+<li>404： 请求资源不存在</li>
+<li>500： 服务器发生不可预期的错误</li>
+</ul>
+<h4 id="协议解析"><a href="#协议解析" class="headerlink" title="协议解析"></a>协议解析</h4><p>http(Hyper Text Transfer Protocol)超文本传输协议</p>
+<h3 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h3><p>是一个软件程序，对HTTP协议的操作进行封装，使得程序员不必直接对协议进行操作，让Web开发更加便捷。主要的功能是“提供网上信息浏览服务”</p>
+<h4 id="请求（各类请求参数的接收和封装）"><a href="#请求（各类请求参数的接收和封装）" class="headerlink" title="请求（各类请求参数的接收和封装）"></a>请求（各类请求参数的接收和封装）</h4><ul>
+<li>简单参数</li>
+<li>实体参数</li>
+<li>数组集合参数</li>
+<li>日期参数</li>
+<li>Json参数</li>
+<li>路径参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lifetime.springbootwebrespreq.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.Address;</span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.Hobby;</span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.User;</span><br><span class="line"><span class="keyword">import</span> org.springframework.format.annotation.DateTimeFormat;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RequestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/testRequest&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">testRequest</span><span class="params">(<span class="meta">@RequestParam(name = &quot;name&quot;,required = false)</span> String username,Integer age)</span>&#123;</span><br><span class="line">        System.out.println(username + age);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simplePojo&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simplePojo</span><span class="params">(User user)</span>&#123;</span><br><span class="line">        System.out.println(user.toString());</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//信息中包含信息</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/simplePojo1&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">simplePojo1</span><span class="params">(User user, Address address)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;有地址的访问&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//同一个类型，多个值(数组、集合)</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;array&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">array</span><span class="params">(String[] hobby)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;接收的hobby有(数组)&quot;</span> + Arrays.toString(hobby));</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//使用集合</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;ListParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">ListParam</span><span class="params">(<span class="meta">@RequestParam</span> List&lt;String&gt; hobby)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;接收的Hobby(集合)&quot;</span> + hobby);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//日期参数</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/dateParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">dateParam</span><span class="params">(<span class="meta">@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span>LocalDateTime updateTime)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;时间为&quot;</span> + updateTime);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//json参数</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;jsonParam&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">jsonParam</span><span class="params">(<span class="meta">@RequestBody</span> User user)</span>&#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//路径参数</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/path/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">pathParam</span><span class="params">(<span class="meta">@PathVariable</span> Integer id)</span>&#123;</span><br><span class="line">        System.out.println(id);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h4><p>使用到<code>@ResponseBody</code></p>
+<ul>
+<li>类型：方法注解、类注解</li>
+<li>位置：Controller方法&#x2F;类上</li>
+<li>作用：将方法返回值直接响应，如返回值类型是实体对象&#x2F;集合，将会转换为JSON响应对象</li>
+<li><code>@RestController = @Controlller + @ResponseBody</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lifetime.springbootwebrespreq.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.Address;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResponseController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;getAddress&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Address <span class="title function_">getAddress</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Address</span> <span class="variable">address</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address.setCity(<span class="string">&quot;邳州市&quot;</span>);</span><br><span class="line">        address.setProvince(<span class="string">&quot;江苏省&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;listAddress&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Address&gt; <span class="title function_">listAddress</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;Address&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="type">Address</span> <span class="variable">address1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address1.setProvince(<span class="string">&quot;台湾省&quot;</span>);</span><br><span class="line">        address1.setCity(<span class="string">&quot;台北市&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Address</span> <span class="variable">address2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address2.setCity(<span class="string">&quot;深圳市&quot;</span>);</span><br><span class="line">        address2.setProvince(<span class="string">&quot;广东省&quot;</span>);</span><br><span class="line"></span><br><span class="line">        list.add(address1);</span><br><span class="line">        list.add(address2);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>↑ 以上，如果数据过多，不容易处理</p>
+<p>↓ 统一响应结果：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span>&#123;</span><br><span class="line">    <span class="comment">//响应码 1代表成功 2代表失败</span></span><br><span class="line"> 	<span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="comment">//提示信息</span></span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">    <span class="comment">//返回数据</span></span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文件名：ResponseController.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lifetime.springbootwebrespreq.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.Address;</span><br><span class="line"><span class="keyword">import</span> com.lifetime.springbootwebrespreq.pojo.Result;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResponseController</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">1</span>,<span class="string">&quot;success&quot;</span>,<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;getAddress&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">getAddress</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Address</span> <span class="variable">address</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address.setCity(<span class="string">&quot;邳州市&quot;</span>);</span><br><span class="line">        address.setProvince(<span class="string">&quot;江苏省&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> Result.success(address);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;listAddress&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">listAddress</span><span class="params">()</span>&#123;</span><br><span class="line">        List&lt;Address&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="type">Address</span> <span class="variable">address1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address1.setProvince(<span class="string">&quot;台湾省&quot;</span>);</span><br><span class="line">        address1.setCity(<span class="string">&quot;台北市&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Address</span> <span class="variable">address2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Address</span>();</span><br><span class="line">        address2.setCity(<span class="string">&quot;深圳市&quot;</span>);</span><br><span class="line">        address2.setProvince(<span class="string">&quot;广东省&quot;</span>);</span><br><span class="line"></span><br><span class="line">        list.add(address1);</span><br><span class="line">        list.add(address2);</span><br><span class="line">        <span class="keyword">return</span> Result.success(list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文件名：Result.java</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lifetime.springbootwebrespreq.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Result</span><span class="params">()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Result</span><span class="params">(Integer code,String msg,Object data)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">        <span class="built_in">this</span>.msg = msg;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCode</span><span class="params">(Integer code)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMsg</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMsg</span><span class="params">(String msg)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(Object data)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">success</span><span class="params">(Object data)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">1</span>,<span class="string">&quot;sucess&quot;</span>,data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">success</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">1</span>,<span class="string">&quot;success&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">error</span><span class="params">(String msg)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">0</span>,msg,<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Result&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;code=&quot;</span> + code +</span><br><span class="line">                <span class="string">&quot;, msg=&#x27;&quot;</span> + msg + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, data=&quot;</span> + data +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="分层解耦"><a href="#分层解耦" class="headerlink" title="分层解耦"></a>分层解耦</h4><h5 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h5><ul>
+<li>Controller：控制层，接收前端发送的请求，对请求进行处理，并响应数据</li>
+<li>Service：业务逻辑层，处理具体的业务逻辑</li>
+<li>Dao：数据访问层(Data Access Object)(持久层)，负责数据访问操作，包括数据的增、删、改、查</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png"></p>
+<h5 id="分层解耦-1"><a href="#分层解耦-1" class="headerlink" title="分层解耦"></a>分层解耦</h5><ul>
+<li><p>内聚：软件中各个功能模块内部的功能练习</p>
+</li>
+<li><p>耦合：衡量软件中各个层&#x2F;模块之间的依赖、关联的程度</p>
+<blockquote>
+<p>软件设计原则：高内聚、低耦合</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="IOC-amp-DI入门"><a href="#IOC-amp-DI入门" class="headerlink" title="IOC&amp; DI入门"></a>IOC&amp; DI入门</h5><ul>
+<li>IOC-&gt;控制反转：对象的创建控制权由程序自身转移到外部(容器),这种思想称为控制反转</li>
+<li>DI-&gt;依赖注入：容器为应用程序提供运行时，所依赖的资源，称之为依赖注入</li>
+<li>Bean对象：IOC容器中创建、管理的对象，称之为bean</li>
+</ul>
+<h5 id="IOC详解"><a href="#IOC详解" class="headerlink" title="IOC详解"></a>IOC详解</h5><h5 id="DI详解"><a href="#DI详解" class="headerlink" title="DI详解"></a>DI详解</h5><p>从新开始：</p>
+<hr>
+<hr>
+<h1 id="JavaWeb-1"><a href="#JavaWeb-1" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="JavaWeb的概念"><a href="#JavaWeb的概念" class="headerlink" title="JavaWeb的概念"></a>JavaWeb的概念</h2><p>是指，所有通过Java语言编写可以通过浏览器访问的程序的总称</p>
+<p>是基于<strong>请求</strong>和<strong>响应</strong>开发的</p>
+<ul>
+<li>请求：客户端给服务器发送数据，Request</li>
+<li>响应：服务器给客户端回传数据，Response</li>
+<li>响应与请求的关系：成对出现</li>
+</ul>
+<h2 id="Web资源的分类"><a href="#Web资源的分类" class="headerlink" title="Web资源的分类"></a>Web资源的分类</h2><ul>
+<li>静态资源：html、css、js、txt、mp4、jpg</li>
+<li>动态资源：jsp页面，Servlet程序</li>
+</ul>
+<h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><ul>
+<li><p>框架：半成品软件，可以在框架的基础上进行软件的开发，简化代码</p>
+</li>
+<li><p>反射：将类的各个组成部分封装为其他对象</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E5%8F%8D%E5%B0%84.png"></p>
+<ul>
+<li>好处：<ol>
+<li>可以在程序运行的过程中，操作这些对象</li>
+<li>可以解耦，提高程序的可扩展性</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
       <tags>
         <tag>Java</tag>
       </tags>
@@ -1511,95 +1623,94 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>Junit</title>
-    <url>/2023/09/13/Junit/</url>
-    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
-<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
-<ul>
-<li>Eclipse</li>
-<li>Ant</li>
-<li>Maven</li>
+    <title>Java网络</title>
+    <url>/2023/08/18/Java%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h2><ul>
+<li>获取本机InetAddress对象：<code>getLocalHost()</code></li>
+<li>根据指定主机名&#x2F;域名获取ip地址对象：<code>getByName()</code></li>
+<li>获取InetAddress对象的主机名：<code>getHostName()</code></li>
+<li>获取InetAddress对象的地址：<code>getHostAddress()</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">API_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException &#123;</span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">localHost</span> <span class="operator">=</span> InetAddress.getLocalHost();</span><br><span class="line">        System.out.println(localHost);</span><br><span class="line"></span><br><span class="line">        <span class="type">InetAddress</span> <span class="variable">byName</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;MaxLifetime-LAPTOP&quot;</span>);</span><br><span class="line">        System.out.println(byName);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">lh1</span> <span class="operator">=</span> localHost.getHostName();</span><br><span class="line">        System.out.println(lh1);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">hm</span> <span class="operator">=</span> byName.getHostName();</span><br><span class="line">        System.out.println(hm);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ol>
+<li><p>套接字(Socket)开发网络应用程序被广泛采用，以至于成为事实上的标准</p>
+</li>
+<li><p>通信的两端都要有插座，是两台机器间通信的端点</p>
+</li>
+<li><p>网络通信其实就是Socket间的通信.</p>
+</li>
+<li><p>Socket允许程序把网络连接当成一个流，数据在两个套接字间通过IO传输</p>
+</li>
+<li><p>一般主动发起通信的应用程序属客户端，等待通信请求的为服务端</p>
+</li>
+</ol>
+<h3 id="TCP网络通信编程"><a href="#TCP网络通信编程" class="headerlink" title="TCP网络通信编程"></a>TCP网络通信编程</h3><ol>
+<li>基本介绍<ul>
+<li>基于客户端——服务端的网络通信</li>
+<li>底层使用的是TCP&#x2F;IP协议</li>
+<li>应用场景举例：客户端发送数据、服务端接受并显示</li>
+<li>基于Socket的TCP编程</li>
+<li>（可靠）</li>
 </ul>
 </li>
-<li><p><em></em></p>
-<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
-<ul>
-<li>Fixtures</li>
-<li>测试套件</li>
-<li>测试运行器</li>
-<li>JUnit 类</li>
-</ul>
-<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
-<ul>
-<li>setUp() 方法，在每次测试调用之前运行。</li>
-<li>tearDown() 方法，在每个测试方法之后运行。</li>
-</ul>
-<p>让我们看一个例子 -</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</ol>
+<h3 id="UDP编程"><a href="#UDP编程" class="headerlink" title="UDP编程"></a>UDP编程</h3><p>（不可靠）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCP%E9%80%9A%E4%BF%A1%E7%BC%96%E7%A8%8B.png"></p>
+<blockquote>
+<p>练习1.：</p>
+<p>1.编写一个服务器端,和一个客户端<br>2.服务器端在 9999端口监听<br>3.客户端连接到服务器端，发送“hello,server”，然后退出<br>4.服务器端接收到 客户端发送的 信息，输出，并退出</p>
+<p>思路：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMind.jpg"></p>
+<blockquote>
+<p><Strong>Server:</Strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCPServer</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;等待连接&quot;</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span>  <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes ,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(<span class="string">&quot;关闭&quot;</span>);</span><br><span class="line">        serverSocket.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><Strong>Client：</Strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCPClient</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">string</span> <span class="operator">=</span> <span class="string">&quot;Hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line">        outputStream.write(string.getBytes());</span><br><span class="line"></span><br><span class="line">        outputStream.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>练习2：(使用字节流)</p>
+<ol>
+<li>编写一个服务端，和一个客户端</li>
+<li>服务器端在9999端口监听</li>
+<li>客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</li>
+<li>服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</li>
+</ol>
+<p>思路：</p>
+<p> &#x2F;+ 以上思路</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMindTest2.jpg"></p>
+<blockquote>
+<p><strong>Server:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP2Server</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//2.服务器端在9999端口监听</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nServer收到“你好，服务器”&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好，客户&quot;</span>.getBytes());</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line">        serverSocket.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><Strong>Client:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP2Client</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好，服务器&quot;</span>.getBytes());</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">readLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((readLen = inputStream.read(bytes)) != -<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.print(<span class="keyword">new</span> <span class="title class_">String</span>(bytes,<span class="number">0</span>,readLen));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        socket.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        inputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>练习3：(使用字节流)</p>
+<ol>
+<li>编写一个服务端，和一个客户端</li>
+<li>服务器端在9999端口监听</li>
+<li>客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</li>
+<li>服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/TCPMindTest3.jpg"></p>
+<blockquote>
+<p><strong>Client:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP3Client</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(InetAddress.getLocalHost(), <span class="number">9999</span>);</span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="comment">//使用字符流</span></span><br><span class="line">        <span class="type">BufferedWriter</span> <span class="variable">bufferedWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(outputStream));</span><br><span class="line">        bufferedWriter.write(<span class="string">&quot;hello Server&quot;</span>);</span><br><span class="line">        bufferedWriter.newLine();</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> bufferedReader.readLine();</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        socket.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        bufferedReader.close();</span><br><span class="line">        bufferedWriter.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>复制</p>
-</li>
-<li><p><em></em></p>
-<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
-<ul>
-<li><strong>Assert</strong> - 包含一组断言方法。</li>
-<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
-<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
-</ul>
-</li>
-</ul>
+<p><strong>Server:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> Internet.API.TCP_3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SocketTCP3Server</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//2.服务器端在9999端口监听</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">9999</span>);</span><br><span class="line">        <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> socket.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bufferedReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream));</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> bufferedReader.readLine();</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\nServer收到“你好，服务器”&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.客户端连接到服务器端，发送“你好，服务器”，并接收服务器端回发的“你好，客户”再退出</span></span><br><span class="line">        <span class="comment">//4.服务器端接收到客户端发送的信息，输出，并发送“你好，客户”，再退出</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line">        <span class="type">BufferedWriter</span> <span class="variable">bufferedWriter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(outputStream));</span><br><span class="line">        bufferedWriter.write(<span class="string">&quot;Hello Client&quot;</span>);</span><br><span class="line">        bufferedWriter.newLine();</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line"></span><br><span class="line">        serverSocket.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        bufferedWriter.close();</span><br><span class="line">        bufferedReader.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>软件测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web自动化测试</title>
-    <url>/2023/09/21/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="web自动化测试"><a href="#web自动化测试" class="headerlink" title="web自动化测试"></a>web自动化测试</h1><h2 id="web自动化入门"><a href="#web自动化入门" class="headerlink" title="web自动化入门"></a>web自动化入门</h2><h3 id="认识自动化及自动化测试"><a href="#认识自动化及自动化测试" class="headerlink" title="认识自动化及自动化测试"></a>认识自动化及自动化测试</h3><p>自动化：</p>
-<ul>
-<li>机器代替人工自动完成指定目标的过程</li>
-</ul>
-<p>自动化测试：</p>
-<ul>
-<li>让程序代替人工取验证系统功能的过程</li>
-</ul>
-<p>自动化测试解决问题：</p>
-<ul>
-<li>回归测试</li>
-<li>压力测试</li>
-<li>兼容性测试</li>
-<li>提高测试效率，保证产品质量</li>
-</ul>
-<p>自动化测试的优点：</p>
-<ul>
-<li>较少的时间内可以运行更多的测试用例</li>
-<li>自动化脚本可重复运行</li>
-<li>减少人为错误</li>
-<li>克服手工测试的局限性</li>
-</ul>
-<h3 id="自动化测试工具选择"><a href="#自动化测试工具选择" class="headerlink" title="自动化测试工具选择"></a>自动化测试工具选择</h3><p>Selenium</p>
-<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h2 id="Selenium-API操作"><a href="#Selenium-API操作" class="headerlink" title="Selenium-API操作"></a>Selenium-API操作</h2><h3 id="元素定位方式"><a href="#元素定位方式" class="headerlink" title="元素定位方式"></a>元素定位方式</h3><h3 id="元素和浏览器的操作方法"><a href="#元素和浏览器的操作方法" class="headerlink" title="元素和浏览器的操作方法"></a>元素和浏览器的操作方法</h3><h3 id="鼠标和键盘操作"><a href="#鼠标和键盘操作" class="headerlink" title="鼠标和键盘操作"></a>鼠标和键盘操作</h3><h3 id="元素等待"><a href="#元素等待" class="headerlink" title="元素等待"></a>元素等待</h3><h3 id="HTML特殊元素处理"><a href="#HTML特殊元素处理" class="headerlink" title="HTML特殊元素处理"></a>HTML特殊元素处理</h3><h3 id="窗口截图"><a href="#窗口截图" class="headerlink" title="窗口截图"></a>窗口截图</h3><h3 id="验证码处理"><a href="#验证码处理" class="headerlink" title="验证码处理"></a>验证码处理</h3><h2 id="UnitTest框架"><a href="#UnitTest框架" class="headerlink" title="UnitTest框架"></a>UnitTest框架</h2><h3 id="UnitTest基本使用"><a href="#UnitTest基本使用" class="headerlink" title="UnitTest基本使用"></a>UnitTest基本使用</h3><h3 id="UnitTest断言"><a href="#UnitTest断言" class="headerlink" title="UnitTest断言"></a>UnitTest断言</h3><h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><h3 id="生成HTML测试报告"><a href="#生成HTML测试报告" class="headerlink" title="生成HTML测试报告"></a>生成HTML测试报告</h3><h2 id="PO测试"><a href="#PO测试" class="headerlink" title="PO测试"></a>PO测试</h2><h3 id="方法封装"><a href="#方法封装" class="headerlink" title="方法封装"></a>方法封装</h3><h3 id="PO模式介绍"><a href="#PO模式介绍" class="headerlink" title="PO模式介绍"></a>PO模式介绍</h3><h3 id="PO模式实战"><a href="#PO模式实战" class="headerlink" title="PO模式实战"></a>PO模式实战</h3><h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><h3 id="JSON读写"><a href="#JSON读写" class="headerlink" title="JSON读写"></a>JSON读写</h3><h3 id="数据驱动介绍"><a href="#数据驱动介绍" class="headerlink" title="数据驱动介绍"></a>数据驱动介绍</h3><h3 id="数据驱动实战"><a href="#数据驱动实战" class="headerlink" title="数据驱动实战"></a>数据驱动实战</h3><h2 id="日志采集"><a href="#日志采集" class="headerlink" title="日志采集"></a>日志采集</h2><h3 id="日志相关概念"><a href="#日志相关概念" class="headerlink" title="日志相关概念"></a>日志相关概念</h3><h3 id="日志的基本方法"><a href="#日志的基本方法" class="headerlink" title="日志的基本方法"></a>日志的基本方法</h3><h3 id="日志的高级方法"><a href="#日志的高级方法" class="headerlink" title="日志的高级方法"></a>日志的高级方法</h3><h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="自动化测试流程"><a href="#自动化测试流程" class="headerlink" title="自动化测试流程"></a>自动化测试流程</h3><h3 id="项目实战演练"><a href="#项目实战演练" class="headerlink" title="项目实战演练"></a>项目实战演练</h3>]]></content>
-      <tags>
-        <tag>软件测试</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1935,10 +2046,96 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/09/24/%E4%B8%8D%E4%BC%9A%E7%9A%84%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%AE%8B%E6%B5%A9%20%E7%BB%83%E4%B9%A0%E6%9C%AA%E5%81%9A.jpg"></p>
+    <title>Junit</title>
+    <url>/2023/09/13/Junit/</url>
+    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
+<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
+<ul>
+<li>Eclipse</li>
+<li>Ant</li>
+<li>Maven</li>
+</ul>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
+<ul>
+<li>Fixtures</li>
+<li>测试套件</li>
+<li>测试运行器</li>
+<li>JUnit 类</li>
+</ul>
+<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
+<ul>
+<li>setUp() 方法，在每次测试调用之前运行。</li>
+<li>tearDown() 方法，在每个测试方法之后运行。</li>
+</ul>
+<p>让我们看一个例子 -</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
+<ul>
+<li><strong>Assert</strong> - 包含一组断言方法。</li>
+<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
+<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
+</ul>
+</li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web自动化测试</title>
+    <url>/2023/09/21/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="web自动化测试"><a href="#web自动化测试" class="headerlink" title="web自动化测试"></a>web自动化测试</h1><h2 id="web自动化入门"><a href="#web自动化入门" class="headerlink" title="web自动化入门"></a>web自动化入门</h2><h3 id="认识自动化及自动化测试"><a href="#认识自动化及自动化测试" class="headerlink" title="认识自动化及自动化测试"></a>认识自动化及自动化测试</h3><p>自动化：</p>
+<ul>
+<li>机器代替人工自动完成指定目标的过程</li>
+</ul>
+<p>自动化测试：</p>
+<ul>
+<li>让程序代替人工取验证系统功能的过程</li>
+</ul>
+<p>自动化测试解决问题：</p>
+<ul>
+<li>回归测试</li>
+<li>压力测试</li>
+<li>兼容性测试</li>
+<li>提高测试效率，保证产品质量</li>
+</ul>
+<p>自动化测试的优点：</p>
+<ul>
+<li>较少的时间内可以运行更多的测试用例</li>
+<li>自动化脚本可重复运行</li>
+<li>减少人为错误</li>
+<li>克服手工测试的局限性</li>
+</ul>
+<h3 id="自动化测试工具选择"><a href="#自动化测试工具选择" class="headerlink" title="自动化测试工具选择"></a>自动化测试工具选择</h3><p>Selenium</p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h2 id="Selenium-API操作"><a href="#Selenium-API操作" class="headerlink" title="Selenium-API操作"></a>Selenium-API操作</h2><h3 id="元素定位方式"><a href="#元素定位方式" class="headerlink" title="元素定位方式"></a>元素定位方式</h3><h3 id="元素和浏览器的操作方法"><a href="#元素和浏览器的操作方法" class="headerlink" title="元素和浏览器的操作方法"></a>元素和浏览器的操作方法</h3><h3 id="鼠标和键盘操作"><a href="#鼠标和键盘操作" class="headerlink" title="鼠标和键盘操作"></a>鼠标和键盘操作</h3><h3 id="元素等待"><a href="#元素等待" class="headerlink" title="元素等待"></a>元素等待</h3><h3 id="HTML特殊元素处理"><a href="#HTML特殊元素处理" class="headerlink" title="HTML特殊元素处理"></a>HTML特殊元素处理</h3><h3 id="窗口截图"><a href="#窗口截图" class="headerlink" title="窗口截图"></a>窗口截图</h3><h3 id="验证码处理"><a href="#验证码处理" class="headerlink" title="验证码处理"></a>验证码处理</h3><h2 id="UnitTest框架"><a href="#UnitTest框架" class="headerlink" title="UnitTest框架"></a>UnitTest框架</h2><h3 id="UnitTest基本使用"><a href="#UnitTest基本使用" class="headerlink" title="UnitTest基本使用"></a>UnitTest基本使用</h3><h3 id="UnitTest断言"><a href="#UnitTest断言" class="headerlink" title="UnitTest断言"></a>UnitTest断言</h3><h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><h3 id="生成HTML测试报告"><a href="#生成HTML测试报告" class="headerlink" title="生成HTML测试报告"></a>生成HTML测试报告</h3><h2 id="PO测试"><a href="#PO测试" class="headerlink" title="PO测试"></a>PO测试</h2><h3 id="方法封装"><a href="#方法封装" class="headerlink" title="方法封装"></a>方法封装</h3><h3 id="PO模式介绍"><a href="#PO模式介绍" class="headerlink" title="PO模式介绍"></a>PO模式介绍</h3><h3 id="PO模式实战"><a href="#PO模式实战" class="headerlink" title="PO模式实战"></a>PO模式实战</h3><h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><h3 id="JSON读写"><a href="#JSON读写" class="headerlink" title="JSON读写"></a>JSON读写</h3><h3 id="数据驱动介绍"><a href="#数据驱动介绍" class="headerlink" title="数据驱动介绍"></a>数据驱动介绍</h3><h3 id="数据驱动实战"><a href="#数据驱动实战" class="headerlink" title="数据驱动实战"></a>数据驱动实战</h3><h2 id="日志采集"><a href="#日志采集" class="headerlink" title="日志采集"></a>日志采集</h2><h3 id="日志相关概念"><a href="#日志相关概念" class="headerlink" title="日志相关概念"></a>日志相关概念</h3><h3 id="日志的基本方法"><a href="#日志的基本方法" class="headerlink" title="日志的基本方法"></a>日志的基本方法</h3><h3 id="日志的高级方法"><a href="#日志的高级方法" class="headerlink" title="日志的高级方法"></a>日志的高级方法</h3><h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="自动化测试流程"><a href="#自动化测试流程" class="headerlink" title="自动化测试流程"></a>自动化测试流程</h3><h3 id="项目实战演练"><a href="#项目实战演练" class="headerlink" title="项目实战演练"></a>项目实战演练</h3>]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
   </entry>
   <entry>
     <title>从零开始搭建个人博客</title>
@@ -2163,6 +2360,59 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>C++中&amp;和*的区别</title>
+    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
+<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
+<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
+</ul>
+<hr>
+<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图</title>
+    <url>/2023/05/22/%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
+</li>
+<li><p>注意：</p>
+<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
+</li>
+</ul>
+<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
+<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
+<li>简单图</li>
+<li>多重图</li>
+</ul>
+<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
+<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
+</li>
+<li><p>有向图：</p>
+<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
+<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
+<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
+</li>
+</ul>
+<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
+<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
+<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
+<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><font color="red">路径长度</font>:路径上边的数目</li>
+<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
+<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
+<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
+</ul>
+<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java设计思想</title>
     <url>/2023/06/23/%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
@@ -2199,20 +2449,6 @@ public interface English &#123;
 ]]></content>
       <tags>
         <tag>设计思想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++中&amp;和*的区别</title>
-    <url>/2023/07/31/%E5%8F%96%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E5%9C%B0%E5%9D%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="C-中-和-amp-的区别"><a href="#C-中-和-amp-的区别" class="headerlink" title="C++中*和&amp;的区别"></a>C++中*和&amp;的区别</h1><ul>
-<li>*是<mark>取值运算符</mark>，对地址使用可以获得地址中储存的数值。 对于指针a，*a表示取a中的值</li>
-<li>&amp;是<mark>地址运算符</mark>，对变量使用可以获得该变量的地址。对于变量b，&amp;b表示取b的地址</li>
-</ul>
-<hr>
-<p>在定义时，* 是一个标识符，声明该变量是一个指针，比如说int *p; 那p就是一个指向int型的指针；<br>在调用时，*p是指针p指向的那个变量，比如说之前有int a&#x3D;5；int *p&#x3D;a；那么p的值是a的地址，也就是指针p指向a，*p则等于a的值，即*p&#x3D;5。<br>而&amp;，则是引用，比如说有定义int a&#x3D;5；再定义int b&#x3D;&amp;a；那么这里的b则引用a的值，即b&#x3D;5，而再给b赋值：b&#x3D;10，a的值也会变为10。</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2296,91 +2532,6 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>图</title>
-    <url>/2023/05/22/%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><p><img src="https://s2.loli.net/2023/05/22/WTjnpNUAybvVCOE.png" alt="图的定义1.png"><img src="https://s2.loli.net/2023/05/22/FV6WkYfRIZOPbSo.png" alt="图的定义2.png" style="zoom:33%;" /></p>
-</li>
-<li><p>注意：</p>
-<p>​	线性表可以是空表，树可以是空树，但图不可以是空，即v一定是非空集</p>
-</li>
-</ul>
-<h3 id="无向图、有向图"><a href="#无向图、有向图" class="headerlink" title="无向图、有向图"></a>无向图、有向图</h3><p><img src="https://s2.loli.net/2023/05/22/cxqBhkDFXmNb4fC.png" alt="无向图.png"><img src="https://s2.loli.net/2023/05/22/WyAsc3gnGuLPSXQ.png" alt="有向图.png"></p>
-<h3 id="简单图、多重图"><a href="#简单图、多重图" class="headerlink" title="简单图、多重图"></a>简单图、多重图</h3><ul>
-<li>简单图</li>
-<li>多重图</li>
-</ul>
-<h3 id="顶点的度、入度、出度"><a href="#顶点的度、入度、出度" class="headerlink" title="顶点的度、入度、出度"></a>顶点的度、入度、出度</h3><ul>
-<li><p>无向图：顶点v的度是指依附于改顶点的边的条数，极左TD(v)</p>
-</li>
-<li><p>有向图：</p>
-<p>​	入读是以顶点v为终点的有向边的数目，记为ID(v)</p>
-<p>​	出度是以顶点v为起点的有向边的数目，记为OD(v)</p>
-<p>​	顶点的度等于入度和出度之和，TD(v)&#x3D;ID(v)+OD(v)</p>
-</li>
-</ul>
-<h3 id="顶点-顶点的关系描述"><a href="#顶点-顶点的关系描述" class="headerlink" title="顶点-顶点的关系描述"></a>顶点-顶点的关系描述</h3><ul>
-<li><font color="red">路径</font>：顶点v1到顶点v2之间的一条路径</li>
-<li><font color="red">回路</font>：第一个顶点和最后一个顶点相同的路径称为回路或环</li>
-<li><font color="red">简单路径</font>：在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><font color="red">简单回路</font>:除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><font color="red">路径长度</font>:路径上边的数目</li>
-<li><font color="red">点到点的距离</font>:从顶点u出发到顶点v的最短路径若存在，则此路径的长度称为从u到v的距离。若从u到v根本不存在路径，则记该距离为无穷</li>
-<li><font color="red">无向图</font>中，若从顶点v到顶点w有路径存在，则称v和w是<font color="red">连通</font>的</li>
-<li><font color="red">有向图</font>中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是<font color="red">强连通</font>的</li>
-</ul>
-<h2 id="几种特殊的图"><a href="#几种特殊的图" class="headerlink" title="几种特殊的图"></a>几种特殊的图</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树</title>
-    <url>/2023/05/19/%E6%A0%91/</url>
-    <content><![CDATA[<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
-<li><p>节点的内部结构</p>
-<p><img src="/img/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
-</li>
-<li><p><img src="/img/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
-</li>
-</ul>
-<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
-<li>规则：任意节点左右子树不超过一</li>
-<li>平衡二叉树的旋转机制<ul>
-<li>左旋</li>
-<li>右旋</li>
-</ul>
-</li>
-</ul>
-<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
-<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
-<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
-<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
-<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
-</ul>
-<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
-<li>每一个节点或是红色的，或者是黑色的</li>
-<li>根节点必须是黑色</li>
-<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
-<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
-<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
-</ul>
-<img src="红黑树节点.png" style="zoom:50%;" />
-
-<ul>
-<li>红黑树添加节点的规则：<ul>
-<li>添加节点默认是红色(效率高)</li>
-<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
-</ul>
-</li>
-</ul>
-<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>查找（只含代码）</title>
     <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E4%BB%A3%E7%A0%81)/</url>
     <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><div class="tabs" id="顺序查找"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#顺序查找-1">顺序查找 1</button></li><li class="tab"><button type="button" data-href="#顺序查找-2">顺序查找 2</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="顺序查找-1"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SerchSqList</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;L.length;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(e == L.elem[i])&#123;</span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;已找到元素&quot;</span>&lt;&lt;L.elem[i]&lt;&lt;endl;</span><br><span class="line">			<span class="keyword">return</span> e;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="顺序查找-2"><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">SearchSqList2</span><span class="params">(SqList &amp;L,<span class="type">int</span> e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	L.elem[<span class="number">0</span>] = e;</span><br><span class="line">	<span class="keyword">for</span>(i = L.length;L.elem[i] != e;--i)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;元素的位置为&quot;</span>&lt;&lt;i+<span class="number">1</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
@@ -2456,6 +2607,259 @@ public interface English &#123;
 <h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
 <p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
 <p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查找（全）</title>
+    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/</url>
+    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><strong>查找</strong>：在数据集合中寻找满足某种条件的数据元素的过程称为查找</li>
+<li><strong>查找表(查找结构)</strong>：用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成</li>
+<li><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</li>
+</ul>
+<h3 id="查找表的常见操作"><a href="#查找表的常见操作" class="headerlink" title="查找表的常见操作"></a>查找表的常见操作</h3><ol>
+<li>查找符合条件的数据元素(静态查找表)</li>
+<li>插入、删除某个元素数据(动态查找表)</li>
+</ol>
+<h2 id="查找算法的效率评价"><a href="#查找算法的效率评价" class="headerlink" title="查找算法的效率评价"></a>查找算法的效率评价</h2><ul>
+<li><p>查找长度：在查找运算中，需要对比关键字的次数称为查找长度</p>
+</li>
+<li><p>平均查找长度(ASL)：所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^nP_iC_i<br>$$<br>$$P_i$$：查找第i个元素的概率</p>
+<p>$$C_i$$：查找第i个元素的查找长度</p>
+</li>
+</ul>
+<blockquote>
+<p>通常认为查找任何一个元素的概率都相同</p>
+</blockquote>
+<blockquote>
+<p>评价一个查找算法的效率时，通常考虑查找成功&#x2F;查找失败两种情况的ASL</p>
+</blockquote>
+<h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找，又叫”线性查找“，通常用于线性表</p>
+<p>线性表：</p>
+<ul>
+<li>顺序表</li>
+<li>链表</li>
+</ul>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>思想：从头到尾挨个找</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>普通实现：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE1.png"></p>
+<p>实现（哨兵）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%93%A8%E5%85%B5%EF%BC%89.png"></p>
+<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><h4 id="顺序查找的优化-对有序表"><a href="#顺序查找的优化-对有序表" class="headerlink" title="顺序查找的优化(对有序表)"></a>顺序查找的优化(对有序表)</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%8C%96.png"></p>
+<h4 id="（被查概率不相等）"><a href="#（被查概率不相等）" class="headerlink" title="（被查概率不相等）"></a>（被查概率不相等）</h4><p>将被查概率大的放在靠前的位置</p>
+<h4 id="用查找判定树分析ASL"><a href="#用查找判定树分析ASL" class="headerlink" title="用查找判定树分析ASL"></a>用查找判定树分析ASL</h4><blockquote>
+<ul>
+<li>一个成功节点的查找长度 &#x3D; 自身所在层数</li>
+<li>一个失败节点的查找长度 &#x3D; 其父节点所在层数</li>
+<li>默认情况下，各种失败情况或成功情况都等概率发生</li>
+</ul>
+</blockquote>
+<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><blockquote>
+<p>折半查找，又称“二分查找”，仅适用于<font color="red">有序的顺序表</font></p>
+</blockquote>
+<h4 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE2.png"></p>
+<h4 id="查找判定树"><a href="#查找判定树" class="headerlink" title="查找判定树"></a>查找判定树</h4><p>根据数据构造判定树</p>
+<blockquote>
+<p>根据mid所指的元素与将原有元素分割到左右子树中</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A02.png"></p>
+<ul>
+<li>如果low和high之间有<mark>偶数</mark>个元素，则mid分隔后，<mark>左半部分比右半部分少一个元素</mark></li>
+<li>如果当前low和high之间有<mark>奇数</mark>个元素，则mid分隔后，<mark>左右两部分元素个数相等</mark></li>
+<li><mark>结论</mark>：折半查找的判定树中，若$$mid&#x3D;\lfloor(low+high)&#x2F;2\rfloor$$，则对于任何一个节点，必有<mark>右子树节点数-左子树节点数&#x3D;0或1</mark>——<font color="red">即：右子树的节点数总比左子树的节点数相等或多一个</font></li>
+</ul>
+<hr>
+<p><strong>折半查找的<mark>判定树</mark>一定是<mark>平衡二叉树</mark></strong></p>
+<p>折半查找的判定树中，<mark>只有最下面一层是不满的</mark>，因此，元素个数为<mark>n</mark>时，树高<mark>$h&#x3D;[log_2{(n+1)}]$</mark></p>
+<hr>
+<p><strong>判定树节点关键字：<mark>左&lt;中&lt;右</mark>，满足二叉树排序树的定义</strong></p>
+<p><strong>当二叉树的节点有<mark>n</mark>个时，有<mark>失败节点n+1个</mark>（等于成功节点的空链域数量）</strong></p>
+<h4 id="折半查找效率"><a href="#折半查找效率" class="headerlink" title="折半查找效率"></a>折半查找效率</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png"></p>
+<p><mark><strong>时间复杂度&#x3D;$O(log_2{n})$</strong></mark></p>
+<hr>
+<blockquote>
+<p><strong>问</strong>：折半查找时间复杂度&#x3D;$$O(log_2{n})$$，顺序查找的时间复杂度&#x3D;$$O(n)$$，那么折半查找的速度一定比顺序查找更快吗？</p>
+<hr>
+<p><strong>答</strong>：不是，在顺序查找中，当查找的元素是第一个元素时，顺序查找的速度</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>问</strong>：$$mid&#x3D;\lceil(low+high)&#x2F;2\rceil$$会出现什么情况？</p>
+<hr>
+<p><strong>答</strong>：左子树节点数-右子树节点数&#x3D;0或1</p>
+</blockquote>
+<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p><strong>分块查找</strong>又称为<strong>索引顺序查找</strong>，是一种性能介于顺序查找和折半查找之间的查找方法。</p>
+<p>在此查找方法中，除了本身以外，还需建立“索引表”。</p>
+<p>索引表包含两个部分：<mark>关键字项（其值为改字表内的最大关键字）和指针项（指示该字表的第一个记录在表中的位置）</mark></p>
+<p><strong>特点</strong>：<mark>块内无序、块间有序、</mark></p>
+<hr>
+<p><strong>代码</strong>：</p>
+<img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81.png" style="zoom:50%;" />
+
+<p><strong>过程</strong>：</p>
+<ol>
+<li>在索引表中确定待查记录所属的分块</li>
+<li>在块内顺序查找</li>
+</ol>
+<h4 id="查找效率分析（ASL）"><a href="#查找效率分析（ASL）" class="headerlink" title="查找效率分析（ASL）"></a>查找效率分析（ASL）</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90%EF%BC%88%E5%88%86%E5%9D%97%EF%BC%89.png"></p>
+<p>设索引查找和块内查找的平均查找长度分别为$$L_I$$、$$L_S$$，则分块超找的平均查找长度为<br>$$<br>ASL&#x3D;L_I+L_S<br>$$<br>用顺序查找查索引表，则$$L_I&#x3D;(1+2+…+b)&#x2F;b&#x3D;(b+1)&#x2F;2$$，$$L_S&#x3D;(1+2+…+s)&#x2F;s&#x3D;(s+1)&#x2F;2$$</p>
+<p>当$$s&#x3D;\sqrt[]n$$时，$$ASL_{最小}&#x3D;\sqrt[]n+1$$</p>
+<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树（BST）"><a href="#二叉排序树（BST）" class="headerlink" title="二叉排序树（BST）"></a>二叉排序树（BST）</h3><p><font color="red">二叉排序树</font>&gt;又称<em>二叉查找树</em></p>
+<ol>
+<li><p>二叉排序树的定义</p>
+<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有节点的的值均小于它的根节点的值；</li>
+<li>若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
+<li>它的左右子树也分别为二叉排序树</li>
+</ul>
+<blockquote>
+<p><mark>左子树节点值&lt;根节点值&lt;右子树节点值</mark></p>
+</blockquote>
+</li>
+<li><p>二叉排序树的查找</p>
+<p>步骤：</p>
+<ol>
+<li>若二叉排序树为空，则查找失败，返回空指针</li>
+<li>若二叉排序树非空，将给定值key与根节点的关键字<code>T-&gt;data.key</code>进行比较<ul>
+<li>若key等于<code>T-&gt;data.key</code>，则查找成功，返回根节点的地址</li>
+<li>若key小于<code>T-&gt;data.key</code>，则递归查找左子树</li>
+<li>若key大于<code>T-&gt;data.key</code>，则递归查找右子树</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>二叉排序树的插入</p>
+</li>
+<li><p>二叉排序树的创建</p>
+</li>
+<li><p>二叉排序树的删除</p>
+</li>
+<li><p>查找效率分析</p>
+</li>
+</ol>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
+<li><p>平衡二叉树的定义</p>
+</li>
+<li><p>平衡二叉树的平衡调整方法</p>
+</li>
+<li><p>平衡二叉树的插入</p>
+</li>
+</ol>
+<h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
+<blockquote>
+<p>如何建立“关键字”与“存储地址”的联系？</p>
+<blockquote>
+<p>通过“散列函数(哈希函数)”：$$Add&#x3D;H(key)$$实现</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>散列函数和散列地址：$$p&#x3D;H(key)$$，$$H$$为散列函数，$$p$$为散列地址</li>
+<li>散列表：一个连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录</li>
+<li>冲突和同义词：$$key_1\not&#x3D;key_2$$，$$H(key_1)&#x3D;H(key_2)$$，这种现象称为冲突，$$key_1$$，$$key_2$$互为同义词</li>
+</ol>
+<h3 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h3><ol>
+<li><p><strong>数字分析法</strong></p>
+<blockquote>
+<p>选取数码分布较为均匀的若干位作为散列地址</p>
+</blockquote>
+<p>设关键字是r进制数（如十进制数)，而r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些，每种数码出现的机会均等；而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。</p>
+<p>这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+</li>
+<li><p><strong>平方取中法</strong>：取关键字的平方值的<strong>中间几位</strong>作为散列地址</p>
+<p>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+<li><p><strong>折叠法</strong></p>
+<p>将关键字分割成位数相同的几部分，然后取这几部分叠加和作为散列地址。根据数叠加的方式，可以把折叠法分为移位叠加、边界叠加。</p>
+<p>$$key&#x3D;45387765213$$，表长为1000：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8F%A0%E6%B3%95.jpg"></p>
+</li>
+<li><p><strong>除留余数法</strong><br>$$<br>H(key)&#x3D;key%p<br>$$<br>$$p$$为不大于表长$$m$$但最接近或等于$$m$$的最大<mark>质数</mark></p>
+<blockquote>
+<p>用质数取模，分布更均匀，冲突更少</p>
+</blockquote>
+</li>
+<li><p><strong>直接定址法</strong><br>$$<br>H(key)&#x3D;key 或H(key)&#x3D;a*key+b<br>$$<br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+</ol>
+<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><ol>
+<li><p>开放地址法</p>
+<p>所谓开放定址法，是指可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为:<br>$$<br>H_i&#x3D;(H(key)+d_i)%m,i&#x3D;1,2…,k(k&lt;&#x3D;m-1)<br>$$</p>
+<p>$$m$$为散列表表长；$$d_i$$为增量序列</p>
+<p>根据$$d$$的取值不同，可分为以下三种方法：</p>
+<ol>
+<li><p><strong>线性探测法</strong><br>$$<br>d_i&#x3D;1,2,3,…,m-1<br>$$<br>发生冲突时，每次往后探测相邻的下一个单元是否为空</p>
+<blockquote>
+<p>线性探测法很容易造成同义词、非同义词的“聚集(堆积)”现象，严重影响查找效率</p>
+<blockquote>
+<p>产生原因：冲突后再探测一定是放在某个连续的位置</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p><strong>二次探测法</strong><br>$$<br>d_i&#x3D;1^2,-1^2,2^2,-2^2,3^2,…,k^2,-k^2(k&lt;&#x3D;m&#x2F;2)<br>$$</p>
+</li>
+<li><p><strong>伪随机探测法</strong><br>$$<br>d_i&#x3D;伪随机数序列<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>链地址法(拉链法)：把具有相同散列地址的记录放在同一个单链表中，称之为同义词单链表</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8B%89%E9%93%BE%E6%B3%95.png"></p>
+</li>
+</ol>
+<h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
+<p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
+<p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树</title>
+    <url>/2023/05/19/%E6%A0%91/</url>
+    <content><![CDATA[<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><ul>
+<li><p>节点的内部结构</p>
+<p><img src="/img/%E8%8A%82%E7%82%B9%E5%86%85%E9%83%A8.png"></p>
+</li>
+<li><p><img src="/img/%E6%95%B0%E4%B8%93%E4%B8%9A%E5%90%8D%E8%AF%8D.png"></p>
+</li>
+</ul>
+<h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><ul>
+<li>规则：任意节点左右子树不超过一</li>
+<li>平衡二叉树的旋转机制<ul>
+<li>左旋</li>
+<li>右旋</li>
+</ul>
+</li>
+</ul>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
+<li>红黑树是一种自平衡的二叉查找树，是计算机科学中用到的一种数据结构。</li>
+<li>1972年出现，当时被称之为平衡二叉B树。后来，1978年被修改为如今的”红黑树”。</li>
+<li>它是一种特殊的二叉查找树，红黑树的每一个节点上都有存储位表示节点的颜色，</li>
+<li>每一个节点可以是红或者黑;红黑树不是高度平衡的，它的平衡是通过”红黑规则”进行实现的</li>
+</ul>
+<h2 id="红黑规则"><a href="#红黑规则" class="headerlink" title="红黑规则"></a>红黑规则</h2><ul>
+<li>每一个节点或是红色的，或者是黑色的</li>
+<li>根节点必须是黑色</li>
+<li>如果一个节点没有子节点或者父节点，则该节点相应的指针属性值为Nil，这些Nil视为叶节点，每个叶节点(Nil)是黑色的</li>
+<li>如果某一个节点是红色，那么它的子节点必须是黑色(不能出现两个红色节点相连的情况)</li>
+<li>对每一个节点，从该节点到其所有后代叶节点的简单路径上，均包含相同数目的黑色节点;</li>
+</ul>
+<img src="红黑树节点.png" style="zoom:50%;" />
+
+<ul>
+<li>红黑树添加节点的规则：<ul>
+<li>添加节点默认是红色(效率高)</li>
+<li><img src="/红黑树添加节点的规则.png" style="zoom:67%;" /></li>
+</ul>
+</li>
+</ul>
+<p><strong>更多内容请见 :point_right:<a href="https://flowus.cn/czlifetime/4fe006af-a7d0-4ef3-94b9-09f775b9334d">链接</a></strong></p>
 ]]></content>
       <tags>
         <tag>数据结构</tag>
@@ -2872,8 +3276,11 @@ public interface English &#123;
 <li>线程组的设置</li>
 <li>集合点的设置</li>
 </ul>
-<h4 id="数据驱动的JMeter参数化测试"><a href="#数据驱动的JMeter参数化测试" class="headerlink" title="数据驱动的JMeter参数化测试"></a>数据驱动的JMeter参数化测试</h4><h3 id="练习赛截图"><a href="#练习赛截图" class="headerlink" title="练习赛截图"></a>练习赛截图</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%85%B3%E6%9D%91%20%E7%BA%BF%E7%A8%8B%E7%BB%84.png"></p>
+<h4 id="数据驱动的JMeter参数化测试"><a href="#数据驱动的JMeter参数化测试" class="headerlink" title="数据驱动的JMeter参数化测试"></a>数据驱动的JMeter参数化测试</h4><h3 id="练习赛截图"><a href="#练习赛截图" class="headerlink" title="练习赛截图"></a>练习赛截图</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E7%BB%83%E4%B9%A0%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%85%B3%E6%9D%91%20%E7%BA%BF%E7%A8%8B%E7%BB%84.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%85%B3%E6%9D%91%20csv.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%85%B3%E6%9D%91%20csv2.png"></p>
+<p><mark><strong>集合点：</strong>(Synchronizing Timer)</mark></p>
 <p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/web%E6%B5%8B%E8%AF%95%E4%B8%AD%E5%85%B3%E6%9D%91%20%E5%90%8C%E6%AD%A5%E8%AE%A1%E6%97%B6%E5%99%A8.png"></p>
 <h3 id="录制流量"><a href="#录制流量" class="headerlink" title="录制流量"></a>录制流量</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%BD%95%E5%88%B6%E6%B5%81%E9%87%8F.png"></p>
 <p>英文：<code>HTTP(s) Test Script Recorder</code></p>
@@ -2896,213 +3303,6 @@ public interface English &#123;
 <h2 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h2>]]></content>
       <tags>
         <tag>软件测试、Web测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查找（全）</title>
-    <url>/2023/08/08/%E6%9F%A5%E6%89%BE(%E5%85%A8)/</url>
-    <content><![CDATA[<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
-<li><strong>查找</strong>：在数据集合中寻找满足某种条件的数据元素的过程称为查找</li>
-<li><strong>查找表(查找结构)</strong>：用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成</li>
-<li><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</li>
-</ul>
-<h3 id="查找表的常见操作"><a href="#查找表的常见操作" class="headerlink" title="查找表的常见操作"></a>查找表的常见操作</h3><ol>
-<li>查找符合条件的数据元素(静态查找表)</li>
-<li>插入、删除某个元素数据(动态查找表)</li>
-</ol>
-<h2 id="查找算法的效率评价"><a href="#查找算法的效率评价" class="headerlink" title="查找算法的效率评价"></a>查找算法的效率评价</h2><ul>
-<li><p>查找长度：在查找运算中，需要对比关键字的次数称为查找长度</p>
-</li>
-<li><p>平均查找长度(ASL)：所有查找过程中进行关键字的比较次数的平均值<br>$$<br>ASL&#x3D;\sum_{i&#x3D;1}^nP_iC_i<br>$$<br>$$P_i$$：查找第i个元素的概率</p>
-<p>$$C_i$$：查找第i个元素的查找长度</p>
-</li>
-</ul>
-<blockquote>
-<p>通常认为查找任何一个元素的概率都相同</p>
-</blockquote>
-<blockquote>
-<p>评价一个查找算法的效率时，通常考虑查找成功&#x2F;查找失败两种情况的ASL</p>
-</blockquote>
-<h2 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h2><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找，又叫”线性查找“，通常用于线性表</p>
-<p>线性表：</p>
-<ul>
-<li>顺序表</li>
-<li>链表</li>
-</ul>
-<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>思想：从头到尾挨个找</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><p>普通实现：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img//%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE1.png"></p>
-<p>实现（哨兵）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%93%A8%E5%85%B5%EF%BC%89.png"></p>
-<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><h4 id="顺序查找的优化-对有序表"><a href="#顺序查找的优化-对有序表" class="headerlink" title="顺序查找的优化(对有序表)"></a>顺序查找的优化(对有序表)</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%8C%96.png"></p>
-<h4 id="（被查概率不相等）"><a href="#（被查概率不相等）" class="headerlink" title="（被查概率不相等）"></a>（被查概率不相等）</h4><p>将被查概率大的放在靠前的位置</p>
-<h4 id="用查找判定树分析ASL"><a href="#用查找判定树分析ASL" class="headerlink" title="用查找判定树分析ASL"></a>用查找判定树分析ASL</h4><blockquote>
-<ul>
-<li>一个成功节点的查找长度 &#x3D; 自身所在层数</li>
-<li>一个失败节点的查找长度 &#x3D; 其父节点所在层数</li>
-<li>默认情况下，各种失败情况或成功情况都等概率发生</li>
-</ul>
-</blockquote>
-<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><blockquote>
-<p>折半查找，又称“二分查找”，仅适用于<font color="red">有序的顺序表</font></p>
-</blockquote>
-<h4 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE1.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE2.png"></p>
-<h4 id="查找判定树"><a href="#查找判定树" class="headerlink" title="查找判定树"></a>查找判定树</h4><p>根据数据构造判定树</p>
-<blockquote>
-<p>根据mid所指的元素与将原有元素分割到左右子树中</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%A4%E5%AE%9A%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A02.png"></p>
-<ul>
-<li>如果low和high之间有<mark>偶数</mark>个元素，则mid分隔后，<mark>左半部分比右半部分少一个元素</mark></li>
-<li>如果当前low和high之间有<mark>奇数</mark>个元素，则mid分隔后，<mark>左右两部分元素个数相等</mark></li>
-<li><mark>结论</mark>：折半查找的判定树中，若$$mid&#x3D;\lfloor(low+high)&#x2F;2\rfloor$$，则对于任何一个节点，必有<mark>右子树节点数-左子树节点数&#x3D;0或1</mark>——<font color="red">即：右子树的节点数总比左子树的节点数相等或多一个</font></li>
-</ul>
-<hr>
-<p><strong>折半查找的<mark>判定树</mark>一定是<mark>平衡二叉树</mark></strong></p>
-<p>折半查找的判定树中，<mark>只有最下面一层是不满的</mark>，因此，元素个数为<mark>n</mark>时，树高<mark>$h&#x3D;[log_2{(n+1)}]$</mark></p>
-<hr>
-<p><strong>判定树节点关键字：<mark>左&lt;中&lt;右</mark>，满足二叉树排序树的定义</strong></p>
-<p><strong>当二叉树的节点有<mark>n</mark>个时，有<mark>失败节点n+1个</mark>（等于成功节点的空链域数量）</strong></p>
-<h4 id="折半查找效率"><a href="#折半查找效率" class="headerlink" title="折半查找效率"></a>折半查找效率</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png"></p>
-<p><mark><strong>时间复杂度&#x3D;$O(log_2{n})$</strong></mark></p>
-<hr>
-<blockquote>
-<p><strong>问</strong>：折半查找时间复杂度&#x3D;$$O(log_2{n})$$，顺序查找的时间复杂度&#x3D;$$O(n)$$，那么折半查找的速度一定比顺序查找更快吗？</p>
-<hr>
-<p><strong>答</strong>：不是，在顺序查找中，当查找的元素是第一个元素时，顺序查找的速度</p>
-</blockquote>
-<hr>
-<blockquote>
-<p><strong>问</strong>：$$mid&#x3D;\lceil(low+high)&#x2F;2\rceil$$会出现什么情况？</p>
-<hr>
-<p><strong>答</strong>：左子树节点数-右子树节点数&#x3D;0或1</p>
-</blockquote>
-<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><p><strong>分块查找</strong>又称为<strong>索引顺序查找</strong>，是一种性能介于顺序查找和折半查找之间的查找方法。</p>
-<p>在此查找方法中，除了本身以外，还需建立“索引表”。</p>
-<p>索引表包含两个部分：<mark>关键字项（其值为改字表内的最大关键字）和指针项（指示该字表的第一个记录在表中的位置）</mark></p>
-<p><strong>特点</strong>：<mark>块内无序、块间有序、</mark></p>
-<hr>
-<p><strong>代码</strong>：</p>
-<img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81.png" style="zoom:50%;" />
-
-<p><strong>过程</strong>：</p>
-<ol>
-<li>在索引表中确定待查记录所属的分块</li>
-<li>在块内顺序查找</li>
-</ol>
-<h4 id="查找效率分析（ASL）"><a href="#查找效率分析（ASL）" class="headerlink" title="查找效率分析（ASL）"></a>查找效率分析（ASL）</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90%EF%BC%88%E5%88%86%E5%9D%97%EF%BC%89.png"></p>
-<p>设索引查找和块内查找的平均查找长度分别为$$L_I$$、$$L_S$$，则分块超找的平均查找长度为<br>$$<br>ASL&#x3D;L_I+L_S<br>$$<br>用顺序查找查索引表，则$$L_I&#x3D;(1+2+…+b)&#x2F;b&#x3D;(b+1)&#x2F;2$$，$$L_S&#x3D;(1+2+…+s)&#x2F;s&#x3D;(s+1)&#x2F;2$$</p>
-<p>当$$s&#x3D;\sqrt[]n$$时，$$ASL_{最小}&#x3D;\sqrt[]n+1$$</p>
-<h2 id="数表的查找"><a href="#数表的查找" class="headerlink" title="数表的查找"></a>数表的查找</h2><h3 id="二叉排序树（BST）"><a href="#二叉排序树（BST）" class="headerlink" title="二叉排序树（BST）"></a>二叉排序树（BST）</h3><p><font color="red">二叉排序树</font>&gt;又称<em>二叉查找树</em></p>
-<ol>
-<li><p>二叉排序树的定义</p>
-<p>二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：</p>
-<ul>
-<li>若它的左子树不空，则左子树上所有节点的的值均小于它的根节点的值；</li>
-<li>若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值</li>
-<li>它的左右子树也分别为二叉排序树</li>
-</ul>
-<blockquote>
-<p><mark>左子树节点值&lt;根节点值&lt;右子树节点值</mark></p>
-</blockquote>
-</li>
-<li><p>二叉排序树的查找</p>
-<p>步骤：</p>
-<ol>
-<li>若二叉排序树为空，则查找失败，返回空指针</li>
-<li>若二叉排序树非空，将给定值key与根节点的关键字<code>T-&gt;data.key</code>进行比较<ul>
-<li>若key等于<code>T-&gt;data.key</code>，则查找成功，返回根节点的地址</li>
-<li>若key小于<code>T-&gt;data.key</code>，则递归查找左子树</li>
-<li>若key大于<code>T-&gt;data.key</code>，则递归查找右子树</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>二叉排序树的插入</p>
-</li>
-<li><p>二叉排序树的创建</p>
-</li>
-<li><p>二叉排序树的删除</p>
-</li>
-<li><p>查找效率分析</p>
-</li>
-</ol>
-<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><ol>
-<li><p>平衡二叉树的定义</p>
-</li>
-<li><p>平衡二叉树的平衡调整方法</p>
-</li>
-<li><p>平衡二叉树的插入</p>
-</li>
-</ol>
-<h2 id="散列表的查找"><a href="#散列表的查找" class="headerlink" title="散列表的查找"></a>散列表的查找</h2><h3 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h3><p><mark>散列表(哈希表)</mark>，是一种数据结构，特点是：数据元素的<font color="red">关键字</font>与其<font color="red">存储地址</font>直接相关</p>
-<blockquote>
-<p>如何建立“关键字”与“存储地址”的联系？</p>
-<blockquote>
-<p>通过“散列函数(哈希函数)”：$$Add&#x3D;H(key)$$实现</p>
-</blockquote>
-</blockquote>
-<ol>
-<li>散列函数和散列地址：$$p&#x3D;H(key)$$，$$H$$为散列函数，$$p$$为散列地址</li>
-<li>散列表：一个连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录</li>
-<li>冲突和同义词：$$key_1\not&#x3D;key_2$$，$$H(key_1)&#x3D;H(key_2)$$，这种现象称为冲突，$$key_1$$，$$key_2$$互为同义词</li>
-</ol>
-<h3 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h3><ol>
-<li><p><strong>数字分析法</strong></p>
-<blockquote>
-<p>选取数码分布较为均匀的若干位作为散列地址</p>
-</blockquote>
-<p>设关键字是r进制数（如十进制数)，而r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些，每种数码出现的机会均等；而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。</p>
-<p>这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
-</li>
-<li><p><strong>平方取中法</strong>：取关键字的平方值的<strong>中间几位</strong>作为散列地址</p>
-<p>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
-</li>
-<li><p><strong>折叠法</strong></p>
-<p>将关键字分割成位数相同的几部分，然后取这几部分叠加和作为散列地址。根据数叠加的方式，可以把折叠法分为移位叠加、边界叠加。</p>
-<p>$$key&#x3D;45387765213$$，表长为1000：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8A%98%E5%8F%A0%E6%B3%95.jpg"></p>
-</li>
-<li><p><strong>除留余数法</strong><br>$$<br>H(key)&#x3D;key%p<br>$$<br>$$p$$为不大于表长$$m$$但最接近或等于$$m$$的最大<mark>质数</mark></p>
-<blockquote>
-<p>用质数取模，分布更均匀，冲突更少</p>
-</blockquote>
-</li>
-<li><p><strong>直接定址法</strong><br>$$<br>H(key)&#x3D;key 或H(key)&#x3D;a*key+b<br>$$<br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
-</li>
-</ol>
-<h3 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h3><ol>
-<li><p>开放地址法</p>
-<p>所谓开放定址法，是指可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为:<br>$$<br>H_i&#x3D;(H(key)+d_i)%m,i&#x3D;1,2…,k(k&lt;&#x3D;m-1)<br>$$</p>
-<p>$$m$$为散列表表长；$$d_i$$为增量序列</p>
-<p>根据$$d$$的取值不同，可分为以下三种方法：</p>
-<ol>
-<li><p><strong>线性探测法</strong><br>$$<br>d_i&#x3D;1,2,3,…,m-1<br>$$<br>发生冲突时，每次往后探测相邻的下一个单元是否为空</p>
-<blockquote>
-<p>线性探测法很容易造成同义词、非同义词的“聚集(堆积)”现象，严重影响查找效率</p>
-<blockquote>
-<p>产生原因：冲突后再探测一定是放在某个连续的位置</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p><strong>二次探测法</strong><br>$$<br>d_i&#x3D;1^2,-1^2,2^2,-2^2,3^2,…,k^2,-k^2(k&lt;&#x3D;m&#x2F;2)<br>$$</p>
-</li>
-<li><p><strong>伪随机探测法</strong><br>$$<br>d_i&#x3D;伪随机数序列<br>$$</p>
-</li>
-</ol>
-</li>
-<li><p>链地址法(拉链法)：把具有相同散列地址的记录放在同一个单链表中，称之为同义词单链表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%8B%89%E9%93%BE%E6%B3%95.png"></p>
-</li>
-</ol>
-<h3 id="散列表的查找-1"><a href="#散列表的查找-1" class="headerlink" title="散列表的查找"></a>散列表的查找</h3><p>$$<br>\alpha&#x3D;\frac{表中填入的记录值}{散列表的长度}<br>$$</p>
-<p>$$\alpha$$：装填因子$$&#x3D;ASL_{失败}$$</p>
-<p>装填因子表示的是散列表装填的满不满，越大，越空；越小，越满。</p>
-]]></content>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
