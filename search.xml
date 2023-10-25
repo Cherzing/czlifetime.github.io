@@ -350,164 +350,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JMeter</title>
-    <url>/2023/09/29/JMeter/</url>
-    <content><![CDATA[<h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JMeter简介"><a href="#JMeter简介" class="headerlink" title="JMeter简介"></a>JMeter简介</h3><ol>
-<li>可以对于服务器。网络或对象模拟巨大的负载</li>
-<li>可以创建带有断言的脚本来验证程序是否能返回期望的结果</li>
-</ol>
-<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
-<ol>
-<li>开源、免费</li>
-<li>跨平台</li>
-<li>支持多协议</li>
-<li>小巧</li>
-<li>功能强大</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>不支持IP欺骗</li>
-<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要和Selenium配合来完成Web2.0应用的测试</li>
-</ol>
-<h3 id="JMeter基本使用"><a href="#JMeter基本使用" class="headerlink" title="JMeter基本使用"></a>JMeter基本使用</h3><h4 id="两个特殊的线程组"><a href="#两个特殊的线程组" class="headerlink" title="两个特殊的线程组"></a>两个特殊的线程组</h4><ul>
-<li>setUp线程组：最优先执行的线程组</li>
-<li>tearDown线程组：最后执行的线程组</li>
-</ul>
-<h4 id="操作线程组"><a href="#操作线程组" class="headerlink" title="操作线程组"></a>操作线程组</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7.bmp"></p>
-<h4 id="http请求默认值"><a href="#http请求默认值" class="headerlink" title="http请求默认值"></a>http请求默认值</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC2.bmp"></p>
-<h4 id="信息头管理器"><a href="#信息头管理器" class="headerlink" title="信息头管理器"></a>信息头管理器</h4><p>新增修改实现时提交的数据时JSON格式的，需申明提交的数据的内容类型：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A8.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A82.bmp"></p>
-<h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><p>当提交的数据量较大，参数化可以动态的获取、设置或生成数据，是一种有程序驱动代替人工驱动的数据设计方案，提高脚本的编写效率以及编写质量</p>
-<p>以下四种方式实现参数化：</p>
-<ol>
-<li><p>用户数据文件设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F.bmp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F2.bmp"></p>
-</li>
-<li><p>CSV数据文件设置</p>
-<p>CSV：逗号分隔符，是一种简洁且常见的数据存储格式</p>
-<p>实现步骤：</p>
-<ol>
-<li>使用CSV文件存储测试数据</li>
-<li>编写被复用的学院新增脚本模板(编码集使用UTF-8，无BOM格式)</li>
-<li>关联脚本与数据(将文件数据倒入脚本)</li>
-</ol>
-</li>
-<li><p>用户参数</p>
-</li>
-<li><p>函数</p>
-</li>
-</ol>
-<h3 id="直链数据库"><a href="#直链数据库" class="headerlink" title="直链数据库"></a>直链数据库</h3><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3>]]></content>
-      <tags>
-        <tag>软件测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JDBC</title>
-    <url>/2023/09/09/JDBC/</url>
-    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
-<h2 id="JDBC-入门"><a href="#JDBC-入门" class="headerlink" title="JDBC 入门"></a>JDBC 入门</h2><ol>
-<li><p>创建工程，导入jar包</p>
-</li>
-<li><p>注册驱动</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>获取连接</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/jdbc_test&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;cz&quot;</span>;</span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>定义SQL语句</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update account set money = 2000 where id =1&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>获取执行SQL对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> conn.createStatement();</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>执行SQL</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>处理返回结果</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>释放资源</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">statement.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="JDBC-API-详解"><a href="#JDBC-API-详解" class="headerlink" title="JDBC API 详解"></a>JDBC API 详解</h2><h3 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h3><ul>
-<li>作用<ul>
-<li>注册驱动</li>
-<li>获取数据库连接</li>
-</ul>
-</li>
-</ul>
-<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
-<li><p>作用</p>
-<ol>
-<li><p>获取执行SQL的对象</p>
-<ul>
-<li><p>普通执行SQL对象</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Statement <span class="title function_">createStatement</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>预编译SQL的执行SQL对象：防止SQL注入</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PreparedStatement <span class="title function_">prepareStatement</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>执行存储过程的对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CallableStatement <span class="title function_">prepaareCall</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>管理事务</p>
-<ul>
-<li><p>MySQL事务管理</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开启事务：<span class="keyword">BEGIN</span>；<span class="operator">/</span><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">提交事务：<span class="keyword">COMMIT</span>;</span><br><span class="line">回滚事务：<span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>JDBC事务管理</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">开启事务：setAutoCommit(<span class="type">boolean</span> autoCommit):<span class="literal">true</span>为自动提交；FALSE为手动提交，几位开始事务</span><br><span class="line">提交事务:commit();</span><br><span class="line">回滚事务:rollback();</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><ul>
-<li><p>作用：</p>
-<ol>
-<li><p>执行SQL语句</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20statement.jpg"></p>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><ul>
-<li><p>封装了DQL语句查询结果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20resultset.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20result%E6%96%B9%E6%B3%95.jpg"></p>
-</li>
-</ul>
-<h3 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h3><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
-<h2 id="据库连接池"><a href="#据库连接池" class="headerlink" title="据库连接池"></a>据库连接池</h2><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
-]]></content>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>I/O流</title>
     <url>/2023/06/23/IO%E6%B5%81/</url>
     <content><![CDATA[<h1 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>1、文件</p>
@@ -728,6 +570,164 @@
       </tags>
   </entry>
   <entry>
+    <title>JDBC</title>
+    <url>/2023/09/09/JDBC/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h2><p>JDBC(<font color='red'>J</font>ava <font color='red'>D</font>ata<font color='red'>B</font>ase <font color='red'>C</font>onnectivity)(<font color='red'>Java数据库连接</font>)是java语言操作关系型数据库的一套API</p>
+<h2 id="JDBC-入门"><a href="#JDBC-入门" class="headerlink" title="JDBC 入门"></a>JDBC 入门</h2><ol>
+<li><p>创建工程，导入jar包</p>
+</li>
+<li><p>注册驱动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取连接</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/jdbc_test&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;cz&quot;</span>;</span><br><span class="line"><span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(url,username,password);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>定义SQL语句</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;update account set money = 2000 where id =1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>获取执行SQL对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> conn.createStatement();</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行SQL</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> statement.executeUpdate(sql);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>处理返回结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>释放资源</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">statement.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="JDBC-API-详解"><a href="#JDBC-API-详解" class="headerlink" title="JDBC API 详解"></a>JDBC API 详解</h2><h3 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h3><ul>
+<li>作用<ul>
+<li>注册驱动</li>
+<li>获取数据库连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><ul>
+<li><p>作用</p>
+<ol>
+<li><p>获取执行SQL的对象</p>
+<ul>
+<li><p>普通执行SQL对象</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Statement <span class="title function_">createStatement</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>预编译SQL的执行SQL对象：防止SQL注入</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PreparedStatement <span class="title function_">prepareStatement</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>执行存储过程的对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CallableStatement <span class="title function_">prepaareCall</span><span class="params">(sql)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>管理事务</p>
+<ul>
+<li><p>MySQL事务管理</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开启事务：<span class="keyword">BEGIN</span>；<span class="operator">/</span><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">提交事务：<span class="keyword">COMMIT</span>;</span><br><span class="line">回滚事务：<span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>JDBC事务管理</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">开启事务：setAutoCommit(<span class="type">boolean</span> autoCommit):<span class="literal">true</span>为自动提交；FALSE为手动提交，几位开始事务</span><br><span class="line">提交事务:commit();</span><br><span class="line">回滚事务:rollback();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><ul>
+<li><p>作用：</p>
+<ol>
+<li><p>执行SQL语句</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20statement.jpg"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><ul>
+<li><p>封装了DQL语句查询结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20resultset.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20result%E6%96%B9%E6%B3%95.jpg"></p>
+</li>
+</ul>
+<h3 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h3><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+<h2 id="据库连接池"><a href="#据库连接池" class="headerlink" title="据库连接池"></a>据库连接池</h2><p>未完：<a href="https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&p=5">https://www.bilibili.com/video/BV1s3411K7jH?t=972.5&amp;p=5</a></p>
+]]></content>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter</title>
+    <url>/2023/09/29/JMeter/</url>
+    <content><![CDATA[<h1 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h1><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JMeter简介"><a href="#JMeter简介" class="headerlink" title="JMeter简介"></a>JMeter简介</h3><ol>
+<li>可以对于服务器。网络或对象模拟巨大的负载</li>
+<li>可以创建带有断言的脚本来验证程序是否能返回期望的结果</li>
+</ol>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：</p>
+<ol>
+<li>开源、免费</li>
+<li>跨平台</li>
+<li>支持多协议</li>
+<li>小巧</li>
+<li>功能强大</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>不支持IP欺骗</li>
+<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要和Selenium配合来完成Web2.0应用的测试</li>
+</ol>
+<h3 id="JMeter基本使用"><a href="#JMeter基本使用" class="headerlink" title="JMeter基本使用"></a>JMeter基本使用</h3><h4 id="两个特殊的线程组"><a href="#两个特殊的线程组" class="headerlink" title="两个特殊的线程组"></a>两个特殊的线程组</h4><ul>
+<li>setUp线程组：最优先执行的线程组</li>
+<li>tearDown线程组：最后执行的线程组</li>
+</ul>
+<h4 id="操作线程组"><a href="#操作线程组" class="headerlink" title="操作线程组"></a>操作线程组</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%B1%9E%E6%80%A7.bmp"></p>
+<h4 id="http请求默认值"><a href="#http请求默认值" class="headerlink" title="http请求默认值"></a>http请求默认值</h4><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC2.bmp"></p>
+<h4 id="信息头管理器"><a href="#信息头管理器" class="headerlink" title="信息头管理器"></a>信息头管理器</h4><p>新增修改实现时提交的数据时JSON格式的，需申明提交的数据的内容类型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A8.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20http%E4%BF%A1%E6%81%AF%E5%A4%B4%E7%AE%A1%E7%90%86%E5%99%A82.bmp"></p>
+<h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><p>当提交的数据量较大，参数化可以动态的获取、设置或生成数据，是一种有程序驱动代替人工驱动的数据设计方案，提高脚本的编写效率以及编写质量</p>
+<p>以下四种方式实现参数化：</p>
+<ol>
+<li><p>用户数据文件设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F.bmp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JMeter%20%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F2.bmp"></p>
+</li>
+<li><p>CSV数据文件设置</p>
+<p>CSV：逗号分隔符，是一种简洁且常见的数据存储格式</p>
+<p>实现步骤：</p>
+<ol>
+<li>使用CSV文件存储测试数据</li>
+<li>编写被复用的学院新增脚本模板(编码集使用UTF-8，无BOM格式)</li>
+<li>关联脚本与数据(将文件数据倒入脚本)</li>
+</ol>
+</li>
+<li><p>用户参数</p>
+</li>
+<li><p>函数</p>
+</li>
+</ol>
+<h3 id="直链数据库"><a href="#直链数据库" class="headerlink" title="直链数据库"></a>直链数据库</h3><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3>]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript</title>
     <url>/2023/09/22/JavaScript/</url>
     <content><![CDATA[<p>JavaScript是可插入HTML 页面的编程代码，用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用</p>
@@ -746,7 +746,32 @@
   <entry>
     <title>JavaWeb</title>
     <url>/2023/09/09/JavaWeb/</url>
-    <content><![CDATA[<h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有</p>
+    <content><![CDATA[<h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="JavaWeb的概念"><a href="#JavaWeb的概念" class="headerlink" title="JavaWeb的概念"></a>JavaWeb的概念</h2><p>是指，所有通过Java语言编写可以通过浏览器访问的程序的总称</p>
+<p>是基于<strong>请求</strong>和<strong>响应</strong>开发的</p>
+<ul>
+<li>请求：客户端给服务器发送数据，Request</li>
+<li>响应：服务器给客户端回传数据，Response</li>
+<li>响应与请求的关系：成对出现</li>
+</ul>
+<h2 id="Web资源的分类"><a href="#Web资源的分类" class="headerlink" title="Web资源的分类"></a>Web资源的分类</h2><ul>
+<li>静态资源：html、css、js、txt、mp4、jpg</li>
+<li>动态资源：jsp页面，Servlet程序</li>
+</ul>
+<h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><ul>
+<li><p>框架：半成品软件，可以在框架的基础上进行软件的开发，简化代码</p>
+</li>
+<li><p>反射：将类的各个组成部分封装为其他对象</p>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E5%8F%8D%E5%B0%84.png"></p>
+<ul>
+<li>好处：<ol>
+<li>可以在程序运行的过程中，操作这些对象</li>
+<li>可以解耦，提高程序的可扩展性</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有</p>
 <ul>
 <li>提供了一套标准化的项目结构</li>
 <li>提供了一套标准化的构建流程 (编译，测试，打包，发布……)</li>
@@ -788,7 +813,54 @@
 <blockquote>
 <p>在同一套生命周期中，当运行后面的阶段时，前面的阶段都会运行</p>
 </blockquote>
-<h3 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h3><p><strong><a href="https://mybatis.org/mybatis-3/zh/getting-started.html">MyBatis教程</a></Strong></p>
+<h2 id="SSM框架"><a href="#SSM框架" class="headerlink" title="SSM框架"></a>SSM框架</h2><p>SSM框架是spring、spring MVC和mybatis框架的整合，是标准的MVC模式。标准的SSM框架有四层，分别是DAO(Mapper)层、Service层、Controller层和View层。使用spring实现业务对象管理，使用spring MVC负责请求的转发和视图管理，mybatis作为数据对象的持久化引擎</p>
+<h3 id="持久层-Mapper-x2F-DAO"><a href="#持久层-Mapper-x2F-DAO" class="headerlink" title="持久层(Mapper&#x2F;DAO)"></a>持久层(Mapper&#x2F;DAO)</h3><p>主要是做数据持久层的工作，负责与数据库进行联络的一些任务都封装在此。</p>
+<ul>
+<li>Dao层首先设计的是接口，然后再Spring的配置文件中定义接口的实现类</li>
+<li>然后可以在模块中进行接口的调用来进行数据业务的处理。 (不在关心接口的实现类是哪个类)</li>
+<li>数据源的配置以及有关数据库连接的参数都在Spring的配置文件中进行配置</li>
+</ul>
+<h3 id="业务层-Service"><a href="#业务层-Service" class="headerlink" title="业务层(Service)"></a>业务层(Service)</h3><p>业务模块的逻辑应用设计</p>
+<ul>
+<li>先设计接口然后再设计实类，然后再在Spring的配置文件中配置其实现的关联。(业务逻辑层的实现具体要调用到自己已经定义好的Dao的接口上)这样就可以在应用中调用Service接口来进行业务处理。</li>
+<li>建立好Dao之后再建立service层，service层又要在controler层之下，因为既要调用Dao层的接口又要提供接口给controller层。每模型都有一个service接口，每个接口分别封装各自的业务处理的方法。</li>
+</ul>
+<h3 id="表现层-Controller"><a href="#表现层-Controller" class="headerlink" title="表现层(Controller)"></a>表现层(Controller)</h3><p>负责具体的业务模块流程控制</p>
+<ul>
+<li>配置也同样是在Spring的配置文件里面进行的</li>
+<li>调用Service层提供的接口来控制业务流程</li>
+<li>业务流程的不同会有不同的控制器，在具体的开发中可以将我们的流程进行抽象的归纳，设计出可以重复利用的子单元流程模块</li>
+</ul>
+<h4 id="View层"><a href="#View层" class="headerlink" title="View层"></a>View层</h4><p>主要和控制层紧密结合，主要负责前台jsp页面的表示</p>
+<h3 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h3><ul>
+<li>Controller：控制层，接收前端发送的请求，对请求进行处理，并响应数据</li>
+<li>Service：业务逻辑层，处理具体的业务逻辑</li>
+<li>Dao：数据访问层(Data Access Object)(持久层)，负责数据访问操作，包括数据的增、删、改、查</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png"></p>
+<h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><ol>
+<li><p>IOC(控制反转Inversion of Control)</p>
+<p>不是技术，是一种设计思想。意味着，将设计好的对象，交给容器控制，而不是传统的在对象内部直接控制</p>
+</li>
+<li><p>AOP(面向切面Aspect Oriented Programming)</p>
+<p>也是一种程序设计规范，旨在将横切关注点与业务逻辑分离</p>
+</li>
+</ol>
+<h4 id="分层解耦"><a href="#分层解耦" class="headerlink" title="分层解耦"></a>分层解耦</h4><ul>
+<li><p>内聚：软件中各个功能模块内部的功能练习</p>
+</li>
+<li><p>耦合：衡量软件中各个层&#x2F;模块之间的依赖、关联的程度</p>
+<blockquote>
+<p>软件设计原则：高内聚、低耦合</p>
+</blockquote>
+</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="IOC-amp-DI入门"><a href="#IOC-amp-DI入门" class="headerlink" title="IOC&amp; DI入门"></a>IOC&amp; DI入门</h4><ul>
+<li>IOC-&gt;控制反转：对象的创建控制权由程序自身转移到外部(容器),这种思想称为控制反转</li>
+<li>DI-&gt;依赖注入：容器为应用程序提供运行时，所依赖的资源，称之为依赖注入</li>
+<li>Bean对象：IOC容器中创建、管理的对象，称之为bean</li>
+</ul>
+<h4 id="IOC详解"><a href="#IOC详解" class="headerlink" title="IOC详解"></a>IOC详解</h4><h4 id="DI详解"><a href="#DI详解" class="headerlink" title="DI详解"></a>DI详解</h4><h3 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h3><p><strong><a href="https://mybatis.org/mybatis-3/zh/getting-started.html">MyBatis教程</a></Strong></p>
 <p>是一款优秀的持久层框架，用于简化JDBC开发</p>
 <p><strong>持久层</strong></p>
 <ul>
@@ -1030,52 +1102,26 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lifetime.springbootwebrespreq.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Result</span><span class="params">()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Result</span><span class="params">(Integer code,String msg,Object data)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">        <span class="built_in">this</span>.msg = msg;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCode</span><span class="params">(Integer code)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.code = code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMsg</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMsg</span><span class="params">(String msg)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(Object data)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">success</span><span class="params">(Object data)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">1</span>,<span class="string">&quot;sucess&quot;</span>,data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">success</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">1</span>,<span class="string">&quot;success&quot;</span>,<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Result <span class="title function_">error</span><span class="params">(String msg)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Result</span>(<span class="number">0</span>,msg,<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Result&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;code=&quot;</span> + code +</span><br><span class="line">                <span class="string">&quot;, msg=&#x27;&quot;</span> + msg + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, data=&quot;</span> + data +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h4 id="分层解耦"><a href="#分层解耦" class="headerlink" title="分层解耦"></a>分层解耦</h4><h5 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h5><ul>
-<li>Controller：控制层，接收前端发送的请求，对请求进行处理，并响应数据</li>
-<li>Service：业务逻辑层，处理具体的业务逻辑</li>
-<li>Dao：数据访问层(Data Access Object)(持久层)，负责数据访问操作，包括数据的增、删、改、查</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png"></p>
-<h5 id="分层解耦-1"><a href="#分层解耦-1" class="headerlink" title="分层解耦"></a>分层解耦</h5><ul>
-<li><p>内聚：软件中各个功能模块内部的功能练习</p>
+
+
+<p>开始做项目：</p>
+<hr>
+<hr>
+<ul>
+<li><p>开发规范：基于当前最为流行的前后端分离模式进行开发</p>
 </li>
-<li><p>耦合：衡量软件中各个层&#x2F;模块之间的依赖、关联的程度</p>
-<blockquote>
-<p>软件设计原则：高内聚、低耦合</p>
+<li><p>前端与后端的交互：Restful</p>
+<ul>
+<li><p>REST (REPresentational State Transfer)，表述性状态装换，是一种软件架构风格</p>
+</li>
+<li><blockquote>
+<p>REST只是一种风格，可以打破</p>
 </blockquote>
 </li>
 </ul>
-<h5 id="IOC-amp-DI入门"><a href="#IOC-amp-DI入门" class="headerlink" title="IOC&amp; DI入门"></a>IOC&amp; DI入门</h5><ul>
-<li>IOC-&gt;控制反转：对象的创建控制权由程序自身转移到外部(容器),这种思想称为控制反转</li>
-<li>DI-&gt;依赖注入：容器为应用程序提供运行时，所依赖的资源，称之为依赖注入</li>
-<li>Bean对象：IOC容器中创建、管理的对象，称之为bean</li>
-</ul>
-<h5 id="IOC详解"><a href="#IOC详解" class="headerlink" title="IOC详解"></a>IOC详解</h5><h5 id="DI详解"><a href="#DI详解" class="headerlink" title="DI详解"></a>DI详解</h5><p>从新开始：</p>
-<hr>
-<hr>
-<h1 id="JavaWeb-1"><a href="#JavaWeb-1" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="JavaWeb的概念"><a href="#JavaWeb的概念" class="headerlink" title="JavaWeb的概念"></a>JavaWeb的概念</h2><p>是指，所有通过Java语言编写可以通过浏览器访问的程序的总称</p>
-<p>是基于<strong>请求</strong>和<strong>响应</strong>开发的</p>
-<ul>
-<li>请求：客户端给服务器发送数据，Request</li>
-<li>响应：服务器给客户端回传数据，Response</li>
-<li>响应与请求的关系：成对出现</li>
-</ul>
-<h2 id="Web资源的分类"><a href="#Web资源的分类" class="headerlink" title="Web资源的分类"></a>Web资源的分类</h2><ul>
-<li>静态资源：html、css、js、txt、mp4、jpg</li>
-<li>动态资源：jsp页面，Servlet程序</li>
-</ul>
-<h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><ul>
-<li><p>框架：半成品软件，可以在框架的基础上进行软件的开发，简化代码</p>
 </li>
-<li><p>反射：将类的各个组成部分封装为其他对象</p>
-<p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/JavaWeb%E5%8F%8D%E5%B0%84.png"></p>
-<ul>
-<li>好处：<ol>
-<li>可以在程序运行的过程中，操作这些对象</li>
-<li>可以解耦，提高程序的可扩展性</li>
-</ol>
-</li>
-</ul>
+<li><p>开发流程：</p>
+<p>查看页面原型-&gt;阅读接口文档-&gt;思路分析-&gt;接口开发-&gt;接口测试-&gt;前后端联调</p>
 </li>
 </ul>
 ]]></content>
@@ -1714,6 +1760,67 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
+    <title>Junit</title>
+    <url>/2023/09/13/Junit/</url>
+    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
+<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
+<ul>
+<li>Eclipse</li>
+<li>Ant</li>
+<li>Maven</li>
+</ul>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
+<ul>
+<li>Fixtures</li>
+<li>测试套件</li>
+<li>测试运行器</li>
+<li>JUnit 类</li>
+</ul>
+<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
+<ul>
+<li>setUp() 方法，在每次测试调用之前运行。</li>
+<li>tearDown() 方法，在每个测试方法之后运行。</li>
+</ul>
+<p>让我们看一个例子 -</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p></p>
+<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+</li>
+<li><p><em></em></p>
+<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
+<ul>
+<li><strong>Assert</strong> - 包含一组断言方法。</li>
+<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
+<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>软件测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/2023/08/20/MySQL/</url>
     <content><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>服务启动与关闭：<code>net start mysql</code>,<code>net stop mysql</code></p>
@@ -2046,65 +2153,28 @@ public interface English &#123;
       </tags>
   </entry>
   <entry>
-    <title>Junit</title>
-    <url>/2023/09/13/Junit/</url>
-    <content><![CDATA[<h1 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h1><ul>
-<li><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>JUnit 是一个 <strong>Regression Testing Framework</strong>被开发者用来在Java中实现单元测试，加快编程速度，提高代码质量。JUnit 框架可以轻松地与以下任一项集成 -</p>
+    <title>Vue</title>
+    <url>/2023/10/24/Vue/</url>
+    <content><![CDATA[<ol>
+<li><p>Vue是什么</p>
+<p>一套用于构建用户界面的渐进式JavaScript框架</p>
 <ul>
-<li>Eclipse</li>
-<li>Ant</li>
-<li>Maven</li>
-</ul>
-</li>
-<li><p><em></em></p>
-<h2 id="JUnit-测试框架的特点"><a href="#JUnit-测试框架的特点" class="headerlink" title="JUnit 测试框架的特点"></a>JUnit 测试框架的特点</h2><p>JUnit 测试框架提供以下重要功能 -</p>
-<ul>
-<li>Fixtures</li>
-<li>测试套件</li>
-<li>测试运行器</li>
-<li>JUnit 类</li>
-</ul>
-<h3 id="Fixtures"><a href="#Fixtures" class="headerlink" title="Fixtures"></a>Fixtures</h3><p><strong>Fixtures</strong>是一组对象的固定状态，用作运行测试的基线。测试夹具的目的是确保有一个众所周知的固定环境来运行测试，以便结果是可重复的。它包括 -</p>
-<ul>
-<li>setUp() 方法，在每次测试调用之前运行。</li>
-<li>tearDown() 方法，在每个测试方法之后运行。</li>
-</ul>
-<p>让我们看一个例子 -</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> junit.framework.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JavaTest</span> <span class="keyword">extends</span> <span class="title class_">TestCase</span> &#123;</span><br><span class="line">   <span class="keyword">protected</span> <span class="type">int</span> value1, value2;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// assigning the values</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span>&#123;</span><br><span class="line">      value1 = <span class="number">3</span>;</span><br><span class="line">      value2 = <span class="number">3</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// test method to add two values</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span>&#123;</span><br><span class="line">      <span class="type">double</span> <span class="variable">result</span> <span class="operator">=</span> value1 &amp;plus value2;</span><br><span class="line">      assertTrue(result == <span class="number">6</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h2><p>一个测试套件捆绑了几个单元测试用例并将它们一起运行。在 JUnit 中，@RunWith 和 @Suite 注释都用于运行套件测试。下面给出了一个使用 TestJunit1 和 TestJunit2 测试类的示例。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.junit.runners.Suite;</span><br><span class="line"><span class="comment">//JUnit Suite Test</span></span><br><span class="line"><span class="meta">@RunWith(Suite.class)</span></span><br><span class="line"><span class="meta">@Suite</span>.SuiteClasses(&#123; </span><br><span class="line">   TestJunit1.class ,TestJunit2.class</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTestSuite</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit1</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line">   </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPrintMessage</span><span class="params">()</span> &#123;     </span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testPrintMessage()&quot;</span>);    </span><br><span class="line">      assertEquals(message, messageUtil.printMessage());     </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.Ignore;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.assertEquals;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJunit2</span> &#123;</span><br><span class="line">   <span class="type">String</span> <span class="variable">message</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>; </span><br><span class="line">   <span class="type">MessageUtil</span> <span class="variable">messageUtil</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MessageUtil</span>(message);</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSalutationMessage</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside testSalutationMessage()&quot;</span>);</span><br><span class="line">      message = <span class="string">&quot;Hi!&quot;</span> + <span class="string">&quot;Robert&quot;</span>;</span><br><span class="line">      assertEquals(message,messageUtil.salutationMessage());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p></p>
-<h2 id="测试运行器"><a href="#测试运行器" class="headerlink" title="测试运行器"></a>测试运行器</h2><p>测试运行器用于执行测试用例。这是一个假设测试类的示例<strong>TestJunit</strong> 已经存在。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.runner.JUnitCore;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.Result;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.notification.Failure;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestRunner</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Result</span> <span class="variable">result</span> <span class="operator">=</span> JUnitCore.runClasses(TestJunit.class);</span><br><span class="line">          </span><br><span class="line">      <span class="keyword">for</span> (Failure failure : result.getFailures()) &#123;</span><br><span class="line">         System.out.println(failure.toString());</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">      System.out.println(result.wasSuccessful());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>复制</p>
-</li>
-<li><p><em></em></p>
-<h2 id="JUnit-类"><a href="#JUnit-类" class="headerlink" title="JUnit 类"></a>JUnit 类</h2><p>JUnit 类是重要的类，用于编写和测试 JUnit。一些重要的课程是 -</p>
-<ul>
-<li><strong>Assert</strong> - 包含一组断言方法。</li>
-<li><strong>TestCase</strong> − 包含一个测试用例，该用例定义了运行多个测试的夹具。</li>
-<li><strong>TestResult</strong> − 包含收集执行测试用例结果的方法。</li>
+<li>渐进式：Vue可以自底向上逐层的应用<ul>
+<li>简单应用：只需一个轻量小巧的核心库</li>
+<li>复杂应用：可以引入各式各样的Vue插件</li>
 </ul>
 </li>
 </ul>
+</li>
+<li><p>Vue特点</p>
+<ol>
+<li>采用组件化模式，提高代码复用率、且让代码更好维护</li>
+<li>申明是编码，让编码人员无需直接操作DOM，提高开发效率</li>
+<li>使用虚拟DOM+优秀的Diff算法，尽量复用DOM节点</li>
+</ol>
+</li>
+</ol>
 ]]></content>
-      <tags>
-        <tag>软件测试</tag>
-      </tags>
   </entry>
   <entry>
     <title>web自动化测试</title>
