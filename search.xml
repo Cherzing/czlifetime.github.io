@@ -205,7 +205,7 @@
 </ul>
 <h2 id="STL六大组件"><a href="#STL六大组件" class="headerlink" title="STL六大组件"></a>STL六大组件</h2><p>STL大体分为六大组件，分别是:<strong>容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器</strong></p>
 <ol>
-<li>容器：各种数据结构，如vector、list、deque、set、map等,用来存放数据。</li>
+<li>容器：各种数据结构，如<code>vector</code>、<code>list</code>、<code>deque</code>、<code>set</code>、<code>map</code>等,用来存放数据。</li>
 <li>算法：各种常用的算法，如sort、find、copy、for_each等</li>
 <li>迭代器：扮演了容器与算法之间的胶合剂。</li>
 <li>仿函数：行为类似函数，可作为算法的某种策略。</li>
@@ -262,7 +262,46 @@
 </tr>
 </tbody></table>
 <p>常用的容器中迭代器种类为双向迭代器，和随机访问迭代器</p>
-]]></content>
+<h2 id="容器算法迭代器初识"><a href="#容器算法迭代器初识" class="headerlink" title="容器算法迭代器初识"></a>容器算法迭代器初识</h2><p>向容器中插入数据、并遍历这个容器</p>
+<h3 id="vector存放内置数据类型"><a href="#vector存放内置数据类型" class="headerlink" title="vector存放内置数据类型"></a>vector存放内置数据类型</h3><p>容器：<code>vector</code></p>
+<blockquote>
+<p><code>vector</code>容器本身可以理解为指针</p>
+</blockquote>
+<p>算法：<code>for_each</code></p>
+<p>迭代器：<code>vector&lt;int&gt;::iterator</code></p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">myPrit</span><span class="params">(<span class="type">int</span> value)</span>&#123;</span><br><span class="line">    cout &lt;&lt; value &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">    v.push_back(<span class="number">10</span>);</span><br><span class="line">    v.push_back(<span class="number">20</span>);</span><br><span class="line">    v.push_back(<span class="number">30</span>);</span><br><span class="line">    v.push_back(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//第一种遍历方式</span></span><br><span class="line">    <span class="comment">//通过迭代器访问容器中的数据</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;::<span class="type">iterator</span> <span class="variable">itBegin</span> <span class="operator">=</span> v.begin();<span class="comment">//指向容器中的第一个元素</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;::<span class="type">iterator</span> <span class="variable">itEnd</span> <span class="operator">=</span> v.end();<span class="comment">//指向容器中最后一个元素的最后一个位置</span></span><br><span class="line">    <span class="keyword">while</span>(itBegin != itEnd)&#123;</span><br><span class="line">        cout &lt;&lt; *itBegin &lt;&lt; endl;</span><br><span class="line">        itBegin++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//第二种遍历</span></span><br><span class="line">    <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt;::<span class="type">iterator</span> <span class="variable">it</span> <span class="operator">=</span> v.begin();it != v.end();it++)&#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//第三种遍历</span></span><br><span class="line">    for_each(v.begin(),v.end(), myPrit);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>vector存放自定义数据类型</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Lifetime on 2023/11/17 017.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//vector存放自定义数据类型</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    string name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Person</span>(<span class="type">const</span> string &amp;name, <span class="type">int</span> age) : <span class="built_in">name</span>(name), <span class="built_in">age</span>(age) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">const</span> string &amp;<span class="title">getName</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setName</span><span class="params">(<span class="type">const</span> string &amp;name)</span> </span>&#123;</span><br><span class="line">        Person::name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getAge</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setAge</span><span class="params">(<span class="type">int</span> age)</span> </span>&#123;</span><br><span class="line">        Person::age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Person</span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;Person&gt;p;</span><br><span class="line">    <span class="function">Person <span class="title">p1</span><span class="params">(<span class="string">&quot;Tom&quot;</span>,<span class="number">12</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p2</span><span class="params">(<span class="string">&quot;Jack&quot;</span>,<span class="number">18</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p3</span><span class="params">(<span class="string">&quot;Rose&quot;</span>,<span class="number">18</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p4</span><span class="params">(<span class="string">&quot;Jerry&quot;</span>,<span class="number">18</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p5</span><span class="params">(<span class="string">&quot;Georgy&quot;</span>,<span class="number">13</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p6</span><span class="params">(<span class="string">&quot;Max&quot;</span>,<span class="number">12</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    p.<span class="built_in">push_back</span>(p1);</span><br><span class="line">    p.<span class="built_in">push_back</span>(p2);</span><br><span class="line">    p.<span class="built_in">push_back</span>(p3);</span><br><span class="line">    p.<span class="built_in">push_back</span>(p4);</span><br><span class="line">    p.<span class="built_in">push_back</span>(p5);</span><br><span class="line">    p.<span class="built_in">push_back</span>(p6);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (vector&lt;Person&gt;::iterator it = p.<span class="built_in">begin</span>();it != p.<span class="built_in">end</span>();it++) &#123;</span><br><span class="line">        cout &lt;&lt;it-&gt;<span class="built_in">getName</span>()&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Vector容器嵌套容器"><a href="#Vector容器嵌套容器" class="headerlink" title="Vector容器嵌套容器"></a>Vector容器嵌套容器</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Lifetime on 2023/11/17 017.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;vec;</span><br><span class="line">    <span class="comment">//创建小容器</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;vector1;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;vector2;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;vector3;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;vector4;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;vector5;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//向小容器中添加数据</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</span><br><span class="line">        vector1.<span class="built_in">push_back</span>(i+<span class="number">1</span>);</span><br><span class="line">        vector2.<span class="built_in">push_back</span>(i+<span class="number">2</span>);</span><br><span class="line">        vector3.<span class="built_in">push_back</span>(i+<span class="number">3</span>);</span><br><span class="line">        vector4.<span class="built_in">push_back</span>(i+<span class="number">4</span>);</span><br><span class="line">        vector5.<span class="built_in">push_back</span>(i+<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将小容器添加到大容器</span></span><br><span class="line">    vec.<span class="built_in">push_back</span>(vector1);</span><br><span class="line">    vec.<span class="built_in">push_back</span>(vector2);</span><br><span class="line">    vec.<span class="built_in">push_back</span>(vector3);</span><br><span class="line">    vec.<span class="built_in">push_back</span>(vector4);</span><br><span class="line">    vec.<span class="built_in">push_back</span>(vector5);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历大容器</span></span><br><span class="line">    <span class="keyword">for</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;::iterator it = vec.<span class="built_in">begin</span>();vec.<span class="built_in">begin</span>() != vec.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator iter = (*it).<span class="built_in">begin</span>();iter != (*it).<span class="built_in">end</span>();iter++) &#123;</span><br><span class="line">            cout&lt;&lt; <span class="string">&quot;iter=&quot;</span> &lt;&lt; *iter ;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">test01</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="STL-常用容器"><a href="#STL-常用容器" class="headerlink" title="STL-常用容器"></a>STL-常用容器</h1><h2 id="string容器"><a href="#string容器" class="headerlink" title="string容器"></a>string容器</h2><h3 id="1-string基本概念"><a href="#1-string基本概念" class="headerlink" title="1. string基本概念"></a>1. string基本概念</h3><p><strong>本质</strong></p>
+<ul>
+<li>string是C++风格的字符串，是个类</li>
+</ul>
+<p><strong>string和char*的区别</strong></p>
+<ul>
+<li>char*是一个指针</li>
+<li>string是一个类，类内部封装了char*，管理这个字符串，是一个char*型的容器</li>
+</ul>
+<p><strong>特点：</strong></p>
+<p>string类内部封装了很多成员方法</p>
+<blockquote>
+<p>查找find，拷贝copy，删除delete，替换replace，插入insert</p>
+</blockquote>
+<p>string管理char*所分配的内存，不用担心赋值越界等，由类内部进行负责</p>
+<h3 id="2-string构造函数"><a href="#2-string构造函数" class="headerlink" title="2. string构造函数"></a>2. string构造函数</h3><p>构造函数原型：</p>
+<ul>
+<li><code>string();</code> &#x2F;&#x2F;创建一个空的字符串</li>
+<li><code>string(const char* s)</code> &#x2F;&#x2F;使用字符串初始化</li>
+<li><code>string(const string&amp; str);</code>&#x2F;&#x2F;使用一个string对象初始化另一个string对象</li>
+<li><code>string(int n,char c);</code> &#x2F;&#x2F;使用n个字符c初始化</li>
+</ul>
+<h3 id="3-string赋值操作"><a href="#3-string赋值操作" class="headerlink" title="3. string赋值操作"></a>3. string赋值操作</h3><h3 id="4-string字符串拼接"><a href="#4-string字符串拼接" class="headerlink" title="4. string字符串拼接"></a>4. string字符串拼接</h3><h3 id="5-string查找和替换"><a href="#5-string查找和替换" class="headerlink" title="5. string查找和替换"></a>5. string查找和替换</h3><h3 id="6-string字符串比较"><a href="#6-string字符串比较" class="headerlink" title="6. string字符串比较"></a>6. string字符串比较</h3><h3 id="7-string字符读取"><a href="#7-string字符读取" class="headerlink" title="7. string字符读取"></a>7. string字符读取</h3><h3 id="8-string插入和删除"><a href="#8-string插入和删除" class="headerlink" title="8. string插入和删除"></a>8. string插入和删除</h3><h3 id="9-string子串"><a href="#9-string子串" class="headerlink" title="9. string子串"></a>9. string子串</h3>]]></content>
       <tags>
         <tag>C++</tag>
       </tags>
@@ -1067,7 +1106,46 @@
 </ul>
 <h4 id="协议解析"><a href="#协议解析" class="headerlink" title="协议解析"></a>协议解析</h4><p>http(Hyper Text Transfer Protocol)超文本传输协议</p>
 <h3 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h3><p>是一个软件程序，对HTTP协议的操作进行封装，使得程序员不必直接对协议进行操作，让Web开发更加便捷。主要的功能是“提供网上信息浏览服务”</p>
-<h4 id="请求（各类请求参数的接收和封装）"><a href="#请求（各类请求参数的接收和封装）" class="headerlink" title="请求（各类请求参数的接收和封装）"></a>请求（各类请求参数的接收和封装）</h4><ul>
+<h4 id="请求（各类请求参数的接收和封装）"><a href="#请求（各类请求参数的接收和封装）" class="headerlink" title="请求（各类请求参数的接收和封装）"></a>请求（各类请求参数的接收和封装）</h4><blockquote>
+<p>HTTP的八种请求方式</p>
+<ol>
+<li>GET：向服务器请求指定的资源</li>
+<li>POST：向服务器提交数据请求处理，数据被包含在请求体中</li>
+<li>HEAD：返回服务器上对指定资源数据的HTTP请求头，在不需要2返回全部数据的地方</li>
+<li>OPTIONS：返回服务器对指定资源数据支持的HTTP请求方法，一般用于测试服务器功能的可用性</li>
+<li>PUT：向服务器上传指定的数据</li>
+<li>DELETE：向服务器发送请求删除指定数据</li>
+<li>TRANCE：回显服务器收到的请求，主要进行功能测试诊断</li>
+<li>CONNECT：HTTP1.1协议中预留请求方式，可以将连接改为管道方式的代理服务器</li>
+</ol>
+<p>常见的请求方式：</p>
+<ol>
+<li>POST：添加</li>
+<li>GET：查询</li>
+<li>DELETE：删除</li>
+<li>PUT：修改</li>
+</ol>
+<blockquote>
+<p><strong><mark>注解</mark></strong></p>
+</blockquote>
+<blockquote>
+<p><code>@RequestBody</code>注解的主要作用是接收前端的参数，当我们使用POST请求是，会将参数放在Request Body中，此时我们就需要再Controller的方法参数面前加上@RequestBody用来接收到前端传过来的RequestBody的值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>（“/test”）</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testMethod</span><span class="params">(<span class="meta">@RequestBody</span> String string)</span><span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">       System.out.println(&quot;</span>测试<span class="string">&quot;);</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>一个请求只能有一个RequestBody，也就是说，当一个方法中有两个参数的时候，最多只能有一个参数加@RequestBody注解用来</li>
+<li>@RequestBody接收的参数是来自requestbody中，也就是请求体</li>
+</ol>
+</blockquote>
+<p><code>@RequestParam</code>接收的参数是来自Request header中，即请求头中。通常用于GET请求</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequesMapping</span>（“/api”）</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testMethod</span><span class="params">(<span class="meta">@RequestParam(value=&quot;name&quot;,required=false,defaultValue=&quot;雷神&quot;)</span>String name,<span class="meta">@RequestParam(value=&quot;age&quot;)</span>Int age)</span>&#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;年仅&quot;</span>+age+“岁肥宅”+name);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+</blockquote>
+<ul>
 <li>简单参数</li>
 <li>实体参数</li>
 <li>数组集合参数</li>
@@ -1124,6 +1202,7 @@
 <p>查看页面原型-&gt;阅读接口文档-&gt;思路分析-&gt;接口开发-&gt;接口测试-&gt;前后端联调</p>
 </li>
 </ul>
+<h3 id="部门查询"><a href="#部门查询" class="headerlink" title="部门查询"></a>部门查询</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/%E6%9F%A5%E8%AF%A2%E9%83%A8%E9%97%A8%E6%80%9D%E8%B7%AF.png"></p>
 ]]></content>
       <tags>
         <tag>Java</tag>
@@ -1826,7 +1905,12 @@ public interface English &#123;
     <content><![CDATA[<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>服务启动与关闭：<code>net start mysql</code>,<code>net stop mysql</code></p>
 <p>连接到MySQL服务的指令：<code>mysql -h localhost -P 3306 -u root -pcz</code></p>
 <p>表的一行称之为一条记录，在java中，一行记录往往使用对象表示</p>
-<p>MySQL结构:</p>
+<h2 id="MySQL结构"><a href="#MySQL结构" class="headerlink" title="MySQL结构:"></a>MySQL结构:</h2><p><strong>数据库的三层结构</strong></p>
+<ul>
+<li>数据库管理系统(DBMS)</li>
+<li>数据库</li>
+<li>表</li>
+</ul>
 <p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/MySQL%E7%BB%93%E6%9E%84.jpg"></p>
 <p><strong>SQL语句的分类</strong></p>
 <ul>
@@ -1840,7 +1924,7 @@ public interface English &#123;
 <ol>
 <li><p>[DEFAULT] CHARACTER SET ：指定数据库采用的字符集，如果不指定字符集，默认utf-8</p>
 </li>
-<li><p>COLLATE：指定数据库字符集的校对规则（常用的utf8_bin、utf8_general_ci）</p>
+<li><p>COLLATE：指定数据库字符集的校对规则（常用的utf8_bin(区分大小写)、utf8_general_ci(不区分大小写)）</p>
 </li>
 </ol>
 </blockquote>
@@ -1857,8 +1941,8 @@ public interface English &#123;
 </li>
 </ul>
 <h3 id="备份恢复数据库"><a href="#备份恢复数据库" class="headerlink" title="备份恢复数据库"></a>备份恢复数据库</h3><ul>
-<li><p>备份数据库</p>
-<p><code>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; 文件名.sql</code></p>
+<li><p>备份数据库(DOS命令行)</p>
+<p><code>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; 文件名.sql</code>	</p>
 </li>
 <li><p>恢复数据库</p>
 <p><code>Sourse 文件名.sql</code></p>
@@ -1904,8 +1988,6 @@ public interface English &#123;
 </ol>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test04(</span><br><span class="line">num1 <span class="type">FLOAT</span>,</span><br><span class="line">num2 <span class="keyword">DOUBLE</span>,</span><br><span class="line">num3 <span class="type">DECIMAL</span>(<span class="number">20</span>,<span class="number">10</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test04 <span class="keyword">VALUE</span>(<span class="number">1234567890.1234567890</span>,<span class="number">1234567890.1234567890</span>,<span class="number">1234567890.1234567890</span>);</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test04;</span><br></pre></td></tr></table></figure>
 
-
-
 <h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
 <li><p>字符串的基本使用</p>
 <ul>
@@ -1920,7 +2002,7 @@ public interface English &#123;
 </ul>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test05 (</span><br><span class="line">	<span class="string">&#x27;name&#x27;</span> <span class="type">CHAR</span>(<span class="number">255</span>));</span><br></pre></td></tr></table></figure>
 
-<p>细节：</p>
+<p>细节：<mark>不区分是字符还是字节，具体的字节数要根据编码格式进行计算</mark></p>
 <ul>
 <li><code>char(4)</code>，4表示字符数（最大255），不是字节数</li>
 <li><code>varchar(4)</code>，4表示字符数</li>
@@ -1930,24 +2012,25 @@ public interface English &#123;
 </blockquote>
 <blockquote>
 <ol>
-<li><p>不管是中文还是英文，都是最多存放4个，是按照字符来存放</p>
-</li>
-<li><p><code>char(4)</code>是定长，不管插入几个字符，只会分配4个字符</p>
-</li>
-<li><p><code>varchar(4)</code>是变长，按照实际占用的空间来分配</p>
+<li>不管是中文还是英文，都是最多存放4个，是按照字符来存放</li>
+<li><mark><code>char(4)</code>是定长</mark>，不管插入几个字符，只会分配4个字符</li>
+<li><mark><code>varchar(4)</code>是变长</mark>，按照实际占用的空间来分配</li>
+</ol>
 <ul>
 <li><code>varchar</code>本身还需要占用1-3个字节来记录存放内容长度</li>
 </ul>
-</li>
+<ol start="4">
 <li><ul>
-<li><p>如果数据是定长，推荐使用char，比如md5的密码,邮编，手<br>机号，身份证号码等.char(32)</p>
-</li>
-<li><p>如果一个字段的长度是不确定，我们使用varchar ，比如留<br>言，文章</p>
-</li>
+<li>如果数据是定长，推荐使用char，比如md5的密码,邮编，手机号，身份证号码等.char(32)</li>
 </ul>
 </li>
-<li><p>在存放文本时，也可以使用Text 数据类型.可以将TEXT列视为<br>VARCHAR列,注意 Text 不能有默认值.大小 0-2^16 字节<br>如果希望存放更多字符，可以选择<br>MEDIUMTEXT 0-2^24 或者 LONGTEXT O~2^32</p>
-</li>
+</ol>
+<ul>
+<li>如果一个字段的长度是不确定，我们使用varchar ，比如留言，文章.</li>
+<li>查询速度：char &gt; varchar</li>
+</ul>
+<ol start="5">
+<li>在存放文本时，也可以使用Text 数据类型.可以将TEXT列视为VARCHAR列,注意 Text 不能有默认值.大小 0-2^16 字节。如果希望存放更多字符，可以选择MEDIUMTEXT(0-2^24) 或者 LONGTEXT(0-2^32)</li>
 </ol>
 </blockquote>
 <h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> t1 (</span><br><span class="line">  birthday <span class="type">DATE</span>,</span><br><span class="line">  job_time DATETIME,</span><br><span class="line">  login_time <span class="type">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span></span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> t1;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> t1(birthday,job_time) <span class="keyword">VALUE</span>(<span class="string">&#x27;2003-4-24&#x27;</span>,<span class="string">&#x27;2026-3-1&#x27;</span>);</span><br></pre></td></tr></table></figure>
@@ -1966,7 +2049,11 @@ public interface English &#123;
 </ol>
 <h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20update.jpg"></p>
 <h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQL%20delete.jpg"></p>
-<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><h4 id="单表"><a href="#单表" class="headerlink" title="单表"></a>单表</h4><p>1. </p>
+<h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> [<span class="keyword">all</span><span class="operator">|</span><span class="keyword">distinct</span>]<span class="operator">&lt;</span>目标列表达式<span class="operator">&gt;</span>[,<span class="operator">&lt;</span>目标列表达式<span class="operator">&gt;</span>]</span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名或视图名<span class="operator">&gt;</span> [,<span class="operator">&lt;</span>表名或视图名<span class="operator">&gt;</span>]</span><br><span class="line">[<span class="keyword">where</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span><span class="operator">&lt;</span>列名<span class="number">1</span><span class="operator">&gt;</span>[<span class="keyword">having</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span><span class="operator">&lt;</span>列名<span class="number">2</span><span class="operator">&gt;</span>[<span class="keyword">ASC</span><span class="operator">|</span><span class="keyword">DESC</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h4><p>1. </p>
 <p><img src="https://cdn.jsdelivr.net/gh/czlifetime/img/SQLselect1.jpg"></p>
 <p>准备：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>,</span><br><span class="line">`name` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">chinese <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span>,</span><br><span class="line">English <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span>,</span><br><span class="line">Math <span class="type">FLOAT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0.0</span> </span><br><span class="line"> );</span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">1</span>,<span class="string">&#x27;曹志&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">2</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="number">89</span>,<span class="number">78</span>,<span class="number">86</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">3</span>,<span class="string">&#x27;李四&#x27;</span>,<span class="number">76</span>,<span class="number">87</span>,<span class="number">56</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">4</span>,<span class="string">&#x27;王五&#x27;</span>,<span class="number">87</span>,<span class="number">56</span>,<span class="number">76</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">5</span>,<span class="string">&#x27;熊大&#x27;</span>,<span class="number">81</span>,<span class="number">83</span>,<span class="number">80</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">6</span>,<span class="string">&#x27;熊二&#x27;</span>,<span class="number">71</span>,<span class="number">72</span>,<span class="number">73</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (id,`name`,chinese,English,Math)<span class="keyword">VALUES</span>(<span class="number">7</span>,<span class="string">&#x27;Tom&#x27;</span>,<span class="number">7</span>,<span class="number">74</span>,<span class="number">75</span>);</span><br></pre></td></tr></table></figure>
@@ -1987,7 +2074,7 @@ public interface English &#123;
 
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 查询math大于<span class="number">60</span> 并且(<span class="keyword">AND</span>) id大于<span class="number">90</span>的学生成绩</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> Math <span class="operator">&gt;</span> <span class="number">60</span> <span class="keyword">AND</span> id <span class="operator">&gt;</span> <span class="number">90</span>;</span><br><span class="line"># 查询英语成绩大于语文成绩的同学</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span><span class="keyword">FROM</span> student</span><br><span class="line">	<span class="keyword">WHERE</span> English <span class="operator">&gt;</span> chinese;</span><br><span class="line"># 查询总分大于<span class="number">200</span>分 并且 数学成绩小于等于语文成绩，姓曹的学生.</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student </span><br><span class="line">	<span class="keyword">WHERE</span> (English<span class="operator">+</span>Math<span class="operator">+</span>chinese) <span class="operator">&gt;</span> <span class="number">200</span> <span class="keyword">AND</span> Math <span class="operator">&lt;=</span> chinese <span class="keyword">AND</span> `name` <span class="keyword">LIKE</span> <span class="string">&#x27;曹%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
-<h4 id="多表"><a href="#多表" class="headerlink" title="多表"></a>多表</h4><h5 id="多表关系"><a href="#多表关系" class="headerlink" title="多表关系"></a>多表关系</h5><p>项目开发中，在进行数据库表结构设计时，会根据业务需求及业务模块之间的关系，分析并设计表结构，由于业务之间相互关联，所<br>以各个表结构之间也存在着各种联系，基本上分为三种:</p>
+<h4 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h4><h4 id="嵌套查询"><a href="#嵌套查询" class="headerlink" title="嵌套查询"></a>嵌套查询</h4><h4 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h4><h4 id="基于派生表的查询"><a href="#基于派生表的查询" class="headerlink" title="基于派生表的查询"></a>基于派生表的查询</h4><h5 id="多表关系"><a href="#多表关系" class="headerlink" title="多表关系"></a>多表关系</h5><p>项目开发中，在进行数据库表结构设计时，会根据业务需求及业务模块之间的关系，分析并设计表结构，由于业务之间相互关联，所<br>以各个表结构之间也存在着各种联系，基本上分为三种:</p>
 <ul>
 <li>一对多（多对一）</li>
 <li>多对多</li>
@@ -2175,37 +2262,6 @@ public interface English &#123;
 </li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>web自动化测试</title>
-    <url>/2023/09/21/web%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="web自动化测试"><a href="#web自动化测试" class="headerlink" title="web自动化测试"></a>web自动化测试</h1><h2 id="web自动化入门"><a href="#web自动化入门" class="headerlink" title="web自动化入门"></a>web自动化入门</h2><h3 id="认识自动化及自动化测试"><a href="#认识自动化及自动化测试" class="headerlink" title="认识自动化及自动化测试"></a>认识自动化及自动化测试</h3><p>自动化：</p>
-<ul>
-<li>机器代替人工自动完成指定目标的过程</li>
-</ul>
-<p>自动化测试：</p>
-<ul>
-<li>让程序代替人工取验证系统功能的过程</li>
-</ul>
-<p>自动化测试解决问题：</p>
-<ul>
-<li>回归测试</li>
-<li>压力测试</li>
-<li>兼容性测试</li>
-<li>提高测试效率，保证产品质量</li>
-</ul>
-<p>自动化测试的优点：</p>
-<ul>
-<li>较少的时间内可以运行更多的测试用例</li>
-<li>自动化脚本可重复运行</li>
-<li>减少人为错误</li>
-<li>克服手工测试的局限性</li>
-</ul>
-<h3 id="自动化测试工具选择"><a href="#自动化测试工具选择" class="headerlink" title="自动化测试工具选择"></a>自动化测试工具选择</h3><p>Selenium</p>
-<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h2 id="Selenium-API操作"><a href="#Selenium-API操作" class="headerlink" title="Selenium-API操作"></a>Selenium-API操作</h2><h3 id="元素定位方式"><a href="#元素定位方式" class="headerlink" title="元素定位方式"></a>元素定位方式</h3><h3 id="元素和浏览器的操作方法"><a href="#元素和浏览器的操作方法" class="headerlink" title="元素和浏览器的操作方法"></a>元素和浏览器的操作方法</h3><h3 id="鼠标和键盘操作"><a href="#鼠标和键盘操作" class="headerlink" title="鼠标和键盘操作"></a>鼠标和键盘操作</h3><h3 id="元素等待"><a href="#元素等待" class="headerlink" title="元素等待"></a>元素等待</h3><h3 id="HTML特殊元素处理"><a href="#HTML特殊元素处理" class="headerlink" title="HTML特殊元素处理"></a>HTML特殊元素处理</h3><h3 id="窗口截图"><a href="#窗口截图" class="headerlink" title="窗口截图"></a>窗口截图</h3><h3 id="验证码处理"><a href="#验证码处理" class="headerlink" title="验证码处理"></a>验证码处理</h3><h2 id="UnitTest框架"><a href="#UnitTest框架" class="headerlink" title="UnitTest框架"></a>UnitTest框架</h2><h3 id="UnitTest基本使用"><a href="#UnitTest基本使用" class="headerlink" title="UnitTest基本使用"></a>UnitTest基本使用</h3><h3 id="UnitTest断言"><a href="#UnitTest断言" class="headerlink" title="UnitTest断言"></a>UnitTest断言</h3><h3 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h3><h3 id="生成HTML测试报告"><a href="#生成HTML测试报告" class="headerlink" title="生成HTML测试报告"></a>生成HTML测试报告</h3><h2 id="PO测试"><a href="#PO测试" class="headerlink" title="PO测试"></a>PO测试</h2><h3 id="方法封装"><a href="#方法封装" class="headerlink" title="方法封装"></a>方法封装</h3><h3 id="PO模式介绍"><a href="#PO模式介绍" class="headerlink" title="PO模式介绍"></a>PO模式介绍</h3><h3 id="PO模式实战"><a href="#PO模式实战" class="headerlink" title="PO模式实战"></a>PO模式实战</h3><h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><h3 id="JSON读写"><a href="#JSON读写" class="headerlink" title="JSON读写"></a>JSON读写</h3><h3 id="数据驱动介绍"><a href="#数据驱动介绍" class="headerlink" title="数据驱动介绍"></a>数据驱动介绍</h3><h3 id="数据驱动实战"><a href="#数据驱动实战" class="headerlink" title="数据驱动实战"></a>数据驱动实战</h3><h2 id="日志采集"><a href="#日志采集" class="headerlink" title="日志采集"></a>日志采集</h2><h3 id="日志相关概念"><a href="#日志相关概念" class="headerlink" title="日志相关概念"></a>日志相关概念</h3><h3 id="日志的基本方法"><a href="#日志的基本方法" class="headerlink" title="日志的基本方法"></a>日志的基本方法</h3><h3 id="日志的高级方法"><a href="#日志的高级方法" class="headerlink" title="日志的高级方法"></a>日志的高级方法</h3><h2 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h2><h3 id="自动化测试流程"><a href="#自动化测试流程" class="headerlink" title="自动化测试流程"></a>自动化测试流程</h3><h3 id="项目实战演练"><a href="#项目实战演练" class="headerlink" title="项目实战演练"></a>项目实战演练</h3>]]></content>
-      <tags>
-        <tag>软件测试</tag>
-      </tags>
   </entry>
   <entry>
     <title>从零开始搭建个人博客</title>
